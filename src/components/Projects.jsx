@@ -25,7 +25,7 @@ export default function Projects({ projects }) {
   return (
     <section
       id="projects"
-      className="relative my-0 py-10 md:py-14 bg-slate-50 dark:bg-[#0b0f19] transition-colors duration-300"
+      className="relative my-0 py-10 md:py-14 bg-white dark:bg-[#070c16] border-t border-slate-200/50 dark:border-blue-500/10 transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}

@@ -54,7 +54,7 @@ export default function Contact({ personalInfo }) {
   };
 
   return (
-    <section id="contact" className="relative my-0 py-10 md:py-14 bg-slate-50 dark:bg-[#0b0f19] transition-colors duration-300">
+    <section id="contact" className="relative my-0 py-10 md:py-14 bg-slate-100/70 dark:bg-[#0b1224] border-t border-slate-200/50 dark:border-blue-500/10 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
