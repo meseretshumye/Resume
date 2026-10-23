@@ -109,53 +109,76 @@ export default function Hero({ personalInfo, stats, onOpenResume }) {
             </div>
 
             {/* Social Links Bar */}
-            <div className="flex items-center gap-3 pt-4 border-t border-slate-200 dark:border-slate-800 w-full">
-              <span className="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-300 font-semibold mr-2">
-                Connect:
+            <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-200 dark:border-slate-800 w-full">
+              <span className="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-300 font-bold mr-1">
+                CONNECT:
               </span>
-              <a
-                href={personalInfo.socialLinks.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-slate-100 hover:bg-indigo-50 dark:bg-slate-800 dark:hover:bg-indigo-950/60 text-slate-600 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400 transition-colors cursor-pointer"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-4 h-4" />
-              </a>
-              <a
-                href={personalInfo.socialLinks.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-slate-100 hover:bg-indigo-50 dark:bg-slate-800 dark:hover:bg-indigo-950/60 text-slate-600 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400 transition-colors cursor-pointer"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-4 h-4" />
-              </a>
-              <a
-                href={personalInfo.socialLinks.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-slate-100 hover:bg-indigo-50 dark:bg-slate-800 dark:hover:bg-indigo-950/60 text-slate-600 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400 transition-colors cursor-pointer"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-4 h-4" />
-              </a>
-              <a
-                href={personalInfo.socialLinks.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-slate-100 hover:bg-emerald-50 dark:bg-slate-800 dark:hover:bg-emerald-950/60 text-slate-600 hover:text-emerald-600 dark:text-slate-400 dark:hover:text-emerald-400 transition-colors cursor-pointer"
-                aria-label="WhatsApp"
-              >
-                <MessageCircle className="w-4 h-4" />
-              </a>
-              <a
-                href={`mailto:${personalInfo.email}`}
-                className="p-2 rounded-lg bg-slate-100 hover:bg-indigo-50 dark:bg-slate-800 dark:hover:bg-indigo-950/60 text-slate-600 hover:text-indigo-600 dark:text-slate-400 dark:hover:text-indigo-400 transition-colors"
-                aria-label="Email"
-              >
-                <Mail className="w-4 h-4" />
-              </a>
+              <div className="flex items-center gap-2.5">
+                {personalInfo.socialLinks?.facebook && (
+                  <a
+                    href={personalInfo.socialLinks.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#0e1629] border border-slate-300 dark:border-slate-700/60 hover:border-sky-400 hover:bg-sky-500/10 text-slate-600 dark:text-slate-300 hover:text-sky-400 flex items-center justify-center transition-all shadow-xs"
+                    aria-label="Facebook"
+                  >
+                    <Facebook className="w-4 h-4" />
+                  </a>
+                )}
+                {personalInfo.socialLinks?.twitter && (
+                  <a
+                    href={personalInfo.socialLinks.twitter}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#0e1629] border border-slate-300 dark:border-slate-700/60 hover:border-sky-400 hover:bg-sky-500/10 text-slate-600 dark:text-slate-300 hover:text-sky-400 flex items-center justify-center transition-all shadow-xs"
+                    aria-label="Twitter"
+                  >
+                    <Twitter className="w-4 h-4" />
+                  </a>
+                )}
+                {personalInfo.socialLinks?.linkedin && (
+                  <a
+                    href={personalInfo.socialLinks.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#0e1629] border border-slate-300 dark:border-slate-700/60 hover:border-sky-400 hover:bg-sky-500/10 text-slate-600 dark:text-slate-300 hover:text-sky-400 flex items-center justify-center transition-all shadow-xs"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin className="w-4 h-4" />
+                  </a>
+                )}
+                {personalInfo.socialLinks?.github && (
+                  <a
+                    href={personalInfo.socialLinks.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#0e1629] border border-slate-300 dark:border-slate-700/60 hover:border-sky-400 hover:bg-sky-500/10 text-slate-600 dark:text-slate-300 hover:text-sky-400 flex items-center justify-center transition-all shadow-xs"
+                    aria-label="GitHub"
+                  >
+                    <Github className="w-4 h-4" />
+                  </a>
+                )}
+                {personalInfo.socialLinks?.whatsapp && (
+                  <a
+                    href={personalInfo.socialLinks.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#0e1629] border border-slate-300 dark:border-slate-700/60 hover:border-emerald-400 hover:bg-emerald-500/10 text-slate-600 dark:text-slate-300 hover:text-emerald-400 flex items-center justify-center transition-all shadow-xs"
+                    aria-label="WhatsApp"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                  </a>
+                )}
+                {personalInfo.email && (
+                  <a
+                    href={`mailto:${personalInfo.email}`}
+                    className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#0e1629] border border-slate-300 dark:border-slate-700/60 hover:border-sky-400 hover:bg-sky-500/10 text-slate-600 dark:text-slate-300 hover:text-sky-400 flex items-center justify-center transition-all shadow-xs"
+                    aria-label="Email"
+                  >
+                    <Mail className="w-4 h-4" />
+                  </a>
+                )}
+              </div>
             </div>
 
           </div>
