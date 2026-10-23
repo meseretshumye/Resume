@@ -114,7 +114,7 @@ export default function Skills({ skills = [], skillCategories = [] }) {
             Technical Stack &amp; Skills
           </h2>
           <p className="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-            Enterprise-ready full-stack engineering proficiency spanning modern client interfaces, distributed backend APIs, scalable databases, and DevOps automation.
+            Enterprise-ready full-stack Engineering proficiency spanning modern client interfaces, distributed backend APIs, scalable databases, and DevOps automation.
           </p>
         </div>
 

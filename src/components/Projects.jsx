@@ -23,28 +23,34 @@ export default function Projects({ projects }) {
     : projects.filter(p => normalize(p.category) === normalize(activeCategory));
 
   return (
-    <section id="projects" className="py-20 md:py-28 relative bg-slate-50 dark:bg-[#0b0f19] transition-colors duration-300">
+    <section
+      id="projects"
+      className="py-20 md:py-28 relative bg-slate-50 dark:bg-[#0b0f19] transition-colors duration-300"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent border border-blue-500/40 text-blue-600 dark:text-[#00d2ff] text-xs font-bold uppercase tracking-wider mb-3 transition-colors">
-            Showcase
+            Featured Projects &amp;Showcase
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Featured Projects & Works
           </h2>
           <p className="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-300">
-            Real-world enterprise SaaS architectures, mobile applications, and high-conversion e-commerce systems.
+            Real-world enterprise SaaS architectures, mobile applications, and
+            high-conversion e-commerce systems.
           </p>
         </div>
 
         {/* Category Filter Tabs */}
         <div className="flex flex-wrap justify-center gap-2.5 mb-12">
           {categories.map((cat) => {
-            const count = cat === 'All Projects' || cat === 'All'
-              ? projects.length
-              : projects.filter(p => normalize(p.category) === normalize(cat)).length;
+            const count =
+              cat === "All Projects" || cat === "All"
+                ? projects.length
+                : projects.filter(
+                    (p) => normalize(p.category) === normalize(cat),
+                  ).length;
 
             return (
               <button
@@ -52,16 +58,18 @@ export default function Projects({ projects }) {
                 onClick={() => setActiveCategory(cat)}
                 className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 ${
                   activeCategory === cat
-                    ? 'bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/45 scale-105 ring-2 ring-indigo-400/40'
-                    : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-700 hover:text-indigo-600 dark:hover:text-indigo-400 border border-slate-200 dark:border-slate-700'
+                    ? "bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/45 scale-105 ring-2 ring-indigo-400/40"
+                    : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-700 hover:text-indigo-600 dark:hover:text-indigo-400 border border-slate-200 dark:border-slate-700"
                 }`}
               >
                 <span>{cat}</span>
-                <span className={`text-xs px-2 py-0.5 rounded-full font-bold ${
-                  activeCategory === cat 
-                    ? 'bg-indigo-500/50 text-white' 
-                    : 'bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400'
-                }`}>
+                <span
+                  className={`text-xs px-2 py-0.5 rounded-full font-bold ${
+                    activeCategory === cat
+                      ? "bg-indigo-500/50 text-white"
+                      : "bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400"
+                  }`}
+                >
                   {count}
                 </span>
               </button>
@@ -83,8 +91,8 @@ export default function Projects({ projects }) {
                   alt={project.title}
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   onError={(e) => {
-                    if (e.target.src.endsWith('.png')) {
-                      e.target.src = e.target.src.replace('.png', '.svg');
+                    if (e.target.src.endsWith(".png")) {
+                      e.target.src = e.target.src.replace(".png", ".svg");
                     }
                   }}
                 />
@@ -105,7 +113,9 @@ export default function Projects({ projects }) {
                 {/* Bottom title inside image */}
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <h3 className="text-xl font-bold">{project.title}</h3>
-                  <p className="text-xs text-slate-300 mt-0.5">{project.subtitle}</p>
+                  <p className="text-xs text-slate-300 mt-0.5">
+                    {project.subtitle}
+                  </p>
                 </div>
               </div>
 
@@ -119,7 +129,10 @@ export default function Projects({ projects }) {
                   {/* Highlights */}
                   <ul className="space-y-1.5 mb-5">
                     {project.highlights.slice(0, 2).map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-xs text-slate-600 dark:text-slate-300">
+                      <li
+                        key={idx}
+                        className="flex items-start gap-2 text-xs text-slate-600 dark:text-slate-300"
+                      >
                         <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5" />
                         <span>{item}</span>
                       </li>
@@ -183,14 +196,12 @@ export default function Projects({ projects }) {
             </div>
           ))}
         </div>
-
       </div>
 
       {/* Case Study Details Modal */}
       {selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm animate-in fade-in duration-200">
           <div className="relative w-full max-w-2xl bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
-            
             {/* Modal Header Image */}
             <div className="relative h-64 overflow-hidden shrink-0">
               <img
@@ -199,7 +210,7 @@ export default function Projects({ projects }) {
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent"></div>
-              
+
               <button
                 onClick={() => setSelectedProject(null)}
                 className="absolute top-4 right-4 p-2 rounded-full bg-slate-900/60 hover:bg-slate-900 text-white transition-colors"
@@ -211,8 +222,12 @@ export default function Projects({ projects }) {
                 <span className="px-3 py-1 rounded-full text-xs font-bold bg-indigo-600">
                   {selectedProject.category}
                 </span>
-                <h3 className="text-2xl font-bold mt-2">{selectedProject.title}</h3>
-                <p className="text-sm text-slate-300">{selectedProject.subtitle}</p>
+                <h3 className="text-2xl font-bold mt-2">
+                  {selectedProject.title}
+                </h3>
+                <p className="text-sm text-slate-300">
+                  {selectedProject.subtitle}
+                </p>
               </div>
             </div>
 
@@ -233,7 +248,10 @@ export default function Projects({ projects }) {
                 </h4>
                 <ul className="space-y-2">
                   {selectedProject.highlights.map((highlight, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-sm text-slate-700 dark:text-slate-300">
+                    <li
+                      key={idx}
+                      className="flex items-start gap-2.5 text-sm text-slate-700 dark:text-slate-300"
+                    >
                       <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                       <span>{highlight}</span>
                     </li>
@@ -299,11 +317,9 @@ export default function Projects({ projects }) {
                 </a>
               </div>
             </div>
-
           </div>
         </div>
       )}
-
     </section>
   );
 }
