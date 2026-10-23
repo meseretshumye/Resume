@@ -30,7 +30,7 @@ export default function Projects({ projects }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-10">
-          <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent border border-blue-500/40 text-blue-600 dark:text-[#00d2ff] text-xs font-bold uppercase tracking-wider mb-3 transition-colors">
+          <div className="inline-flex items-center px-6 py-2 rounded-full bg-gradient-to-r from-blue-500/10 via-sky-500/10 to-indigo-500/10 dark:from-[#0d182e]/95 dark:via-[#102040]/95 dark:to-[#0d182e]/95 backdrop-blur-md border border-blue-400/40 dark:border-blue-500/40 text-blue-600 dark:text-[#00d2ff] text-xs font-bold uppercase tracking-wider mb-3 shadow-[0_0_16px_rgba(0,210,255,0.12)] hover:border-sky-400 transition-all duration-300">
             Featured Projects &amp;Showcase
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
@@ -82,7 +82,7 @@ export default function Projects({ projects }) {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="group rounded-3xl bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/60 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between"
+              className="group rounded-3xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 overflow-hidden shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.7)] hover:shadow-2xl hover:border-sky-400 dark:hover:border-sky-400/60 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between backdrop-blur-sm"
             >
               {/* Image Preview Box */}
               <div className="relative h-60 sm:h-72 overflow-hidden bg-slate-100 dark:bg-slate-900">

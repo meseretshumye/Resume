@@ -21,7 +21,7 @@ export default function ExperienceEducation({ experience, education, onOpenResum
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-10">
-          <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent border border-blue-500/40 text-blue-600 dark:text-[#00d2ff] text-xs font-bold uppercase tracking-wider mb-3 transition-colors">
+          <div className="inline-flex items-center px-6 py-2 rounded-full bg-gradient-to-r from-blue-500/10 via-sky-500/10 to-indigo-500/10 dark:from-[#0d182e]/95 dark:via-[#102040]/95 dark:to-[#0d182e]/95 backdrop-blur-md border border-blue-400/40 dark:border-blue-500/40 text-blue-600 dark:text-[#00d2ff] text-xs font-bold uppercase tracking-wider mb-3 shadow-[0_0_16px_rgba(0,210,255,0.12)] hover:border-sky-400 transition-all duration-300">
             Career Milestones
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
@@ -104,7 +104,7 @@ export default function ExperienceEducation({ experience, education, onOpenResum
                     <div className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-white dark:bg-slate-900 border-4 border-indigo-600 dark:border-indigo-500 group-hover:scale-125 transition-transform" />
 
                     {/* Card Content */}
-                    <div className="p-6 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/60 shadow-sm hover:shadow-md hover:border-indigo-300 dark:hover:border-indigo-600 transition-all">
+                    <div className="p-6 rounded-2xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.6)] backdrop-blur-sm hover:shadow-xl hover:border-indigo-400 dark:hover:border-sky-400/60 transition-all">
                       <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-indigo-50 dark:bg-indigo-950/70 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800">
                           <Calendar className="w-3.5 h-3.5" />
@@ -181,7 +181,7 @@ export default function ExperienceEducation({ experience, education, onOpenResum
                     <div className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-white dark:bg-slate-900 border-4 border-emerald-600 dark:border-emerald-500 group-hover:scale-125 transition-transform" />
 
                     {/* Card Content */}
-                    <div className="p-6 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/60 shadow-sm hover:shadow-md hover:border-emerald-300 dark:hover:border-emerald-600 transition-all">
+                    <div className="p-6 rounded-2xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.6)] backdrop-blur-sm hover:shadow-xl hover:border-emerald-400 dark:hover:border-emerald-400/60 transition-all">
                       <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 dark:bg-emerald-950/70 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">
                           <Calendar className="w-3.5 h-3.5" />

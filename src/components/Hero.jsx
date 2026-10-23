@@ -56,7 +56,7 @@ export default function Hero({ personalInfo, stats, onOpenResume }) {
           <div className="flex flex-col items-start text-left w-full">
             
             {/* Availability Pill styled to match ABOUT ME card style */}
-            <div className="inline-flex items-center gap-2 px-4.5 py-1.5 rounded-full bg-transparent border border-blue-500/40 text-blue-600 dark:text-[#38bdf8] text-xs sm:text-sm font-bold uppercase tracking-wider mb-6 transition-colors">
+            <div className="inline-flex items-center gap-2 px-4.5 py-1.5 rounded-full bg-gradient-to-r from-blue-500/10 via-sky-500/10 to-indigo-500/10 dark:from-[#0d182e]/95 dark:via-[#102040]/95 dark:to-[#0d182e]/95 backdrop-blur-md border border-blue-400/40 dark:border-blue-500/40 text-blue-600 dark:text-[#38bdf8] text-xs sm:text-sm font-bold uppercase tracking-wider mb-6 shadow-[0_0_16px_rgba(56,189,248,0.12)] hover:border-sky-400 transition-all duration-300">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>

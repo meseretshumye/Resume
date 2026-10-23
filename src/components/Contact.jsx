@@ -59,7 +59,7 @@ export default function Contact({ personalInfo }) {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-10">
-          <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent border border-blue-500/40 text-blue-600 dark:text-[#00d2ff] text-xs font-bold uppercase tracking-wider mb-3 transition-colors">
+          <div className="inline-flex items-center px-6 py-2 rounded-full bg-gradient-to-r from-blue-500/10 via-sky-500/10 to-indigo-500/10 dark:from-[#0d182e]/95 dark:via-[#102040]/95 dark:to-[#0d182e]/95 backdrop-blur-md border border-blue-400/40 dark:border-blue-500/40 text-blue-600 dark:text-[#00d2ff] text-xs font-bold uppercase tracking-wider mb-3 shadow-[0_0_16px_rgba(0,210,255,0.12)] hover:border-sky-400 transition-all duration-300">
             Start a Conversation
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
@@ -74,7 +74,7 @@ export default function Contact({ personalInfo }) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           
           {/* Card 1: Email */}
-          <div className="p-6 rounded-3xl bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/60 shadow-sm text-center flex flex-col items-center justify-between group hover:border-indigo-400 dark:hover:border-indigo-500 transition-all">
+          <div className="p-6 rounded-3xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.7)] backdrop-blur-sm text-center flex flex-col items-center justify-between group hover:border-indigo-400 dark:hover:border-sky-400/60 transition-all">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-950/70 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
                 <Mail className="w-6 h-6" />
@@ -108,7 +108,7 @@ export default function Contact({ personalInfo }) {
           </div>
 
           {/* Card 2: Phone / WhatsApp */}
-          <div className="p-6 rounded-3xl bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/60 shadow-sm text-center flex flex-col items-center justify-between group hover:border-emerald-400 dark:hover:border-emerald-500 transition-all">
+          <div className="p-6 rounded-3xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.7)] backdrop-blur-sm text-center flex flex-col items-center justify-between group hover:border-emerald-400 dark:hover:border-emerald-400/60 transition-all">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-950/70 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
                 <Phone className="w-6 h-6" />
@@ -135,7 +135,7 @@ export default function Contact({ personalInfo }) {
           </div>
 
           {/* Card 3: Location */}
-          <div className="p-6 rounded-3xl bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/60 shadow-sm text-center flex flex-col items-center justify-between group hover:border-indigo-400 dark:hover:border-indigo-500 transition-all">
+          <div className="p-6 rounded-3xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.7)] backdrop-blur-sm text-center flex flex-col items-center justify-between group hover:border-indigo-400 dark:hover:border-sky-400/60 transition-all">
             <div>
               <div className="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-blue-950/70 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-4 mx-auto group-hover:scale-110 transition-transform">
                 <MapPin className="w-6 h-6" />
@@ -159,7 +159,7 @@ export default function Contact({ personalInfo }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           {/* Contact Form */}
-          <div className="lg:col-span-6 p-7 sm:p-9 rounded-3xl bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/60 shadow-sm">
+          <div className="lg:col-span-6 p-7 sm:p-9 rounded-3xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.7)] backdrop-blur-sm">
             <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">
               Send a Direct Message
             </h3>
