@@ -26,7 +26,7 @@ export default function Footer({ personalInfo }) {
   ];
 
   return (
-    <footer className="bg-[#080d1a] text-white border-t border-slate-800/80 transition-colors">
+    <footer className="bg-[#0b0f19] text-white border-t border-slate-800/80 transition-colors">
       
       {/* Upper Footer Row: Brand Info on Left, Navigation Inline on Right */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

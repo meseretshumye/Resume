@@ -23,12 +23,12 @@ export default function Projects({ projects }) {
     : projects.filter(p => normalize(p.category) === normalize(activeCategory));
 
   return (
-    <section id="projects" className="py-20 md:py-28 relative">
+    <section id="projects" className="py-20 md:py-28 relative bg-slate-50 dark:bg-[#0b0f19] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center px-6 py-2 rounded-full bg-[#0d162a] border border-blue-500/40 text-[#00d2ff] text-xs font-bold uppercase tracking-wider mb-3 shadow-[0_0_15px_rgba(0,210,255,0.12)]">
+          <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent border border-blue-500/40 text-blue-600 dark:text-[#00d2ff] text-xs font-bold uppercase tracking-wider mb-3 transition-colors">
             Showcase
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">

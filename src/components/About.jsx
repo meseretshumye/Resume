@@ -53,7 +53,7 @@ export default function About({ personalInfo = {}, onOpenResume }) {
   ];
 
   return (
-    <section id="about" className="py-20 md:py-28 relative overflow-hidden bg-slate-50/70 dark:bg-[#070b14] transition-colors duration-300">
+    <section id="about" className="py-20 md:py-28 relative overflow-hidden bg-slate-50 dark:bg-[#0b0f19] transition-colors duration-300">
       
       {/* Background ambient lighting */}
       <div className="absolute top-1/4 left-10 w-96 h-96 bg-indigo-500/10 dark:bg-blue-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
@@ -63,7 +63,7 @@ export default function About({ personalInfo = {}, onOpenResume }) {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 md:mb-16">
-          <div className="inline-flex items-center px-6 py-2 rounded-full bg-[#0d162a] border border-blue-500/40 text-[#00d2ff] text-xs font-bold uppercase tracking-wider mb-3 shadow-[0_0_15px_rgba(0,210,255,0.12)]">
+          <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent border border-blue-500/40 text-blue-600 dark:text-[#00d2ff] text-xs font-bold uppercase tracking-wider mb-3 transition-colors">
             About Me
           </div>
 
@@ -99,7 +99,7 @@ export default function About({ personalInfo = {}, onOpenResume }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
 
                 {/* Top Status Badge */}
-                <div className="absolute top-3.5 right-3.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0d1629]/90 backdrop-blur-md border border-blue-500/35 text-[11px] font-bold uppercase tracking-wider text-[#38bdf8] shadow-[0_0_12px_rgba(56,189,248,0.2)]">
+                <div className="absolute top-3.5 right-3.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0b0f19]/80 backdrop-blur-md border border-blue-500/35 text-[11px] font-bold uppercase tracking-wider text-[#38bdf8] shadow-[0_0_12px_rgba(56,189,248,0.2)]">
                   <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
                   <span>Available for Hire</span>
                 </div>

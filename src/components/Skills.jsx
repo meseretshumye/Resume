@@ -98,7 +98,7 @@ export default function Skills({ skills = [], skillCategories = [] }) {
   };
 
   return (
-    <section id="skills" className="py-20 md:py-28 bg-slate-50/70 dark:bg-[#070b14] relative overflow-hidden transition-colors duration-300">
+    <section id="skills" className="py-20 md:py-28 bg-slate-50 dark:bg-[#0b0f19] relative overflow-hidden transition-colors duration-300">
       
       {/* Background ambient lighting */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-tr from-indigo-500/10 via-purple-500/10 to-emerald-500/10 rounded-full blur-3xl pointer-events-none -z-10" />
@@ -107,7 +107,7 @@ export default function Skills({ skills = [], skillCategories = [] }) {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center px-6 py-2 rounded-full bg-[#0d162a] border border-blue-500/40 text-[#00d2ff] text-xs font-bold uppercase tracking-wider mb-3 shadow-[0_0_15px_rgba(0,210,255,0.12)]">
+          <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent border border-blue-500/40 text-blue-600 dark:text-[#00d2ff] text-xs font-bold uppercase tracking-wider mb-3 transition-colors">
             Architecture &amp; Capabilities
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">

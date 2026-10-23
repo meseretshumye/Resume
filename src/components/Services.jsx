@@ -22,12 +22,12 @@ export default function Services({ services }) {
   };
 
   return (
-    <section id="services" className="py-20 md:py-28 bg-slate-100/60 dark:bg-slate-900/40 relative">
+    <section id="services" className="py-20 md:py-28 bg-slate-50 dark:bg-[#0b0f19] relative transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center px-6 py-2 rounded-full bg-[#0d162a] border border-blue-500/40 text-[#00d2ff] text-xs font-bold uppercase tracking-wider mb-3 shadow-[0_0_15px_rgba(0,210,255,0.12)]">
+          <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent border border-blue-500/40 text-blue-600 dark:text-[#00d2ff] text-xs font-bold uppercase tracking-wider mb-3 transition-colors">
             Client Solutions
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
