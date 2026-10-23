@@ -32,11 +32,11 @@ export default function Hero({ personalInfo, stats, onOpenResume }) {
         <img
           src="/images/hero-developer-workspace.jpg"
           alt="Realistic Modern Developer Workspace"
-          className="w-full h-full object-cover object-center lg:object-right-top opacity-30 dark:opacity-45 scale-[1.02] transition-opacity duration-700"
+          className="w-full h-full object-cover object-center lg:object-right-top opacity-55 dark:opacity-80 scale-[1.01] transition-opacity duration-700"
         />
         {/* Soft Vignette Gradients for Flawless Typography Contrast */}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-50/90 via-slate-50/65 to-slate-50 dark:from-[#0b0f19]/90 dark:via-[#0b0f19]/60 dark:to-[#0b0f19] transition-colors duration-300"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-50/95 via-slate-50/75 to-transparent dark:from-[#0b0f19]/95 dark:via-[#0b0f19]/70 dark:to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-50/85 via-transparent to-slate-50 dark:from-[#070b14]/85 dark:via-transparent/20 dark:to-[#070b14] transition-colors duration-300"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-50/90 via-slate-50/50 to-transparent/20 dark:from-[#070b14]/90 dark:via-[#070b14]/45 dark:to-transparent/20"></div>
       </div>
 
       {/* 2. Subtle IDE Canvas Dot Matrix Pattern */}
