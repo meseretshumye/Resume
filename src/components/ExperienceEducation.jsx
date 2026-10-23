@@ -16,7 +16,7 @@ export default function ExperienceEducation({ experience, education, onOpenResum
   const [activeTab, setActiveTab] = useState('both'); // 'both', 'experience', 'education'
 
   return (
-    <section id="experience" className="relative my-0 py-10 md:py-14 bg-white dark:bg-[#070c16] border-t border-slate-200/50 dark:border-blue-500/10 transition-colors duration-300">
+    <section id="experience" className="relative my-0 py-10 md:py-14 bg-white dark:bg-[#060a14] border-t border-slate-200/80 dark:border-blue-500/20 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

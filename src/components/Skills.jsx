@@ -127,7 +127,7 @@ export default function Skills({ skills = [], skillCategories = [] }) {
   return (
     <section
       id="skills"
-      className="relative my-0 py-10 md:py-14 bg-slate-50/80 dark:bg-[#0a1020] border-t border-slate-200/50 dark:border-blue-500/10 overflow-hidden transition-colors duration-300"
+      className="relative my-0 py-10 md:py-14 bg-slate-100 dark:bg-[#080e1c] border-t border-slate-200/80 dark:border-blue-500/20 overflow-hidden transition-colors duration-300"
     >
       {/* Background ambient lighting */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-tr from-indigo-500/10 via-purple-500/10 to-emerald-500/10 rounded-full blur-3xl pointer-events-none -z-10" />
