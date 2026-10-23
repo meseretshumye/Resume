@@ -28,8 +28,9 @@ export default function Projects({ projects }) {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center px-5 py-1.5 rounded-full bg-[#0d1629] border border-blue-500/35 text-[#38bdf8] text-xs font-bold uppercase tracking-wider mb-3 shadow-[0_0_15px_rgba(56,189,248,0.12)]">
-            FEATURED PROJECTS &amp; SHOWCASE
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/60 text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider mb-3">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Showcase</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Featured Projects & Works

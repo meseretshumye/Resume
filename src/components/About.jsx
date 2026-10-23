@@ -63,8 +63,9 @@ export default function About({ personalInfo = {}, onOpenResume }) {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 md:mb-16">
-          <div className="inline-flex items-center px-5 py-1.5 rounded-full bg-[#0d1629] border border-blue-500/35 text-[#38bdf8] text-xs font-bold uppercase tracking-wider mb-3 shadow-[0_0_15px_rgba(56,189,248,0.12)]">
-            ABOUT ME
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-200 dark:border-indigo-800/60 text-indigo-600 dark:text-indigo-400 text-xs font-bold uppercase tracking-wider mb-3">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>About Me</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
@@ -99,8 +100,8 @@ export default function About({ personalInfo = {}, onOpenResume }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
 
                 {/* Top Status Badge */}
-                <div className="absolute top-3.5 right-3.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0d1629]/90 backdrop-blur-md border border-blue-500/35 text-[11px] font-bold uppercase tracking-wider text-[#38bdf8] shadow-[0_0_12px_rgba(56,189,248,0.2)]">
-                  <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                <div className="absolute top-3.5 right-3.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md border border-slate-700/60 text-[11px] font-semibold text-emerald-400 shadow-md">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                   <span>Available for Hire</span>
                 </div>
 

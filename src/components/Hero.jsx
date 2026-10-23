@@ -55,11 +55,11 @@ export default function Hero({ personalInfo, stats, onOpenResume }) {
           {/* Left Hero Content */}
           <div className="flex flex-col items-start text-left w-full">
             
-            {/* Availability Pill styled to match ABOUT ME card style */}
-            <div className="inline-flex items-center gap-2 px-4.5 py-1.5 rounded-full bg-[#0d1629] border border-blue-500/35 text-[#38bdf8] text-xs sm:text-sm font-bold uppercase tracking-wider mb-6 shadow-[0_0_15px_rgba(56,189,248,0.12)]">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
+            {/* Availability Pill */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/60 text-emerald-700 dark:text-emerald-300 text-xs sm:text-sm font-semibold mb-6 shadow-sm">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
               </span>
               <span>Available for Full-Time &amp; Freelance Projects</span>
             </div>

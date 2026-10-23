@@ -27,8 +27,9 @@ export default function Services({ services }) {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center px-5 py-1.5 rounded-full bg-[#0d1629] border border-blue-500/35 text-[#38bdf8] text-xs font-bold uppercase tracking-wider mb-3 shadow-[0_0_15px_rgba(56,189,248,0.12)]">
-            CLIENT SOLUTIONS &amp; SERVICES
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-200 dark:border-indigo-800/60 text-indigo-600 dark:text-indigo-400 text-xs font-bold uppercase tracking-wider mb-3">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Client Solutions</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Services & Value Offerings
