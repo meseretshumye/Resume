@@ -29,7 +29,7 @@ export default function Footer({ personalInfo }) {
     <footer className="bg-[#0b0f19] text-white border-t border-slate-800/80 transition-colors">
       
       {/* Upper Footer Row: Brand Info on Left, Navigation Inline on Right */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
           
           {/* Brand Info */}

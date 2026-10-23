@@ -53,7 +53,7 @@ export default function About({ personalInfo = {}, onOpenResume }) {
   ];
 
   return (
-    <section id="about" className="py-20 md:py-28 relative overflow-hidden bg-slate-50 dark:bg-[#0b0f19] transition-colors duration-300">
+    <section id="about" className="relative my-0 py-10 md:py-14 overflow-hidden bg-slate-50 dark:bg-[#0b0f19] transition-colors duration-300">
       
       {/* Background ambient lighting */}
       <div className="absolute top-1/4 left-10 w-96 h-96 bg-indigo-500/10 dark:bg-blue-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
@@ -62,7 +62,7 @@ export default function About({ personalInfo = {}, onOpenResume }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 md:mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-8 md:mb-10">
           <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent border border-blue-500/40 text-blue-600 dark:text-[#00d2ff] text-xs font-bold uppercase tracking-wider mb-3 transition-colors">
             About Me
           </div>

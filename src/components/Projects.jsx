@@ -25,11 +25,11 @@ export default function Projects({ projects }) {
   return (
     <section
       id="projects"
-      className="py-20 md:py-28 relative bg-slate-50 dark:bg-[#0b0f19] transition-colors duration-300"
+      className="relative my-0 py-10 md:py-14 bg-slate-50 dark:bg-[#0b0f19] transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-8 md:mb-10">
           <div className="inline-flex items-center px-6 py-2 rounded-full bg-transparent border border-blue-500/40 text-blue-600 dark:text-[#00d2ff] text-xs font-bold uppercase tracking-wider mb-3 transition-colors">
             Featured Projects &amp;Showcase
           </div>
@@ -43,7 +43,7 @@ export default function Projects({ projects }) {
         </div>
 
         {/* Category Filter Tabs */}
-        <div className="flex flex-wrap justify-center gap-2.5 mb-12">
+        <div className="flex flex-wrap justify-center gap-2.5 mb-8 md:mb-10">
           {categories.map((cat) => {
             const count =
               cat === "All Projects" || cat === "All"

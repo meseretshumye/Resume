@@ -26,7 +26,7 @@ export default function Hero({ personalInfo, stats, onOpenResume }) {
   };
 
   return (
-    <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+    <section id="home" className="relative pt-28 pb-10 md:pt-36 md:pb-14 my-0 overflow-hidden">
       {/* 1. Realistic Developer Workspace Background Image Layer */}
       <div className="absolute inset-0 -z-20 pointer-events-none overflow-hidden select-none">
         <img
