@@ -29,15 +29,15 @@ export default function Footer({ personalInfo }) {
     <footer className="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800/80 pt-16 pb-12 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Main Footer Row */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center pb-12 border-b border-slate-100 dark:border-slate-800">
+        {/* Main Footer Row: Brand Info on Left, Navigation Inline on Right */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 pb-10 border-b border-slate-100 dark:border-slate-800">
           
           {/* Brand Info */}
-          <div className="md:col-span-4 flex flex-col items-start">
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
             <div className="flex items-center gap-3.5">
               <Logo size="md" />
               <div>
-                <h3 className="font-extrabold text-lg text-slate-900 dark:text-white">
+                <h3 className="font-extrabold text-lg text-slate-900 dark:text-white leading-tight">
                   {personalInfo.name}
                 </h3>
                 <p className="text-xs text-slate-500 dark:text-slate-400">
@@ -45,40 +45,40 @@ export default function Footer({ personalInfo }) {
                 </p>
               </div>
             </div>
-            <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-3 max-w-sm leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-2.5 max-w-sm leading-relaxed">
               Bridging engineering precision and modern web craftsmanship. Based in Bahir Dar, Ethiopia.
             </p>
           </div>
 
-          {/* Navigation Links - In one horizontal line */}
-          <div className="md:col-span-6 flex items-center justify-start md:justify-center gap-x-4 lg:gap-x-6 whitespace-nowrap overflow-x-auto py-1">
+          {/* Navigation Links - Single continuous inline row, no pagination/scrolling */}
+          <nav className="flex items-center justify-center flex-wrap sm:flex-nowrap gap-4 sm:gap-6 lg:gap-7 whitespace-nowrap">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-colors whitespace-nowrap shrink-0"
+                className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-colors whitespace-nowrap"
               >
                 {link.name}
               </a>
             ))}
-          </div>
-
-          {/* Back to Top */}
-          <div className="md:col-span-2 flex items-center justify-end shrink-0">
-            <button
-              onClick={scrollToTop}
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-100 dark:bg-slate-800/80 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-semibold transition-all shadow-xs hover:scale-105 cursor-pointer shrink-0 whitespace-nowrap"
-              aria-label="Back to Top"
-            >
-              <span>Back to Top</span>
-              <ChevronUp className="w-4 h-4" />
-            </button>
-          </div>
+          </nav>
 
         </div>
 
+        {/* Back to Top - Block Straight Down */}
+        <div className="flex justify-center sm:justify-end pt-5 pb-2">
+          <button
+            onClick={scrollToTop}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800/80 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 text-xs font-semibold transition-all shadow-xs hover:scale-105 cursor-pointer"
+            aria-label="Back to Top"
+          >
+            <span>Back to Top</span>
+            <ChevronUp className="w-4 h-4 text-indigo-500 dark:text-indigo-400" />
+          </button>
+        </div>
+
         {/* Bottom Bar: Copyright on Left, Social Links on Right */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 dark:text-slate-400 gap-4">
+        <div className="pt-5 border-t border-slate-100 dark:border-slate-800/60 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 dark:text-slate-400 gap-4">
           <p className="text-center sm:text-left">
             © {new Date().getFullYear()} <span className="font-semibold text-slate-700 dark:text-slate-300">{personalInfo.name}</span>. All rights reserved.
           </p>
