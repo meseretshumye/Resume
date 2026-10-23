@@ -27,16 +27,16 @@ export default function Hero({ personalInfo, stats, onOpenResume }) {
 
   return (
     <section id="home" className="relative pt-28 pb-10 md:pt-36 md:pb-14 my-0 overflow-hidden bg-slate-50 dark:bg-[#070b14] transition-colors duration-300">
-      {/* 1. Realistic Developer Workspace Background Image Layer */}
+      {/* 1. Developer Code Editor IDE Background Layer with Slow Motion Animation */}
       <div className="absolute inset-0 -z-20 pointer-events-none overflow-hidden select-none">
         <img
-          src="/images/hero-developer-workspace.jpg"
-          alt="Realistic Modern Developer Workspace"
-          className="w-full h-full object-cover object-center lg:object-right-top opacity-55 dark:opacity-80 scale-[1.01] transition-opacity duration-700"
+          src="/images/hero-code-editor-bg.jpg"
+          alt="Developer Code Editor IDE"
+          className="w-full h-full object-cover object-left md:object-center opacity-40 dark:opacity-75 animate-hero-slow-motion transition-opacity duration-700"
         />
         {/* Soft Vignette Gradients for Flawless Typography Contrast */}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-50/85 via-transparent to-slate-50 dark:from-[#070b14]/85 dark:via-transparent/20 dark:to-[#070b14] transition-colors duration-300"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-50/90 via-slate-50/50 to-transparent/20 dark:from-[#070b14]/90 dark:via-[#070b14]/45 dark:to-transparent/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-50/85 via-slate-50/30 to-slate-50 dark:from-[#070b14]/80 dark:via-[#070b14]/25 dark:to-[#070b14] transition-colors duration-300"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-50/90 via-slate-50/45 to-transparent/30 dark:from-[#070b14]/85 dark:via-[#070b14]/40 dark:to-transparent/25"></div>
       </div>
 
       {/* 2. Subtle IDE Canvas Dot Matrix Pattern */}
