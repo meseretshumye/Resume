@@ -109,7 +109,7 @@ export default function Hero({ personalInfo, stats, onOpenResume }) {
             </div>
 
             {/* Social Links Bar */}
-            <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-200 dark:border-slate-800 w-full">
+            {/* <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-200 dark:border-slate-800 w-full">
               <span className="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-300 font-bold mr-1">
                 CONNECT:
               </span>
@@ -179,7 +179,7 @@ export default function Hero({ personalInfo, stats, onOpenResume }) {
                   </a>
                 )}
               </div>
-            </div>
+            </div> */}
 
           </div>
 
