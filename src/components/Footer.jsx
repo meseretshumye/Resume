@@ -67,7 +67,7 @@ export default function Footer({ personalInfo }) {
       </div>
 
       {/* Bottom Bar: Contrast Dark Band with Subtle Electric-Blue Top Border */}
-      <div className="border-t border-blue-500/25 bg-[#050811] py-5">
+      <div className="border-t border-sky-500/40 bg-[#050811] py-5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           
           {/* Left: Copyright */}
@@ -92,7 +92,7 @@ export default function Footer({ personalInfo }) {
                 href={personalInfo.socialLinks.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-[#0e1629] border border-slate-700/60 hover:border-sky-400 hover:bg-sky-500/10 text-slate-300 hover:text-sky-400 flex items-center justify-center transition-all shadow-xs"
+                className="w-8 h-8 rounded-full bg-[#0e1629] border border-sky-500/70 text-white hover:bg-sky-500 hover:border-sky-400 hover:text-white hover:scale-110 hover:shadow-[0_0_12px_rgba(14,165,233,0.5)] flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer"
                 aria-label="Facebook"
               >
                 <Facebook className="w-4 h-4" />
@@ -103,7 +103,7 @@ export default function Footer({ personalInfo }) {
                 href={personalInfo.socialLinks.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-[#0e1629] border border-slate-700/60 hover:border-sky-400 hover:bg-sky-500/10 text-slate-300 hover:text-sky-400 flex items-center justify-center transition-all shadow-xs"
+                className="w-8 h-8 rounded-full bg-[#0e1629] border border-sky-500/70 text-white hover:bg-sky-500 hover:border-sky-400 hover:text-white hover:scale-110 hover:shadow-[0_0_12px_rgba(14,165,233,0.5)] flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer"
                 aria-label="Twitter"
               >
                 <Twitter className="w-4 h-4" />
@@ -114,7 +114,7 @@ export default function Footer({ personalInfo }) {
                 href={personalInfo.socialLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-[#0e1629] border border-slate-700/60 hover:border-sky-400 hover:bg-sky-500/10 text-slate-300 hover:text-sky-400 flex items-center justify-center transition-all shadow-xs"
+                className="w-8 h-8 rounded-full bg-[#0e1629] border border-sky-500/70 text-white hover:bg-sky-500 hover:border-sky-400 hover:text-white hover:scale-110 hover:shadow-[0_0_12px_rgba(14,165,233,0.5)] flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
@@ -125,7 +125,7 @@ export default function Footer({ personalInfo }) {
                 href={personalInfo.socialLinks.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-[#0e1629] border border-slate-700/60 hover:border-sky-400 hover:bg-sky-500/10 text-slate-300 hover:text-sky-400 flex items-center justify-center transition-all shadow-xs"
+                className="w-8 h-8 rounded-full bg-[#0e1629] border border-sky-500/70 text-white hover:bg-sky-500 hover:border-sky-400 hover:text-white hover:scale-110 hover:shadow-[0_0_12px_rgba(14,165,233,0.5)] flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer"
                 aria-label="GitHub"
               >
                 <Github className="w-4 h-4" />
@@ -136,7 +136,7 @@ export default function Footer({ personalInfo }) {
                 href={personalInfo.socialLinks.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-[#0e1629] border border-slate-700/60 hover:border-emerald-400 hover:bg-emerald-500/10 text-slate-300 hover:text-emerald-400 flex items-center justify-center transition-all shadow-xs"
+                className="w-8 h-8 rounded-full bg-[#0e1629] border border-sky-500/70 text-white hover:bg-emerald-500 hover:border-emerald-400 hover:text-white hover:scale-110 hover:shadow-[0_0_12px_rgba(16,185,129,0.5)] flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer"
                 aria-label="WhatsApp"
               >
                 <MessageCircle className="w-4 h-4" />
@@ -145,7 +145,7 @@ export default function Footer({ personalInfo }) {
             {personalInfo.email && (
               <a
                 href={`mailto:${personalInfo.email}`}
-                className="w-8 h-8 rounded-full bg-[#0e1629] border border-slate-700/60 hover:border-sky-400 hover:bg-sky-500/10 text-slate-300 hover:text-sky-400 flex items-center justify-center transition-all shadow-xs"
+                className="w-8 h-8 rounded-full bg-[#0e1629] border border-sky-500/70 text-white hover:bg-sky-500 hover:border-sky-400 hover:text-white hover:scale-110 hover:shadow-[0_0_12px_rgba(14,165,233,0.5)] flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer"
                 aria-label="Email"
               >
                 <Mail className="w-4 h-4" />

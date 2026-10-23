@@ -113,13 +113,13 @@ export default function Hero({ personalInfo, stats, onOpenResume }) {
               <span className="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-300 font-bold mr-1">
                 CONNECT:
               </span>
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2">
                 {personalInfo.socialLinks?.facebook && (
                   <a
                     href={personalInfo.socialLinks.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#0e1629] border border-slate-300 dark:border-slate-700/60 hover:border-sky-400 hover:bg-sky-500/10 text-slate-600 dark:text-slate-300 hover:text-sky-400 flex items-center justify-center transition-all shadow-xs"
+                    className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#0e1629] border border-sky-500/70 text-slate-700 dark:text-white hover:bg-sky-500 hover:border-sky-400 hover:text-white hover:scale-110 hover:shadow-[0_0_12px_rgba(14,165,233,0.5)] flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer"
                     aria-label="Facebook"
                   >
                     <Facebook className="w-4 h-4" />
@@ -130,7 +130,7 @@ export default function Hero({ personalInfo, stats, onOpenResume }) {
                     href={personalInfo.socialLinks.twitter}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#0e1629] border border-slate-300 dark:border-slate-700/60 hover:border-sky-400 hover:bg-sky-500/10 text-slate-600 dark:text-slate-300 hover:text-sky-400 flex items-center justify-center transition-all shadow-xs"
+                    className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#0e1629] border border-sky-500/70 text-slate-700 dark:text-white hover:bg-sky-500 hover:border-sky-400 hover:text-white hover:scale-110 hover:shadow-[0_0_12px_rgba(14,165,233,0.5)] flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer"
                     aria-label="Twitter"
                   >
                     <Twitter className="w-4 h-4" />
@@ -141,7 +141,7 @@ export default function Hero({ personalInfo, stats, onOpenResume }) {
                     href={personalInfo.socialLinks.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#0e1629] border border-slate-300 dark:border-slate-700/60 hover:border-sky-400 hover:bg-sky-500/10 text-slate-600 dark:text-slate-300 hover:text-sky-400 flex items-center justify-center transition-all shadow-xs"
+                    className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#0e1629] border border-sky-500/70 text-slate-700 dark:text-white hover:bg-sky-500 hover:border-sky-400 hover:text-white hover:scale-110 hover:shadow-[0_0_12px_rgba(14,165,233,0.5)] flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer"
                     aria-label="LinkedIn"
                   >
                     <Linkedin className="w-4 h-4" />
@@ -152,7 +152,7 @@ export default function Hero({ personalInfo, stats, onOpenResume }) {
                     href={personalInfo.socialLinks.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#0e1629] border border-slate-300 dark:border-slate-700/60 hover:border-sky-400 hover:bg-sky-500/10 text-slate-600 dark:text-slate-300 hover:text-sky-400 flex items-center justify-center transition-all shadow-xs"
+                    className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#0e1629] border border-sky-500/70 text-slate-700 dark:text-white hover:bg-sky-500 hover:border-sky-400 hover:text-white hover:scale-110 hover:shadow-[0_0_12px_rgba(14,165,233,0.5)] flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer"
                     aria-label="GitHub"
                   >
                     <Github className="w-4 h-4" />
@@ -163,7 +163,7 @@ export default function Hero({ personalInfo, stats, onOpenResume }) {
                     href={personalInfo.socialLinks.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#0e1629] border border-slate-300 dark:border-slate-700/60 hover:border-emerald-400 hover:bg-emerald-500/10 text-slate-600 dark:text-slate-300 hover:text-emerald-400 flex items-center justify-center transition-all shadow-xs"
+                    className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#0e1629] border border-sky-500/70 text-slate-700 dark:text-white hover:bg-emerald-500 hover:border-emerald-400 hover:text-white hover:scale-110 hover:shadow-[0_0_12px_rgba(16,185,129,0.5)] flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer"
                     aria-label="WhatsApp"
                   >
                     <MessageCircle className="w-4 h-4" />
@@ -172,7 +172,7 @@ export default function Hero({ personalInfo, stats, onOpenResume }) {
                 {personalInfo.email && (
                   <a
                     href={`mailto:${personalInfo.email}`}
-                    className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#0e1629] border border-slate-300 dark:border-slate-700/60 hover:border-sky-400 hover:bg-sky-500/10 text-slate-600 dark:text-slate-300 hover:text-sky-400 flex items-center justify-center transition-all shadow-xs"
+                    className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#0e1629] border border-sky-500/70 text-slate-700 dark:text-white hover:bg-sky-500 hover:border-sky-400 hover:text-white hover:scale-110 hover:shadow-[0_0_12px_rgba(14,165,233,0.5)] flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer"
                     aria-label="Email"
                   >
                     <Mail className="w-4 h-4" />
