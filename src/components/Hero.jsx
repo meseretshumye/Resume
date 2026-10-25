@@ -2,22 +2,13 @@ import React from 'react';
 import { 
   ArrowRight, 
   Download, 
-  ExternalLink, 
-  CheckCircle2, 
   Clock, 
+  CheckCircle2, 
   HeartHandshake, 
-  Code2, 
-  Linkedin, 
-  Twitter, 
-  Facebook, 
-  Github, 
-  MessageCircle, 
-  Mail,
-  Sparkles,
-  MapPin
+  Code2
 } from 'lucide-react';
 
-export default function Hero({ personalInfo, stats, onOpenResume }) {
+export default function Hero({ personalInfo, stats = [], onOpenResume }) {
   const statIcons = {
     Clock: Clock,
     CheckCircle2: CheckCircle2,
@@ -39,30 +30,20 @@ export default function Hero({ personalInfo, stats, onOpenResume }) {
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950/85 via-transparent/40 to-slate-950/90 dark:from-[#070b14]/90 dark:via-transparent/30 dark:to-[#070b14]"></div>
       </div>
 
-      {/* 2. Subtle IDE Canvas Dot Matrix Pattern */}
+      {/* 2. Subtle Canvas Grid Pattern */}
       <div 
-        className="absolute inset-0 -z-10 pointer-events-none opacity-20 dark:opacity-25 bg-[radial-gradient(#80808020_1px,transparent_1px)] [background-size:24px_24px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_35%,#000_60%,transparent_100%)]"
+        className="absolute inset-0 -z-10 pointer-events-none opacity-15 dark:opacity-20 bg-[radial-gradient(#80808020_1px,transparent_1px)] [background-size:24px_24px] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_35%,#000_60%,transparent_100%)]"
       />
 
-      {/* 3. Ambient Bias Glow for Radiant Depth */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-indigo-500/20 via-cyan-500/15 to-emerald-500/15 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-slow" />
-      <div className="absolute top-20 right-10 w-80 h-80 bg-indigo-600/10 dark:bg-indigo-500/15 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute bottom-10 left-10 w-96 h-96 bg-cyan-500/10 dark:bg-emerald-500/15 rounded-full blur-3xl pointer-events-none -z-10" />
+      {/* 3. Ambient Bias Glow */}
+      <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-indigo-500/15 via-cyan-500/10 to-emerald-500/10 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-slow" />
+      <div className="absolute top-20 right-10 w-80 h-80 bg-indigo-600/10 dark:bg-indigo-500/10 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
-          {/* Left Hero Content - High-Contrast Clean Typography matching reference */}
-          <div className="lg:col-span-7 flex flex-col items-start text-left w-full z-10">
-            
-            {/* Availability Pill */}
-            <div className="inline-flex items-center gap-2 px-4.5 py-1.5 rounded-full bg-[#0d182e]/90 backdrop-blur-md border border-sky-500/40 text-sky-400 text-xs sm:text-sm font-bold uppercase tracking-wider mb-6 shadow-[0_0_16px_rgba(56,189,248,0.15)] hover:border-sky-300 transition-all duration-300">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
-              </span>
-              <span>Available for Full-Time &amp; Freelance Projects</span>
-            </div>
+          {/* Left Hero Content - Clean, High-Contrast Typography */}
+          <div className="lg:col-span-8 flex flex-col items-start text-left w-full z-10">
 
             {/* Greeting & Main Name */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12] mb-4">
@@ -100,13 +81,6 @@ export default function Hero({ personalInfo, stats, onOpenResume }) {
                 <Download className="w-4 h-4 text-sky-400" />
                 <span>Resume / CV</span>
               </button>
-
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center px-5 py-3.5 rounded-xl text-slate-300 hover:text-white font-medium transition-colors"
-              >
-                <span>Contact Directly</span>
-              </a>
             </div>
 
             {/* Quick Metrics Bar */}
@@ -129,35 +103,11 @@ export default function Hero({ personalInfo, stats, onOpenResume }) {
 
           </div>
 
-          {/* Right Hero Space - Elegantly Highlights the Developer in the Background */}
-          <div className="lg:col-span-5 flex flex-col justify-between items-end gap-6 w-full lg:min-h-[380px] pointer-events-none select-none">
-            
-            {/* Top Floating Glass Badge */}
-            <div className="pointer-events-auto backdrop-blur-xl bg-slate-900/75 dark:bg-[#0c1527]/85 border border-sky-500/30 rounded-2xl p-4 shadow-2xl flex items-center gap-3.5 hover:border-sky-400 transition-all duration-300 max-w-xs self-end">
-              <div className="w-11 h-11 rounded-xl bg-sky-500/20 border border-sky-400/40 flex items-center justify-center text-xl shrink-0">
-                ⚛️
-              </div>
-              <div>
-                <p className="text-[11px] uppercase tracking-wider text-sky-400 font-bold">Specialization</p>
-                <p className="text-sm font-bold text-white leading-tight">React &amp; Node.js Full-Stack</p>
-              </div>
-            </div>
+          {/* Right Hero Space - Fully Unobstructed to Showcase the Developer Background */}
+          <div className="hidden lg:block lg:col-span-4" />
 
-            {/* Bottom Floating Glass Badge */}
-            <div className="pointer-events-auto backdrop-blur-xl bg-slate-900/75 dark:bg-[#0c1527]/85 border border-emerald-500/30 rounded-2xl p-4 shadow-2xl flex items-center gap-3.5 hover:border-emerald-400 transition-all duration-300 max-w-xs self-end">
-              <div className="w-11 h-11 rounded-xl bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-xl shrink-0">
-                🏗️
-              </div>
-              <div>
-                <p className="text-[11px] uppercase tracking-wider text-emerald-400 font-bold">Engineering Discipline</p>
-                <p className="text-sm font-bold text-white leading-tight">Civil Engineering Precision</p>
-              </div>
-            </div>
-
-          </div>
         </div>
       </div>
     </section>
   );
 }
-
