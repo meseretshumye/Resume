@@ -108,22 +108,6 @@ export default function Skills({ skills = [], skillCategories = [] }) {
   // Skill search matching logic
   const normalizedQuery = searchQuery.trim().toLowerCase();
 
-  // Helper for pill level badge styling
-  const getLevelBadgeClasses = (levelText = "", isPillActive = false) => {
-    if (isPillActive) {
-      return "bg-indigo-600 text-white border-indigo-400 dark:bg-indigo-500 dark:text-white dark:border-indigo-300 shadow-sm ring-1 ring-white/20";
-    }
-    const text = levelText.toLowerCase();
-    if (text.includes("advanced")) {
-      return "bg-indigo-50 text-indigo-700 border-indigo-200 dark:bg-[#1a2347] dark:text-[#8ea7ff] dark:border-[#2b3a72] group-hover:border-indigo-400 dark:group-hover:border-indigo-400 group-hover:text-indigo-600 dark:group-hover:text-white";
-    }
-    if (text.includes("proficient")) {
-      return "bg-sky-50 text-sky-700 border-sky-200 dark:bg-[#1c244d] dark:text-[#8ea7ff] dark:border-[#2b3973] group-hover:border-sky-400 dark:group-hover:border-sky-400 group-hover:text-sky-600 dark:group-hover:text-white";
-    }
-    // Intermediate
-    return "bg-slate-100 text-slate-700 border-slate-300 dark:bg-[#191e36] dark:text-[#939cbd] dark:border-[#2a3052] group-hover:border-slate-400 dark:group-hover:border-slate-400 group-hover:text-slate-900 dark:group-hover:text-white";
-  };
-
   return (
     <section
       id="skills"
@@ -262,7 +246,7 @@ export default function Skills({ skills = [], skillCategories = [] }) {
                               activeSkill?.name === skill.name ? null : skill,
                             )
                           }
-                          className={`group flex items-center justify-between gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full cursor-pointer select-none transition-all duration-200 border ${
+                          className={`group flex items-center gap-3 px-4 py-2.5 sm:px-4.5 sm:py-3 rounded-full cursor-pointer select-none transition-all duration-200 border ${
                             matchesSearch
                               ? "opacity-100 scale-100"
                               : "opacity-30 scale-95 pointer-events-none"
@@ -272,35 +256,25 @@ export default function Skills({ skills = [], skillCategories = [] }) {
                               : "bg-white dark:bg-[#0e172a] hover:bg-indigo-50/90 dark:hover:bg-[#162345] border-slate-200/90 dark:border-[#1e2a4a] hover:border-indigo-400 dark:hover:border-indigo-400/90 hover:text-indigo-900 dark:hover:text-white hover:shadow-md hover:shadow-indigo-500/15 hover:-translate-y-0.5 shadow-xs"
                           }`}
                         >
-                          {/* Left: Tech Icon + Skill Name */}
-                          <div className="flex items-center gap-2.5 min-w-0 pr-1">
-                            {/* Authentic Tech Brand Icon */}
-                            <TechIcon
-                              name={skill.name}
-                              className={`w-4 h-4 sm:w-5 sm:h-5 shrink-0 transition-transform duration-200 ${
-                                isHighlighted
-                                  ? "scale-110 drop-shadow-[0_0_8px_rgba(99,102,241,0.5)]"
-                                  : "group-hover:scale-110"
-                              }`}
-                            />
+                          {/* Authentic Tech Brand Icon */}
+                          <TechIcon
+                            name={skill.name}
+                            className={`w-5 h-5 sm:w-5.5 sm:h-5.5 shrink-0 transition-transform duration-200 ${
+                              isHighlighted
+                                ? "scale-110 drop-shadow-[0_0_8px_rgba(99,102,241,0.5)]"
+                                : "group-hover:scale-110"
+                            }`}
+                          />
 
-                            {/* Skill Name */}
-                            <span
-                              className={`text-xs sm:text-sm font-semibold tracking-tight truncate transition-colors duration-200 ${
-                                isHighlighted
-                                  ? "text-indigo-950 dark:text-white font-bold"
-                                  : "text-slate-800 dark:text-slate-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-300"
-                              }`}
-                            >
-                              {skill.name}
-                            </span>
-                          </div>
-
-                          {/* Right: Proficiency Level Badge */}
+                          {/* Skill Name */}
                           <span
-                            className={`text-[10px] sm:text-[11px] font-bold px-2.5 py-0.5 rounded-full tracking-wide shrink-0 transition-all duration-200 ${getLevelBadgeClasses(skill.levelText, isHighlighted)}`}
+                            className={`text-xs sm:text-sm font-semibold tracking-tight truncate transition-colors duration-200 ${
+                              isHighlighted
+                                ? "text-indigo-950 dark:text-white font-bold"
+                                : "text-slate-800 dark:text-slate-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-300"
+                            }`}
                           >
-                            {skill.levelText || "Advanced"}
+                            {skill.name}
                           </span>
                         </div>
                       );

@@ -111,3 +111,4 @@ export default function Hero({ personalInfo, stats = [], onOpenResume }) {
     </section>
   );
 }
+
