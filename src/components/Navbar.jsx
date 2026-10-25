@@ -98,14 +98,14 @@ export default function Navbar({ darkMode, setDarkMode, onOpenResume, personalIn
 
           {/* Desktop Right Actions */}
           <div className="hidden lg:flex items-center gap-3">
-            <button
+            {/* <button
               onClick={onOpenResume}
               className="flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-xl bg-indigo-50 hover:bg-indigo-100 dark:bg-indigo-950/60 dark:hover:bg-indigo-900/80 text-indigo-600 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800/60 transition-all hover:scale-105 shadow-sm"
               title="View Printable Resume"
             >
               <FileText className="w-4 h-4" />
               <span>Resume / CV</span>
-            </button>
+            </button> */}
 
             <a
               href="#contact"
