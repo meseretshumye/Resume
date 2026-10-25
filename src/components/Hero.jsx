@@ -26,17 +26,17 @@ export default function Hero({ personalInfo, stats, onOpenResume }) {
   };
 
   return (
-    <section id="home" className="relative pt-28 pb-10 md:pt-36 md:pb-14 my-0 overflow-hidden bg-slate-50 dark:bg-[#070b14] transition-colors duration-300">
-      {/* 1. Developer Code Editor IDE Background Layer with Slow Motion Animation */}
+    <section id="home" className="relative min-h-[90vh] lg:min-h-screen flex items-center pt-28 pb-14 md:pt-36 md:pb-20 my-0 overflow-hidden bg-slate-950 dark:bg-[#070b14] transition-colors duration-300">
+      {/* 1. Authentic Environmental Developer Background Image with Slow Motion Animation */}
       <div className="absolute inset-0 -z-20 pointer-events-none overflow-hidden select-none">
         <img
-          src="/images/hero-code-editor-bg.jpg"
-          alt="Developer Code Editor IDE"
-          className="w-full h-full object-cover object-left md:object-center opacity-40 dark:opacity-75 animate-hero-slow-motion transition-opacity duration-700"
+          src="/images/hero-developer-portrait.jpg"
+          alt="Professional Software Developer at Workstation"
+          className="w-full h-full object-cover object-[75%_center] lg:object-right-center opacity-75 dark:opacity-65 animate-hero-slow-motion transition-opacity duration-700"
         />
-        {/* Soft Vignette Gradients for Flawless Typography Contrast */}
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-50/85 via-slate-50/30 to-slate-50 dark:from-[#070b14]/80 dark:via-[#070b14]/25 dark:to-[#070b14] transition-colors duration-300"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-50/90 via-slate-50/45 to-transparent/30 dark:from-[#070b14]/85 dark:via-[#070b14]/40 dark:to-transparent/25"></div>
+        {/* Soft Vignette Gradients for Flawless Typography Contrast matching reference */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/75 to-slate-950/30 dark:from-[#070b14]/95 dark:via-[#070b14]/80 dark:to-[#070b14]/25 transition-colors duration-300"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/85 via-transparent/40 to-slate-950/90 dark:from-[#070b14]/90 dark:via-transparent/30 dark:to-[#070b14]"></div>
       </div>
 
       {/* 2. Subtle IDE Canvas Dot Matrix Pattern */}
@@ -49,14 +49,14 @@ export default function Hero({ personalInfo, stats, onOpenResume }) {
       <div className="absolute top-20 right-10 w-80 h-80 bg-indigo-600/10 dark:bg-indigo-500/15 rounded-full blur-3xl pointer-events-none -z-10" />
       <div className="absolute bottom-10 left-10 w-96 h-96 bg-cyan-500/10 dark:bg-emerald-500/15 rounded-full blur-3xl pointer-events-none -z-10" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-14 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
-          {/* Left Hero Content */}
-          <div className="flex flex-col items-start text-left w-full">
+          {/* Left Hero Content - High-Contrast Clean Typography matching reference */}
+          <div className="lg:col-span-7 flex flex-col items-start text-left w-full z-10">
             
-            {/* Availability Pill styled to match ABOUT ME card style */}
-            <div className="inline-flex items-center gap-2 px-4.5 py-1.5 rounded-full bg-gradient-to-r from-blue-500/10 via-sky-500/10 to-indigo-500/10 dark:from-[#0d182e]/95 dark:via-[#102040]/95 dark:to-[#0d182e]/95 backdrop-blur-md border border-blue-400/40 dark:border-blue-500/40 text-blue-600 dark:text-[#38bdf8] text-xs sm:text-sm font-bold uppercase tracking-wider mb-6 shadow-[0_0_16px_rgba(56,189,248,0.12)] hover:border-sky-400 transition-all duration-300">
+            {/* Availability Pill */}
+            <div className="inline-flex items-center gap-2 px-4.5 py-1.5 rounded-full bg-[#0d182e]/90 backdrop-blur-md border border-sky-500/40 text-sky-400 text-xs sm:text-sm font-bold uppercase tracking-wider mb-6 shadow-[0_0_16px_rgba(56,189,248,0.15)] hover:border-sky-300 transition-all duration-300">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400"></span>
@@ -65,28 +65,29 @@ export default function Hero({ personalInfo, stats, onOpenResume }) {
             </div>
 
             {/* Greeting & Main Name */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15] mb-4">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.12] mb-4">
               Hello, I'm <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-indigo-500 to-emerald-500">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-indigo-300 to-emerald-400 drop-shadow-sm">
                 {personalInfo.name}
               </span>
             </h1>
 
             {/* Subtitle / Role */}
-            <div className="flex items-center gap-2 text-xl sm:text-2xl font-semibold text-slate-700 dark:text-slate-200 mb-6">
+            <div className="flex items-center gap-2 text-xl sm:text-2xl font-semibold text-slate-200 mb-6">
+              <span className="text-sky-300 font-medium">A</span>
               <span>{personalInfo.title}</span>
             </div>
 
             {/* Elevator Pitch Tagline */}
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 mb-8 max-w-2xl leading-relaxed">
-              {personalInfo.tagline} Based in <span className="text-indigo-600 dark:text-indigo-400 font-medium">Bahir Dar, Ethiopia</span>, I bring 4+ years of Professional Engineering discipline, delivering modern, accessible, and fast digital solutions.
+            <p className="text-base sm:text-lg text-slate-300 mb-8 max-w-2xl leading-relaxed">
+              {personalInfo.tagline} Based in <span className="text-sky-400 font-medium">Bahir Dar, Ethiopia</span>, I bring 4+ years of Professional Engineering discipline, delivering modern, accessible, and fast digital solutions.
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap items-center gap-4 w-full sm:w-auto mb-10">
               <a
                 href="#projects"
-                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold shadow-lg shadow-indigo-600/25 hover:shadow-indigo-600/35 transition-all hover:scale-[1.02]"
+                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/45 transition-all hover:scale-[1.02]"
               >
                 <span>Explore Projects</span>
                 <ArrowRight className="w-4 h-4" />
@@ -94,148 +95,65 @@ export default function Hero({ personalInfo, stats, onOpenResume }) {
 
               <button
                 onClick={onOpenResume}
-                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-100 font-semibold border border-slate-300 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/60 shadow-sm transition-all hover:scale-[1.02]"
+                className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-white font-semibold border border-slate-700/80 hover:border-slate-600 shadow-sm transition-all hover:scale-[1.02] backdrop-blur-md"
               >
-                <Download className="w-4 h-4 text-indigo-500" />
+                <Download className="w-4 h-4 text-sky-400" />
                 <span>Resume / CV</span>
               </button>
 
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center px-5 py-3.5 rounded-xl text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-colors"
+                className="inline-flex items-center justify-center px-5 py-3.5 rounded-xl text-slate-300 hover:text-white font-medium transition-colors"
               >
                 <span>Contact Directly</span>
               </a>
             </div>
 
-            {/* Social Links Bar */}
-            {/* <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-200 dark:border-slate-800 w-full">
-              <span className="text-xs uppercase tracking-wider text-slate-600 dark:text-slate-300 font-bold mr-1">
-                CONNECT:
-              </span>
-              <div className="flex items-center gap-2">
-                {personalInfo.socialLinks?.facebook && (
-                  <a
-                    href={personalInfo.socialLinks.facebook}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#0e1629] border border-sky-500/70 text-slate-700 dark:text-white hover:bg-sky-500 hover:border-sky-400 hover:text-white hover:scale-110 hover:shadow-[0_0_12px_rgba(14,165,233,0.5)] flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer"
-                    aria-label="Facebook"
-                  >
-                    <Facebook className="w-4 h-4" />
-                  </a>
-                )}
-                {personalInfo.socialLinks?.twitter && (
-                  <a
-                    href={personalInfo.socialLinks.twitter}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#0e1629] border border-sky-500/70 text-slate-700 dark:text-white hover:bg-sky-500 hover:border-sky-400 hover:text-white hover:scale-110 hover:shadow-[0_0_12px_rgba(14,165,233,0.5)] flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer"
-                    aria-label="Twitter"
-                  >
-                    <Twitter className="w-4 h-4" />
-                  </a>
-                )}
-                {personalInfo.socialLinks?.linkedin && (
-                  <a
-                    href={personalInfo.socialLinks.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#0e1629] border border-sky-500/70 text-slate-700 dark:text-white hover:bg-sky-500 hover:border-sky-400 hover:text-white hover:scale-110 hover:shadow-[0_0_12px_rgba(14,165,233,0.5)] flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer"
-                    aria-label="LinkedIn"
-                  >
-                    <Linkedin className="w-4 h-4" />
-                  </a>
-                )}
-                {personalInfo.socialLinks?.github && (
-                  <a
-                    href={personalInfo.socialLinks.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#0e1629] border border-sky-500/70 text-slate-700 dark:text-white hover:bg-sky-500 hover:border-sky-400 hover:text-white hover:scale-110 hover:shadow-[0_0_12px_rgba(14,165,233,0.5)] flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer"
-                    aria-label="GitHub"
-                  >
-                    <Github className="w-4 h-4" />
-                  </a>
-                )}
-                {personalInfo.socialLinks?.whatsapp && (
-                  <a
-                    href={personalInfo.socialLinks.whatsapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#0e1629] border border-sky-500/70 text-slate-700 dark:text-white hover:bg-emerald-500 hover:border-emerald-400 hover:text-white hover:scale-110 hover:shadow-[0_0_12px_rgba(16,185,129,0.5)] flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer"
-                    aria-label="WhatsApp"
-                  >
-                    <MessageCircle className="w-4 h-4" />
-                  </a>
-                )}
-                {personalInfo.email && (
-                  <a
-                    href={`mailto:${personalInfo.email}`}
-                    className="w-8 h-8 rounded-full bg-slate-100 dark:bg-[#0e1629] border border-sky-500/70 text-slate-700 dark:text-white hover:bg-sky-500 hover:border-sky-400 hover:text-white hover:scale-110 hover:shadow-[0_0_12px_rgba(14,165,233,0.5)] flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer"
-                    aria-label="Email"
-                  >
-                    <Mail className="w-4 h-4" />
-                  </a>
-                )}
+            {/* Quick Metrics Bar */}
+            {stats && stats.length > 0 && (
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-slate-800/80 w-full max-w-2xl">
+                {stats.map((stat, idx) => {
+                  const IconComponent = statIcons[stat.icon] || Code2;
+                  return (
+                    <div key={idx} className="flex flex-col">
+                      <div className="flex items-center gap-1.5 text-sky-400 mb-0.5">
+                        <IconComponent className="w-4 h-4 text-sky-400" />
+                        <span className="text-xl font-extrabold text-white">{stat.value}</span>
+                      </div>
+                      <span className="text-xs text-slate-400 font-medium">{stat.label}</span>
+                    </div>
+                  );
+                })}
               </div>
-            </div> */}
+            )}
 
           </div>
 
-          {/* Right Hero Visual Showcase - Equal Margins & Proportionate Framing */}
-          <div className="flex justify-center items-center w-full">
-            <div className="relative w-full max-w-lg mx-auto">
-              
-              {/* Outer Decorative Glow Ring */}
-              <div className="absolute -inset-1.5 bg-gradient-to-r from-indigo-500 via-purple-500 to-emerald-500 rounded-3xl blur-xl opacity-40 dark:opacity-30"></div>
-
-              {/* Main Card Frame */}
-              <div className="relative rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-3.5 shadow-2xl">
-                {/* Image Container with Natural Aspect Ratio */}
-                <div className="relative rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800 aspect-[4/3] sm:aspect-[16/11]">
-                  <img
-                    src={personalInfo.avatar}
-                    alt={personalInfo.name}
-                    className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent"></div>
-                  
-                  {/* Overlay text at bottom of photo */}
-                  <div className="absolute bottom-4 left-4 right-4 text-white">
-                    <p className="text-xs uppercase font-bold tracking-widest text-emerald-400">Full-Stack Engineer</p>
-                    <h3 className="text-xl font-bold">{personalInfo.name}</h3>
-                    <p className="text-xs text-slate-300 flex items-center gap-1.5 mt-0.5">
-                      <MapPin className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                      <span>Bahir Dar, Ethiopia</span>
-                    </p>
-                  </div>
-                </div>
+          {/* Right Hero Space - Elegantly Highlights the Developer in the Background */}
+          <div className="lg:col-span-5 flex flex-col justify-between items-end gap-6 w-full lg:min-h-[380px] pointer-events-none select-none">
+            
+            {/* Top Floating Glass Badge */}
+            <div className="pointer-events-auto backdrop-blur-xl bg-slate-900/75 dark:bg-[#0c1527]/85 border border-sky-500/30 rounded-2xl p-4 shadow-2xl flex items-center gap-3.5 hover:border-sky-400 transition-all duration-300 max-w-xs self-end">
+              <div className="w-11 h-11 rounded-xl bg-sky-500/20 border border-sky-400/40 flex items-center justify-center text-xl shrink-0">
+                ⚛️
               </div>
-
-              {/* Floating Badge 1 - Top Left */}
-              <div className="absolute -top-3.5 -left-2 sm:-left-5 bg-white/95 dark:bg-slate-800/95 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-lg border border-slate-200/80 dark:border-slate-700/80 flex items-center gap-2.5 z-10">
-                <div className="w-8 h-8 rounded-lg bg-indigo-50 dark:bg-indigo-950/80 flex items-center justify-center text-indigo-600 dark:text-indigo-400 font-bold text-sm">
-                  ⚛️
-                </div>
-                <div>
-                  <p className="text-[10px] text-slate-500 dark:text-slate-400 font-medium leading-none">Core Stack</p>
-                  <p className="text-xs font-bold text-slate-900 dark:text-white mt-0.5">React &amp; Node.js</p>
-                </div>
+              <div>
+                <p className="text-[11px] uppercase tracking-wider text-sky-400 font-bold">Specialization</p>
+                <p className="text-sm font-bold text-white leading-tight">React &amp; Node.js Full-Stack</p>
               </div>
-
-              {/* Floating Badge 2 - Bottom Right */}
-              <div className="absolute -bottom-3.5 -right-2 sm:-right-5 bg-white/95 dark:bg-slate-800/95 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-lg border border-slate-200/80 dark:border-slate-700/80 flex items-center gap-2.5 z-10">
-                <div className="w-8 h-8 rounded-lg bg-emerald-50 dark:bg-emerald-950/80 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold text-sm">
-                  🏗️
-                </div>
-                <div>
-                  <p className="text-[10px] text-slate-500 dark:text-slate-400 font-medium leading-none">Discipline</p>
-                  <p className="text-xs font-bold text-slate-900 dark:text-white mt-0.5">Civil Engineering</p>
-                </div>
-              </div>
-
             </div>
+
+            {/* Bottom Floating Glass Badge */}
+            <div className="pointer-events-auto backdrop-blur-xl bg-slate-900/75 dark:bg-[#0c1527]/85 border border-emerald-500/30 rounded-2xl p-4 shadow-2xl flex items-center gap-3.5 hover:border-emerald-400 transition-all duration-300 max-w-xs self-end">
+              <div className="w-11 h-11 rounded-xl bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-xl shrink-0">
+                🏗️
+              </div>
+              <div>
+                <p className="text-[11px] uppercase tracking-wider text-emerald-400 font-bold">Engineering Discipline</p>
+                <p className="text-sm font-bold text-white leading-tight">Civil Engineering Precision</p>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

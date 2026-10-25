@@ -92,8 +92,8 @@ export default function About({ personalInfo = {}, onOpenResume }) {
               {/* Photo Container with Glass Overlays */}
               <div className="relative rounded-2xl overflow-hidden aspect-[4/4.5] sm:aspect-[4/4.2] bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md">
                 <img
-                  src="/images/about-coding-hands.jpg"
-                  alt="Meseret Shumye Developer Workspace"
+                  src={personalInfo.avatar || "/images/developer-desk-setup.jpg"}
+                  alt={personalInfo.name || "Meseret Shumye Workspace"}
                   className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
