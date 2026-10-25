@@ -95,6 +95,7 @@ export const resumeData = {
     { name: "Express.js", category: "backend", level: 92, levelText: "Advanced", icon: "Network", symbol: "ex", popular: true },
     { name: "RESTful API Design", category: "backend", level: 95, levelText: "Advanced", icon: "Cpu", symbol: "REST", popular: true },
     { name: "JWT & OAuth 2.0", category: "backend", level: 90, levelText: "Advanced", icon: "KeyRound", symbol: "🔑", popular: true },
+    { name: "WebSockets / Socket.io", category: "backend", level: 88, levelText: "Advanced", icon: "Radio", symbol: "⚡", popular: true },
     { name: "GraphQL", category: "backend", level: 82, levelText: "Intermediate", icon: "Share2", symbol: "◈", popular: false },
     { name: "Microservices Basics", category: "backend", level: 80, levelText: "Intermediate", icon: "Boxes", symbol: "⬡", popular: false },
 
@@ -111,6 +112,7 @@ export const resumeData = {
     { name: "Postman & Swagger", category: "devops", level: 92, levelText: "Advanced", icon: "Send", symbol: "🚀", popular: true },
     { name: "Vite & Webpack", category: "devops", level: 90, levelText: "Advanced", icon: "Rocket", symbol: "⚡", popular: true },
     { name: "Docker Basics", category: "devops", level: 82, levelText: "Intermediate", icon: "Box", symbol: "🐳", popular: false },
+    { name: "CI/CD & GitHub Actions", category: "devops", level: 88, levelText: "Advanced", icon: "GitBranch", symbol: "⚙", popular: true },
     { name: "Agile / Scrum", category: "devops", level: 94, levelText: "Advanced", icon: "Workflow", symbol: "🔄", popular: true }
   ],
 

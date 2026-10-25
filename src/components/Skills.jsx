@@ -244,8 +244,8 @@ export default function Skills({ skills = [], skillCategories = [] }) {
                     </div>
                   </div>
 
-                  {/* Skills Pills Layout (Exact match to attached image) */}
-                  <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
+                  {/* Skills Pills Layout in Two Equal Sides matching attached reference */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
                     {domainSkills.map((skill, idx) => {
                       const matchesSearch = normalizedQuery
                         ? skill.name.toLowerCase().includes(normalizedQuery)
@@ -262,40 +262,43 @@ export default function Skills({ skills = [], skillCategories = [] }) {
                               activeSkill?.name === skill.name ? null : skill,
                             )
                           }
-                          className={`group inline-flex items-center gap-2.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full cursor-pointer select-none transition-all duration-200 ${
+                          className={`group flex items-center justify-between gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-full cursor-pointer select-none transition-all duration-200 border ${
                             matchesSearch
                               ? "opacity-100 scale-100"
                               : "opacity-30 scale-95 pointer-events-none"
                           } ${
                             isHighlighted
-                              ? "bg-indigo-100 dark:bg-gradient-to-r dark:from-[#213264] dark:via-[#263c78] dark:to-[#1c2952] border-indigo-500 dark:border-indigo-400 text-indigo-950 dark:text-white shadow-lg shadow-indigo-500/25 ring-2 ring-indigo-500/50 -translate-y-0.5 hover:bg-indigo-200 dark:hover:from-[#293d78] dark:hover:via-[#304b94] dark:hover:to-[#223363] hover:border-indigo-600 dark:hover:border-indigo-300 hover:shadow-xl hover:shadow-indigo-500/35 hover:scale-[1.03]"
-                              : "bg-white dark:bg-[#0e172a] hover:bg-indigo-50/90 dark:hover:bg-[#162345] border border-slate-200/90 dark:border-[#1e2a4a] hover:border-indigo-400 dark:hover:border-indigo-400/90 hover:text-indigo-900 dark:hover:text-white hover:shadow-md hover:shadow-indigo-500/15 hover:-translate-y-0.5 hover:scale-[1.02] shadow-xs"
+                              ? "bg-indigo-100 dark:bg-gradient-to-r dark:from-[#213264] dark:via-[#263c78] dark:to-[#1c2952] border-indigo-500 dark:border-indigo-400 text-indigo-950 dark:text-white shadow-lg shadow-indigo-500/25 ring-2 ring-indigo-500/50 -translate-y-0.5"
+                              : "bg-white dark:bg-[#0e172a] hover:bg-indigo-50/90 dark:hover:bg-[#162345] border-slate-200/90 dark:border-[#1e2a4a] hover:border-indigo-400 dark:hover:border-indigo-400/90 hover:text-indigo-900 dark:hover:text-white hover:shadow-md hover:shadow-indigo-500/15 hover:-translate-y-0.5 shadow-xs"
                           }`}
                         >
-                          {/* Authentic Tech Brand Icon */}
-                          <TechIcon
-                            name={skill.name}
-                            className={`w-4 h-4 sm:w-5 sm:h-5 shrink-0 transition-transform duration-200 ${
-                              isHighlighted
-                                ? "scale-110 drop-shadow-[0_0_8px_rgba(99,102,241,0.5)]"
-                                : "group-hover:scale-110"
-                            }`}
-                          />
+                          {/* Left: Tech Icon + Skill Name */}
+                          <div className="flex items-center gap-2.5 min-w-0 pr-1">
+                            {/* Authentic Tech Brand Icon */}
+                            <TechIcon
+                              name={skill.name}
+                              className={`w-4 h-4 sm:w-5 sm:h-5 shrink-0 transition-transform duration-200 ${
+                                isHighlighted
+                                  ? "scale-110 drop-shadow-[0_0_8px_rgba(99,102,241,0.5)]"
+                                  : "group-hover:scale-110"
+                              }`}
+                            />
 
-                          {/* Skill Name */}
-                          <span
-                            className={`text-xs sm:text-sm font-semibold tracking-tight whitespace-nowrap transition-colors duration-200 ${
-                              isHighlighted
-                                ? "text-indigo-950 dark:text-white font-bold group-hover:text-indigo-900 dark:group-hover:text-white"
-                                : "text-slate-800 dark:text-slate-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-300"
-                            }`}
-                          >
-                            {skill.name}
-                          </span>
+                            {/* Skill Name */}
+                            <span
+                              className={`text-xs sm:text-sm font-semibold tracking-tight truncate transition-colors duration-200 ${
+                                isHighlighted
+                                  ? "text-indigo-950 dark:text-white font-bold"
+                                  : "text-slate-800 dark:text-slate-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-300"
+                              }`}
+                            >
+                              {skill.name}
+                            </span>
+                          </div>
 
-                          {/* Proficiency Level Badge (Advanced, Proficient, Intermediate) */}
+                          {/* Right: Proficiency Level Badge */}
                           <span
-                            className={`text-[10px] font-bold px-2 py-0.5 rounded-full tracking-wide shrink-0 transition-all duration-200 ${getLevelBadgeClasses(skill.levelText, isHighlighted)}`}
+                            className={`text-[10px] sm:text-[11px] font-bold px-2.5 py-0.5 rounded-full tracking-wide shrink-0 transition-all duration-200 ${getLevelBadgeClasses(skill.levelText, isHighlighted)}`}
                           >
                             {skill.levelText || "Advanced"}
                           </span>
