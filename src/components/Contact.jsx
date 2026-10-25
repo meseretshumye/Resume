@@ -68,11 +68,11 @@ export default function Contact({ personalInfo }) {
           </p>
         </div>
 
-        {/* Main Content Grid: Equal Width Cards (Left: Contact Info Card, Right: Direct Message Card) */}
+        {/* Main Content Grid: Equal Width Cards with Uniform Styling and Thin Borders */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           
           {/* Left Column: Unified Single Contact Info Card */}
-          <div className="p-7 sm:p-9 rounded-3xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.7)] backdrop-blur-sm flex flex-col justify-between">
+          <div className="p-7 sm:p-9 rounded-3xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 hover:border-slate-300 dark:hover:border-blue-400/40 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.7)] backdrop-blur-sm flex flex-col justify-between transition-all duration-200">
             <div>
               <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-2">
                 Contact Information
@@ -83,9 +83,9 @@ export default function Contact({ personalInfo }) {
 
               <div className="space-y-4">
                 {/* Item 1: Direct Email */}
-                <div className="p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/70 dark:border-blue-500/15 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group hover:border-indigo-400 dark:hover:border-sky-400/50 transition-all">
+                <div className="p-4 sm:p-5 rounded-2xl bg-slate-50/80 dark:bg-slate-900/50 border border-slate-200/80 dark:border-blue-500/15 hover:border-indigo-400/60 dark:hover:border-sky-400/40 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group transition-all duration-200">
                   <div className="flex items-center gap-4 min-w-0">
-                    <div className="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-950/70 text-indigo-600 dark:text-indigo-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-sm">
+                    <div className="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-blue-500/25 text-indigo-600 dark:text-sky-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200 shadow-xs">
                       <Mail className="w-6 h-6" />
                     </div>
                     <div className="min-w-0">
@@ -103,7 +103,7 @@ export default function Contact({ personalInfo }) {
                   <button
                     type="button"
                     onClick={handleCopyEmail}
-                    className="inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700 shadow-sm transition-colors cursor-pointer shrink-0 self-start sm:self-auto"
+                    className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700/80 hover:border-indigo-400 dark:hover:border-sky-400 active:border-indigo-500 dark:active:border-sky-400 hover:bg-slate-50 dark:hover:bg-slate-700/60 shadow-xs transition-all duration-150 cursor-pointer shrink-0 self-start sm:self-auto"
                   >
                     {copied ? (
                       <>
@@ -120,9 +120,9 @@ export default function Contact({ personalInfo }) {
                 </div>
 
                 {/* Item 2: Phone & WhatsApp */}
-                <div className="p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/70 dark:border-blue-500/15 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group hover:border-emerald-400 dark:hover:border-emerald-400/50 transition-all">
+                <div className="p-4 sm:p-5 rounded-2xl bg-slate-50/80 dark:bg-slate-900/50 border border-slate-200/80 dark:border-blue-500/15 hover:border-indigo-400/60 dark:hover:border-sky-400/40 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group transition-all duration-200">
                   <div className="flex items-center gap-4 min-w-0">
-                    <div className="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-950/70 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-sm">
+                    <div className="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-blue-500/25 text-indigo-600 dark:text-sky-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200 shadow-xs">
                       <Phone className="w-6 h-6" />
                     </div>
                     <div className="min-w-0">
@@ -141,17 +141,17 @@ export default function Contact({ personalInfo }) {
                     href={personalInfo.socialLinks.whatsapp}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold bg-emerald-50 hover:bg-emerald-100 dark:bg-emerald-950/70 dark:hover:bg-emerald-900/70 text-emerald-700 dark:text-emerald-300 border border-emerald-200/80 dark:border-emerald-800/60 shadow-sm transition-colors shrink-0 self-start sm:self-auto"
+                    className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700/80 hover:border-indigo-400 dark:hover:border-sky-400 active:border-indigo-500 dark:active:border-sky-400 hover:bg-slate-50 dark:hover:bg-slate-700/60 shadow-xs transition-all duration-150 cursor-pointer shrink-0 self-start sm:self-auto"
                   >
-                    <MessageCircle className="w-3.5 h-3.5" />
+                    <MessageCircle className="w-3.5 h-3.5 text-emerald-500" />
                     <span>Chat on WhatsApp</span>
                   </a>
                 </div>
 
                 {/* Item 3: Current Location */}
-                <div className="p-4 sm:p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/70 dark:border-blue-500/15 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group hover:border-indigo-400 dark:hover:border-sky-400/50 transition-all">
+                <div className="p-4 sm:p-5 rounded-2xl bg-slate-50/80 dark:bg-slate-900/50 border border-slate-200/80 dark:border-blue-500/15 hover:border-indigo-400/60 dark:hover:border-sky-400/40 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group transition-all duration-200">
                   <div className="flex items-center gap-4 min-w-0">
-                    <div className="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-blue-950/70 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-sm">
+                    <div className="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-blue-500/25 text-indigo-600 dark:text-sky-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200 shadow-xs">
                       <MapPin className="w-6 h-6" />
                     </div>
                     <div className="min-w-0">
@@ -163,9 +163,9 @@ export default function Contact({ personalInfo }) {
                     </div>
                   </div>
 
-                  <span className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-blue-50 dark:bg-blue-950/70 text-blue-700 dark:text-blue-300 border border-blue-200/80 dark:border-blue-800/60 shadow-sm shrink-0 self-start sm:self-auto">
-                    <span className="w-2 h-2 rounded-full bg-blue-500"></span>
-                    UTC+3 Timezone
+                  <span className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700/80 hover:border-indigo-400 dark:hover:border-sky-400 shadow-xs transition-all duration-150 shrink-0 self-start sm:self-auto">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>UTC+3 Timezone</span>
                   </span>
                 </div>
               </div>
@@ -181,8 +181,8 @@ export default function Contact({ personalInfo }) {
             </div>
           </div>
 
-          {/* Right Column: Send a Direct Message Form (Equal Width) */}
-          <div className="p-7 sm:p-9 rounded-3xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.7)] backdrop-blur-sm flex flex-col justify-between">
+          {/* Right Column: Send a Direct Message Form (Equal Width & Matching Uniform Styling) */}
+          <div className="p-7 sm:p-9 rounded-3xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 hover:border-slate-300 dark:hover:border-blue-400/40 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.7)] backdrop-blur-sm flex flex-col justify-between transition-all duration-200">
             <div>
               <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-2">
                 Send a Direct Message
@@ -215,7 +215,7 @@ export default function Contact({ personalInfo }) {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="e.g. John Doe / Organization"
-                    className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-slate-900 dark:text-white text-sm"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700/80 text-slate-900 dark:text-white text-sm placeholder:text-slate-400 dark:placeholder:text-slate-500 hover:border-slate-300 dark:hover:border-slate-600 focus:outline-none focus:border-indigo-500 dark:focus:border-sky-400 focus:ring-1 focus:ring-indigo-500/20 dark:focus:ring-sky-400/20 transition-all duration-150"
                   />
                 </div>
 
@@ -230,7 +230,7 @@ export default function Contact({ personalInfo }) {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="name@example.com"
-                    className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-slate-900 dark:text-white text-sm"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700/80 text-slate-900 dark:text-white text-sm placeholder:text-slate-400 dark:placeholder:text-slate-500 hover:border-slate-300 dark:hover:border-slate-600 focus:outline-none focus:border-indigo-500 dark:focus:border-sky-400 focus:ring-1 focus:ring-indigo-500/20 dark:focus:ring-sky-400/20 transition-all duration-150"
                   />
                 </div>
 
@@ -244,7 +244,7 @@ export default function Contact({ personalInfo }) {
                     value={formData.subject}
                     onChange={handleChange}
                     placeholder="e.g. Web Development Inquiry / Contract Consultation"
-                    className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-slate-900 dark:text-white text-sm"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700/80 text-slate-900 dark:text-white text-sm placeholder:text-slate-400 dark:placeholder:text-slate-500 hover:border-slate-300 dark:hover:border-slate-600 focus:outline-none focus:border-indigo-500 dark:focus:border-sky-400 focus:ring-1 focus:ring-indigo-500/20 dark:focus:ring-sky-400/20 transition-all duration-150"
                   />
                 </div>
 
@@ -259,14 +259,14 @@ export default function Contact({ personalInfo }) {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Describe your project, timeline, and requirements..."
-                    className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-slate-900 dark:text-white text-sm resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700/80 text-slate-900 dark:text-white text-sm placeholder:text-slate-400 dark:placeholder:text-slate-500 hover:border-slate-300 dark:hover:border-slate-600 focus:outline-none focus:border-indigo-500 dark:focus:border-sky-400 focus:ring-1 focus:ring-indigo-500/20 dark:focus:ring-sky-400/20 transition-all duration-150 resize-none"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-sm shadow-lg shadow-indigo-600/25 hover:shadow-indigo-600/35 transition-all disabled:opacity-70 cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-semibold text-sm border border-indigo-500 hover:border-indigo-400 active:border-indigo-600 shadow-md shadow-indigo-600/20 hover:shadow-indigo-600/30 transition-all duration-150 cursor-pointer disabled:opacity-70"
                 >
                   {isSubmitting ? (
                     <span>Sending Message...</span>
