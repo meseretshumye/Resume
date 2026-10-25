@@ -6,13 +6,10 @@ import {
   MapPin, 
   CheckCircle2, 
   Building, 
-  Award, 
-  Sparkles, 
-  Download, 
-  ArrowUpRight 
+  Download 
 } from 'lucide-react';
 
-export default function ExperienceEducation({ experience, education, onOpenResume }) {
+export default function ExperienceEducation({ experience = [], education = [], onOpenResume }) {
   const [activeTab, setActiveTab] = useState('both'); // 'both', 'experience', 'education'
 
   return (
@@ -35,50 +32,48 @@ export default function ExperienceEducation({ experience, education, onOpenResum
           <div className="mt-6">
             <button
               onClick={onOpenResume}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 text-white dark:text-slate-900 font-semibold text-sm shadow-md transition-all hover:scale-105"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-semibold text-sm border border-indigo-500 hover:border-indigo-400 shadow-md shadow-indigo-600/20 hover:shadow-indigo-600/30 transition-all duration-150 cursor-pointer"
             >
-              <Download className="w-4 h-4 text-indigo-400 dark:text-indigo-600" />
-              <span>View & Print Complete Resume (PDF)</span>
+              <Download className="w-4 h-4 text-white" />
+              <span>View &amp; Print Complete Resume (PDF)</span>
             </button>
           </div>
         </div>
 
-        {/* View Toggle */}
-        <div className="flex justify-center mb-8">
-          <div className="inline-flex p-1.5 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-            <button
-              onClick={() => setActiveTab('both')}
-              className={`px-5 py-2 rounded-xl text-sm font-semibold transition-all ${
-                activeTab === 'both'
-                  ? 'bg-white dark:bg-slate-900 text-indigo-600 dark:text-white shadow-sm'
-                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-              }`}
-            >
-              All Milestones
-            </button>
-            <button
-              onClick={() => setActiveTab('experience')}
-              className={`flex items-center gap-2 px-5 py-2 rounded-xl text-sm font-semibold transition-all ${
-                activeTab === 'experience'
-                  ? 'bg-white dark:bg-slate-900 text-indigo-600 dark:text-white shadow-sm'
-                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-              }`}
-            >
-              <Briefcase className="w-4 h-4" />
-              <span>Experience</span>
-            </button>
-            <button
-              onClick={() => setActiveTab('education')}
-              className={`flex items-center gap-2 px-5 py-2 rounded-xl text-sm font-semibold transition-all ${
-                activeTab === 'education'
-                  ? 'bg-white dark:bg-slate-900 text-indigo-600 dark:text-white shadow-sm'
-                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-              }`}
-            >
-              <GraduationCap className="w-4 h-4" />
-              <span>Education</span>
-            </button>
-          </div>
+        {/* View Toggle Tabs - Standardized with Thin 1px Borders */}
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-10 pb-6 border-b border-slate-200 dark:border-slate-800/80 w-full">
+          <button
+            onClick={() => setActiveTab('both')}
+            className={`inline-flex items-center px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-150 whitespace-nowrap border ${
+              activeTab === 'both'
+                ? 'bg-indigo-600 hover:bg-indigo-500 text-white shadow-md shadow-indigo-600/25 border-indigo-400/80 scale-[1.02]'
+                : 'bg-white dark:bg-slate-900/80 text-slate-600 dark:text-slate-300 hover:bg-indigo-50/60 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-sky-300 hover:border-indigo-400/60 dark:hover:border-sky-400/40 border-slate-200 dark:border-slate-800'
+            }`}
+          >
+            <span>All Milestones</span>
+          </button>
+          <button
+            onClick={() => setActiveTab('experience')}
+            className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-150 whitespace-nowrap border ${
+              activeTab === 'experience'
+                ? 'bg-indigo-600 hover:bg-indigo-500 text-white shadow-md shadow-indigo-600/25 border-indigo-400/80 scale-[1.02]'
+                : 'bg-white dark:bg-slate-900/80 text-slate-600 dark:text-slate-300 hover:bg-indigo-50/60 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-sky-300 hover:border-indigo-400/60 dark:hover:border-sky-400/40 border-slate-200 dark:border-slate-800'
+            }`}
+          >
+            <Briefcase className="w-3.5 h-3.5" />
+            <span>Professional Experience</span>
+          </button>
+          <button
+            onClick={() => setActiveTab('education')}
+            className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-150 whitespace-nowrap border ${
+              activeTab === 'education'
+                ? 'bg-indigo-600 hover:bg-indigo-500 text-white shadow-md shadow-indigo-600/25 border-indigo-400/80 scale-[1.02]'
+                : 'bg-white dark:bg-slate-900/80 text-slate-600 dark:text-slate-300 hover:bg-indigo-50/60 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-sky-300 hover:border-indigo-400/60 dark:hover:border-sky-400/40 border-slate-200 dark:border-slate-800'
+            }`}
+          >
+            <GraduationCap className="w-3.5 h-3.5" />
+            <span>Academic Education</span>
+          </button>
         </div>
 
         {/* Timeline Columns */}
@@ -88,7 +83,7 @@ export default function ExperienceEducation({ experience, education, onOpenResum
           {(activeTab === 'both' || activeTab === 'experience') && (
             <div className={`space-y-6 ${activeTab === 'experience' ? 'lg:col-span-2 max-w-4xl mx-auto' : ''}`}>
               <div className="flex items-center gap-3 pb-3 border-b border-slate-200 dark:border-slate-800">
-                <div className="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-blue-500/25 text-indigo-600 dark:text-sky-400 flex items-center justify-center shrink-0 shadow-xs">
                   <Briefcase className="w-5 h-5" />
                 </div>
                 <div>
@@ -101,30 +96,30 @@ export default function ExperienceEducation({ experience, education, onOpenResum
                 {experience.map((item) => (
                   <div key={item.id} className="relative group">
                     {/* Glowing Node Marker */}
-                    <div className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-white dark:bg-slate-900 border-4 border-indigo-600 dark:border-indigo-500 group-hover:scale-125 transition-transform" />
+                    <div className="absolute -left-[31px] top-2 w-3.5 h-3.5 rounded-full bg-indigo-600 dark:bg-sky-400 ring-4 ring-white dark:ring-[#060a14] group-hover:scale-125 transition-transform duration-200" />
 
-                    {/* Card Content */}
-                    <div className="p-6 rounded-2xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.6)] backdrop-blur-sm hover:shadow-xl hover:border-indigo-400 dark:hover:border-sky-400/60 transition-all">
-                      <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-indigo-50 dark:bg-indigo-950/70 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800">
-                          <Calendar className="w-3.5 h-3.5" />
+                    {/* Card Content - Standardized with Thin 1px Hover Border */}
+                    <div className="p-6 sm:p-7 rounded-3xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 hover:border-indigo-400/70 dark:hover:border-sky-400/60 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.6)] backdrop-blur-sm transition-all duration-200 group-hover:-translate-y-0.5">
+                      <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-semibold bg-indigo-50/80 dark:bg-indigo-950/60 text-indigo-700 dark:text-sky-300 border border-indigo-200/70 dark:border-blue-500/25 shadow-xs">
+                          <Calendar className="w-3.5 h-3.5 text-indigo-500 dark:text-sky-400" />
                           {item.period}
                         </span>
-                        <span className="text-xs font-semibold px-2.5 py-0.5 rounded-md bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
+                        <span className="text-xs font-semibold px-2.5 py-1 rounded-xl bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700/80">
                           {item.type}
                         </span>
                       </div>
 
-                      <h4 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                      <h4 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-sky-400 transition-colors">
                         {item.role}
                       </h4>
 
                       <div className="flex items-center gap-2 text-sm font-semibold text-slate-700 dark:text-slate-300 mt-1 mb-3">
-                        <Building className="w-4 h-4 text-indigo-500" />
+                        <Building className="w-4 h-4 text-indigo-500 dark:text-sky-400" />
                         <span>{item.company}</span>
                         <span className="text-slate-400 dark:text-slate-600">•</span>
                         <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
-                          <MapPin className="w-3 h-3" />
+                          <MapPin className="w-3.5 h-3.5 text-slate-400" />
                           {item.location}
                         </span>
                       </div>
@@ -143,12 +138,12 @@ export default function ExperienceEducation({ experience, education, onOpenResum
                         ))}
                       </ul>
 
-                      {/* Tech Chips */}
-                      <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-100 dark:border-slate-700/60">
+                      {/* Tech Chips - Standardized with Thin 1px Borders */}
+                      <div className="flex flex-wrap gap-2 pt-3 border-t border-slate-100 dark:border-slate-800/80">
                         {item.technologies.map((tech, idx) => (
                           <span
                             key={idx}
-                            className="px-2.5 py-1 rounded-lg text-xs font-medium bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300"
+                            className="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-700/60 text-slate-700 dark:text-slate-300 hover:border-indigo-400/60 dark:hover:border-sky-400/40 transition-all duration-150"
                           >
                             {tech}
                           </span>
@@ -165,7 +160,7 @@ export default function ExperienceEducation({ experience, education, onOpenResum
           {(activeTab === 'both' || activeTab === 'education') && (
             <div className={`space-y-6 ${activeTab === 'education' ? 'lg:col-span-2 max-w-4xl mx-auto' : ''}`}>
               <div className="flex items-center gap-3 pb-3 border-b border-slate-200 dark:border-slate-800">
-                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-blue-500/25 text-indigo-600 dark:text-sky-400 flex items-center justify-center shrink-0 shadow-xs">
                   <GraduationCap className="w-5 h-5" />
                 </div>
                 <div>
@@ -174,34 +169,34 @@ export default function ExperienceEducation({ experience, education, onOpenResum
                 </div>
               </div>
 
-              <div className="space-y-6 relative pl-6 border-l-2 border-emerald-200 dark:border-emerald-900/60 ml-3">
+              <div className="space-y-6 relative pl-6 border-l-2 border-indigo-200 dark:border-indigo-900/60 ml-3">
                 {education.map((item) => (
                   <div key={item.id} className="relative group">
                     {/* Glowing Node Marker */}
-                    <div className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-white dark:bg-slate-900 border-4 border-emerald-600 dark:border-emerald-500 group-hover:scale-125 transition-transform" />
+                    <div className="absolute -left-[31px] top-2 w-3.5 h-3.5 rounded-full bg-indigo-600 dark:bg-sky-400 ring-4 ring-white dark:ring-[#060a14] group-hover:scale-125 transition-transform duration-200" />
 
-                    {/* Card Content */}
-                    <div className="p-6 rounded-2xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.6)] backdrop-blur-sm hover:shadow-xl hover:border-emerald-400 dark:hover:border-emerald-400/60 transition-all">
-                      <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 dark:bg-emerald-950/70 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800">
-                          <Calendar className="w-3.5 h-3.5" />
+                    {/* Card Content - Standardized with Thin 1px Hover Border */}
+                    <div className="p-6 sm:p-7 rounded-3xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 hover:border-indigo-400/70 dark:hover:border-sky-400/60 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.6)] backdrop-blur-sm transition-all duration-200 group-hover:-translate-y-0.5">
+                      <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-semibold bg-indigo-50/80 dark:bg-indigo-950/60 text-indigo-700 dark:text-sky-300 border border-indigo-200/70 dark:border-blue-500/25 shadow-xs">
+                          <Calendar className="w-3.5 h-3.5 text-indigo-500 dark:text-sky-400" />
                           {item.period}
                         </span>
-                        <span className="text-xs font-semibold px-2.5 py-0.5 rounded-md bg-emerald-100/70 dark:bg-emerald-900/40 text-emerald-800 dark:text-emerald-300">
+                        <span className="text-xs font-semibold px-2.5 py-1 rounded-xl bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700/80">
                           {item.grade}
                         </span>
                       </div>
 
-                      <h4 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                      <h4 className="text-lg font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-sky-400 transition-colors">
                         {item.degree}
                       </h4>
 
                       <div className="flex items-center gap-2 text-sm font-semibold text-slate-700 dark:text-slate-300 mt-1 mb-3">
-                        <Building className="w-4 h-4 text-emerald-500" />
+                        <Building className="w-4 h-4 text-indigo-500 dark:text-sky-400" />
                         <span>{item.institution}</span>
                         <span className="text-slate-400 dark:text-slate-600">•</span>
                         <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
-                          <MapPin className="w-3 h-3" />
+                          <MapPin className="w-3.5 h-3.5 text-slate-400" />
                           {item.location}
                         </span>
                       </div>
@@ -210,12 +205,12 @@ export default function ExperienceEducation({ experience, education, onOpenResum
                         {item.description}
                       </p>
 
-                      {/* Acquired Skills */}
-                      <div className="flex flex-wrap gap-1.5 pt-3 border-t border-slate-100 dark:border-slate-700/60">
+                      {/* Acquired Skills - Standardized with Thin 1px Borders */}
+                      <div className="flex flex-wrap gap-2 pt-3 border-t border-slate-100 dark:border-slate-800/80">
                         {item.skillsAcquired.map((skill, idx) => (
                           <span
                             key={idx}
-                            className="px-2.5 py-1 rounded-lg text-xs font-medium bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border border-emerald-200/50 dark:border-emerald-800/40"
+                            className="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-700/60 text-slate-700 dark:text-slate-300 hover:border-indigo-400/60 dark:hover:border-sky-400/40 transition-all duration-150"
                           >
                             {skill}
                           </span>
@@ -234,4 +229,3 @@ export default function ExperienceEducation({ experience, education, onOpenResum
     </section>
   );
 }
-
