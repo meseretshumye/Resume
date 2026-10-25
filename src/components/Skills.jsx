@@ -1,28 +1,17 @@
 import React, { useState, useMemo } from "react";
 import TechIcon from "./TechIcon";
-import {
-  Sparkles,
-  Search,
-  X,
-  CheckCircle2,
-  Award,
-  Layers,
-  Zap,
-  SlidersHorizontal,
-  GraduationCap,
-} from "lucide-react";
 
 export default function Skills({ skills = [], skillCategories = [] }) {
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const [searchQuery, setSearchQuery] = useState("");
   const [activeSkill, setActiveSkill] = useState(null);
 
-  // 4 Core Domain Architecture Definitions matching the attached design
+  // 4 Core Domain Architecture Definitions
   const DOMAINS = useMemo(
     () => [
       {
         id: "frontend",
         name: "Frontend & Mobile",
+        filterLabel: "Frontend & Mobile",
         description:
           "Building fast, accessible, cross-platform mobile apps and responsive web interfaces with modern frameworks.",
         iconSvg: (
@@ -42,6 +31,7 @@ export default function Skills({ skills = [], skillCategories = [] }) {
       {
         id: "backend",
         name: "Backend & APIs",
+        filterLabel: "Backend & APIs",
         description:
           "Engineering secure, scalable server applications, enterprise microservices, and robust REST/GraphQL endpoints.",
         iconSvg: (
@@ -62,6 +52,7 @@ export default function Skills({ skills = [], skillCategories = [] }) {
       {
         id: "database",
         name: "Databases & Cloud",
+        filterLabel: "Databases & Cloud",
         description:
           "Designing efficient relational & NoSQL schemas, optimizing complex queries, and managing resilient cloud backends.",
         iconSvg: (
@@ -81,6 +72,7 @@ export default function Skills({ skills = [], skillCategories = [] }) {
       {
         id: "devops",
         name: "DevOps & Engineering Tools",
+        filterLabel: "DevOps & Tools",
         description:
           "Mobile testing, modern build tools, version control, API testing, and agile workflows.",
         iconSvg: (
@@ -104,9 +96,6 @@ export default function Skills({ skills = [], skillCategories = [] }) {
     if (selectedCategory === "all") return DOMAINS;
     return DOMAINS.filter((d) => d.id === selectedCategory);
   }, [selectedCategory, DOMAINS]);
-
-  // Skill search matching logic
-  const normalizedQuery = searchQuery.trim().toLowerCase();
 
   return (
     <section
@@ -132,69 +121,45 @@ export default function Skills({ skills = [], skillCategories = [] }) {
           </p>
         </div>
 
-        {/* Enhanced Controls: Domain Filter Tabs & Search Bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-10 pb-6 border-b border-slate-200 dark:border-slate-800/80">
-          {/* Domain Filter Pills */}
-          <div className="flex flex-wrap items-center justify-center gap-2 w-full md:w-auto">
-            <button
-              onClick={() => setSelectedCategory("all")}
-              className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 ${
-                selectedCategory === "all"
-                  ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-600/30 scale-[1.03] ring-2 ring-indigo-400/50"
-                  : "bg-white dark:bg-slate-900/80 text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-indigo-300 hover:border-indigo-300 dark:hover:border-indigo-700/60 border border-slate-200 dark:border-slate-800"
-              }`}
-            >
-              <span>All Domains</span>
-              <span className="ml-1.5 text-xs opacity-75">
-                ({DOMAINS.length})
-              </span>
-            </button>
+        {/* Domain Filter Tabs - Centered & In-Line */}
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-10 pb-6 border-b border-slate-200 dark:border-slate-800/80 w-full">
+          <button
+            onClick={() => setSelectedCategory("all")}
+            className={`px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap ${
+              selectedCategory === "all"
+                ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-600/30 scale-[1.03] ring-2 ring-indigo-400/50"
+                : "bg-white dark:bg-slate-900/80 text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-indigo-300 hover:border-indigo-300 dark:hover:border-indigo-700/60 border border-slate-200 dark:border-slate-800"
+            }`}
+          >
+            <span>All Domains</span>
+            <span className="ml-1.5 text-xs opacity-75">
+              ({DOMAINS.length})
+            </span>
+          </button>
 
-            {DOMAINS.map((domain) => {
-              const count = skills.filter(
-                (s) => s.category === domain.id,
-              ).length;
-              const isSelected = selectedCategory === domain.id;
-              return (
-                <button
-                  key={domain.id}
-                  onClick={() => setSelectedCategory(domain.id)}
-                  className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 ${
-                    isSelected
-                      ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-600/30 scale-[1.03] ring-2 ring-indigo-400/50"
-                      : "bg-white dark:bg-slate-900/80 text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-indigo-300 hover:border-indigo-300 dark:hover:border-indigo-700/60 border border-slate-200 dark:border-slate-800"
-                  }`}
-                >
-                  <span>{domain.name}</span>
-                  <span className="ml-1.5 text-xs opacity-75">({count})</span>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Search Input Bar */}
-          <div className="relative w-full md:w-72">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search skill (e.g. React, NestJS, Docker)..."
-              className="w-full pl-9 pr-8 py-2 rounded-xl text-xs sm:text-sm bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-500 transition-all shadow-xs"
-            />
-            {searchQuery && (
+          {DOMAINS.map((domain) => {
+            const count = skills.filter(
+              (s) => s.category === domain.id,
+            ).length;
+            const isSelected = selectedCategory === domain.id;
+            return (
               <button
-                onClick={() => setSearchQuery("")}
-                className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-0.5 rounded-full"
-                aria-label="Clear search"
+                key={domain.id}
+                onClick={() => setSelectedCategory(domain.id)}
+                className={`px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 whitespace-nowrap ${
+                  isSelected
+                    ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg shadow-indigo-600/30 scale-[1.03] ring-2 ring-indigo-400/50"
+                    : "bg-white dark:bg-slate-900/80 text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-indigo-300 hover:border-indigo-300 dark:hover:border-indigo-700/60 border border-slate-200 dark:border-slate-800"
+                }`}
               >
-                <X className="w-3.5 h-3.5" />
+                <span>{domain.filterLabel || domain.name}</span>
+                <span className="ml-1.5 text-xs opacity-75">({count})</span>
               </button>
-            )}
-          </div>
+            );
+          })}
         </div>
 
-        {/* 2x2 Grid Layout matching the attached screenshot */}
+        {/* 2x2 Grid Layout matching the design */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {visibleDomains.map((domain) => {
             const domainSkills = skills.filter((s) => s.category === domain.id);
@@ -202,103 +167,74 @@ export default function Skills({ skills = [], skillCategories = [] }) {
             return (
               <div
                 key={domain.id}
-                className="group relative rounded-3xl p-6 sm:p-8 bg-white dark:bg-[#0b1120] border border-slate-200 dark:border-[#18233d] shadow-xl dark:shadow-2xl dark:shadow-indigo-950/20 backdrop-blur-md hover:border-indigo-300 dark:hover:border-[#2b3a62] transition-all duration-300 flex flex-col justify-between"
+                className="group relative rounded-3xl p-6 sm:p-8 bg-white dark:bg-[#0b1120] border border-slate-200 dark:border-[#18233d] shadow-xl dark:shadow-2xl dark:shadow-indigo-950/20 backdrop-blur-md hover:border-indigo-300 dark:hover:border-[#2b3a62] transition-all duration-300 flex flex-col"
               >
-                <div>
-                  {/* Card Header (Icon + Title + Description) */}
-                  <div className="flex items-start gap-4 mb-7">
-                    {/* Domain Icon Container */}
-                    <div className="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-[#131d36] border border-indigo-100 dark:border-[#1e2e5c] flex items-center justify-center shrink-0 shadow-inner group-hover:scale-105 transition-transform duration-300">
-                      {domain.iconSvg}
-                    </div>
-
-                    {/* Domain Title & Subtitle */}
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center justify-between gap-2">
-                        <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">
-                          {domain.name}
-                        </h3>
-                        <span className="text-[11px] font-bold px-2 py-0.5 rounded-md bg-slate-100 dark:bg-[#151f38] text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-[#233155]">
-                          {domainSkills.length} Skills
-                        </span>
-                      </div>
-                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1.5 leading-relaxed max-w-lg">
-                        {domain.description}
-                      </p>
-                    </div>
+                {/* Card Header (Icon + Title + Description) */}
+                <div className="flex items-start gap-4 mb-7">
+                  {/* Domain Icon Container */}
+                  <div className="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-[#131d36] border border-indigo-100 dark:border-[#1e2e5c] flex items-center justify-center shrink-0 shadow-inner group-hover:scale-105 transition-transform duration-300">
+                    {domain.iconSvg}
                   </div>
 
-                  {/* Skills Pills Layout in Two Equal Sides matching attached reference */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
-                    {domainSkills.map((skill, idx) => {
-                      const matchesSearch = normalizedQuery
-                        ? skill.name.toLowerCase().includes(normalizedQuery)
-                        : true;
-
-                      const isHighlighted = activeSkill?.name === skill.name;
-
-                      return (
-                        <div
-                          key={idx}
-                          onMouseEnter={() => setActiveSkill(skill)}
-                          onClick={() =>
-                            setActiveSkill(
-                              activeSkill?.name === skill.name ? null : skill,
-                            )
-                          }
-                          className={`group flex items-center gap-3 px-4 py-2.5 sm:px-4.5 sm:py-3 rounded-full cursor-pointer select-none transition-all duration-200 border ${
-                            matchesSearch
-                              ? "opacity-100 scale-100"
-                              : "opacity-30 scale-95 pointer-events-none"
-                          } ${
-                            isHighlighted
-                              ? "bg-indigo-100 dark:bg-gradient-to-r dark:from-[#213264] dark:via-[#263c78] dark:to-[#1c2952] border-indigo-500 dark:border-indigo-400 text-indigo-950 dark:text-white shadow-lg shadow-indigo-500/25 ring-2 ring-indigo-500/50 -translate-y-0.5"
-                              : "bg-white dark:bg-[#0e172a] hover:bg-indigo-50/90 dark:hover:bg-[#162345] border-slate-200/90 dark:border-[#1e2a4a] hover:border-indigo-400 dark:hover:border-indigo-400/90 hover:text-indigo-900 dark:hover:text-white hover:shadow-md hover:shadow-indigo-500/15 hover:-translate-y-0.5 shadow-xs"
-                          }`}
-                        >
-                          {/* Authentic Tech Brand Icon */}
-                          <TechIcon
-                            name={skill.name}
-                            className={`w-5 h-5 sm:w-5.5 sm:h-5.5 shrink-0 transition-transform duration-200 ${
-                              isHighlighted
-                                ? "scale-110 drop-shadow-[0_0_8px_rgba(99,102,241,0.5)]"
-                                : "group-hover:scale-110"
-                            }`}
-                          />
-
-                          {/* Skill Name */}
-                          <span
-                            className={`text-xs sm:text-sm font-semibold tracking-tight truncate transition-colors duration-200 ${
-                              isHighlighted
-                                ? "text-indigo-950 dark:text-white font-bold"
-                                : "text-slate-800 dark:text-slate-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-300"
-                            }`}
-                          >
-                            {skill.name}
-                          </span>
-                        </div>
-                      );
-                    })}
+                  {/* Domain Title & Subtitle */}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center justify-between gap-2">
+                      <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">
+                        {domain.name}
+                      </h3>
+                      <span className="text-[11px] font-bold px-2 py-0.5 rounded-md bg-slate-100 dark:bg-[#151f38] text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-[#233155]">
+                        {domainSkills.length} Skills
+                      </span>
+                    </div>
+                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1.5 leading-relaxed max-w-lg">
+                      {domain.description}
+                    </p>
                   </div>
                 </div>
 
-                {/* Micro-detail Footer for Active Hovered Skill */}
-                <div className="mt-6 pt-3 border-t border-slate-100 dark:border-[#16203a] flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500" />
-                    <span>Industry production-tested</span>
-                  </div>
-                  {activeSkill && activeSkill.category === domain.id ? (
-                    <div className="font-semibold text-indigo-600 dark:text-indigo-400 animate-fadeIn">
-                      {activeSkill.name}:{" "}
-                      <span className="font-bold">{activeSkill.level}%</span>{" "}
-                      score
-                    </div>
-                  ) : (
-                    <span className="text-[11px] text-slate-400 dark:text-slate-500">
-                      Hover to inspect proficiency
-                    </span>
-                  )}
+                {/* Skills Pills Layout in Two Equal Sides */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
+                  {domainSkills.map((skill, idx) => {
+                    const isHighlighted = activeSkill?.name === skill.name;
+
+                    return (
+                      <div
+                        key={idx}
+                        onMouseEnter={() => setActiveSkill(skill)}
+                        onClick={() =>
+                          setActiveSkill(
+                            activeSkill?.name === skill.name ? null : skill,
+                          )
+                        }
+                        className={`group flex items-center gap-3 px-4 py-2.5 sm:px-4.5 sm:py-3 rounded-full cursor-pointer select-none transition-all duration-200 border ${
+                          isHighlighted
+                            ? "bg-indigo-100 dark:bg-gradient-to-r dark:from-[#213264] dark:via-[#263c78] dark:to-[#1c2952] border-indigo-500 dark:border-indigo-400 text-indigo-950 dark:text-white shadow-lg shadow-indigo-500/25 ring-2 ring-indigo-500/50 -translate-y-0.5"
+                            : "bg-white dark:bg-[#0e172a] hover:bg-indigo-50/90 dark:hover:bg-[#162345] border-slate-200/90 dark:border-[#1e2a4a] hover:border-indigo-400 dark:hover:border-indigo-400/90 hover:text-indigo-900 dark:hover:text-white hover:shadow-md hover:shadow-indigo-500/15 hover:-translate-y-0.5 shadow-xs"
+                        }`}
+                      >
+                        {/* Authentic Tech Brand Icon */}
+                        <TechIcon
+                          name={skill.name}
+                          className={`w-5 h-5 sm:w-5.5 sm:h-5.5 shrink-0 transition-transform duration-200 ${
+                            isHighlighted
+                              ? "scale-110 drop-shadow-[0_0_8px_rgba(99,102,241,0.5)]"
+                              : "group-hover:scale-110"
+                          }`}
+                        />
+
+                        {/* Skill Name */}
+                        <span
+                          className={`text-xs sm:text-sm font-semibold tracking-tight truncate transition-colors duration-200 ${
+                            isHighlighted
+                              ? "text-indigo-950 dark:text-white font-bold"
+                              : "text-slate-800 dark:text-slate-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-300"
+                          }`}
+                        >
+                          {skill.name}
+                        </span>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             );
