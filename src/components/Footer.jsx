@@ -46,7 +46,7 @@ export default function Footer({ personalInfo }) {
               </div>
             </div>
             <p className="text-xs sm:text-sm text-slate-400 mt-2.5 max-w-sm leading-relaxed">
-              Bridging engineering precision and modern web craftsmanship. Based in Bahir Dar, Ethiopia.
+              Bridging engineering precision and modern web craftsmanship. Based in Addis Ababa, Ethiopia.
             </p>
           </div>
 

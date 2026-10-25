@@ -6,7 +6,7 @@ export const resumeData = {
     tagline: "Bridging engineering rigor with modern digital web craftsmanship to build fast, beautiful, and accessible web applications.",
     email: "Meseretshumye6@gmail.com",
     phone: "+251 921 250 464",
-    location: "Kebele 13, Bahir Dar City, Ethiopia",
+    location: "Addis Ababa, Ethiopia",
     availability: "Available for Full-time, Remote & Freelance Projects",
     statusBadge: "Available for Hire",
     yearsOfExperience: "4+",
@@ -22,7 +22,7 @@ export const resumeData = {
       whatsapp: "https://wa.me/251921250464",
       email: "mailto:Meseretshumye6@gmail.com"
     },
-    bioSummary: "Meseret Shumye is a passionate Full-Stack Web Developer and Civil Engineer based in Bahir Dar, Ethiopia. With extensive expertise in modern frontend engineering (React, JavaScript ES6+, Tailwind CSS, Bootstrap) and backend systems, he blends structural problem-solving with digital artistry to deliver high-performance web applications.",
+    bioSummary: "Meseret Shumye is a passionate Full-Stack Web Developer and Civil Engineer based in Addis Ababa, Ethiopia. With extensive expertise in modern frontend engineering (React, JavaScript ES6+, Tailwind CSS, Bootstrap) and backend systems, he blends structural problem-solving with digital artistry to deliver high-performance web applications.",
     detailedBio: [
       "I am Meseret Shumye, a Full-Stack Web Developer with a strong academic and practical background in Civil Engineering. This unique duality equips me with systematic analytical thinking, keen attention to detail, and a disciplined approach to building robust software architectures.",
       "My web development journey is rooted in turning design mockups into pixel-perfect, responsive web applications. I love building intuitive user interfaces that deliver smooth performance and delightful user experiences across all devices and screen sizes.",
@@ -30,7 +30,7 @@ export const resumeData = {
       "Whether developing a healthcare management portal, an e-commerce catalog, or an interactive web dashboard, I focus on clean code, maintainability, and client satisfaction. Let's collaborate to bring your digital vision to life!"
     ],
     highlights: [
-      { label: "Location", value: "Bahir Dar, Ethiopia" },
+      { label: "Location", value: "Addis Ababa, Ethiopia" },
       { label: "Degree", value: "B.Sc. in Civil Engineering" },
       { label: "Focus Areas", value: "React, Node.js, Modern UI/UX" },
       { label: "Languages", value: "English (Fluent), Amharic (Native)" }

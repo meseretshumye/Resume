@@ -301,7 +301,7 @@ export default function ResumeModal({ isOpen, onClose, personalInfo, experience,
 
           {/* Printable Footer */}
           <div className="mt-8 pt-4 border-t border-slate-200 dark:border-slate-800 text-center text-xs text-slate-500 dark:text-slate-400">
-            References and verified engineering project credentials available upon request • Bahir Dar, Ethiopia
+            References and verified engineering project credentials available upon request • Addis Ababa, Ethiopia
           </div>
 
         </div>

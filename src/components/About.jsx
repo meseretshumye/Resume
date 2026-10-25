@@ -116,7 +116,7 @@ export default function About({ personalInfo = {}, onOpenResume }) {
                   </div>
                   <div className="hidden sm:flex items-center gap-1 text-[11px] text-slate-300 font-medium">
                     <MapPin className="w-3.5 h-3.5 text-rose-400 shrink-0" />
-                    <span>Bahir Dar</span>
+                    <span>Addis Ababa</span>
                   </div>
                 </div>
               </div>

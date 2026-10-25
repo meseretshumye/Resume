@@ -177,7 +177,7 @@ export default function Contact({ personalInfo }) {
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
                 <span className="font-medium text-slate-700 dark:text-slate-300">Available for projects & roles</span>
               </span>
-              <span className="font-semibold text-indigo-600 dark:text-sky-400">Bahir Dar, Ethiopia</span>
+              <span className="font-semibold text-indigo-600 dark:text-sky-400">Addis Ababa, Ethiopia</span>
             </div>
           </div>
 

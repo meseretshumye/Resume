@@ -46,7 +46,7 @@ Converted and upgraded into a dynamic, modern, component-driven web application 
 8. **Direct Communication & Accurate Location**:
    - One-click email copying with instant feedback checkmark.
    - Direct WhatsApp and phone call actions (`+251 921 250 464`).
-   - Interactive Google Map accurately centered on **Bahir Dar, Ethiopia**.
+   - Interactive Google Map accurately centered on **Addis Ababa, Ethiopia**.
    - Contact form with state validation and celebratory micro-interactions.
 
 ---
@@ -93,7 +93,7 @@ npm run preview
 │   │   ├── Services.jsx      # Client services & deliverable lists
 │   │   ├── Projects.jsx      # Portfolio showcase & case study modals
 │   │   ├── ResumeModal.jsx   # Printable 2-column Executive CV / PDF view
-│   │   ├── Contact.jsx       # Contact cards, form & Bahir Dar map
+│   │   ├── Contact.jsx       # Contact cards, form & Addis Ababa location
 │   │   ├── Footer.jsx        # Footer with back-to-top & social links
 │   │   └── ThemeToggle.jsx   # Dark / Light theme switch
 │   ├── data/

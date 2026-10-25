@@ -61,7 +61,7 @@ export default function Hero({ personalInfo, stats = [], onOpenResume }) {
 
             {/* Elevator Pitch Tagline */}
             <p className="text-base sm:text-lg text-slate-300 mb-8 max-w-2xl leading-relaxed">
-              {personalInfo.tagline} Based in <span className="text-sky-400 font-medium">Bahir Dar, Ethiopia</span>, I bring 4+ years of Professional Engineering discipline, delivering modern, accessible, and fast digital solutions.
+              {personalInfo.tagline} Based in <span className="text-sky-400 font-medium">Addis Ababa, Ethiopia</span>, I bring 4+ years of Professional Engineering discipline, delivering modern, accessible, and fast digital solutions.
             </p>
 
             {/* CTA Buttons */}
