@@ -44,37 +44,19 @@ export default function Projects({ projects }) {
 
         {/* Category Filter Tabs */}
         <div className="flex flex-wrap justify-center gap-2.5 mb-8 md:mb-10">
-          {categories.map((cat) => {
-            const count =
-              cat === "All Projects" || cat === "All"
-                ? projects.length
-                : projects.filter(
-                    (p) => normalize(p.category) === normalize(cat),
-                  ).length;
-
-            return (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 ${
-                  activeCategory === cat
-                    ? "bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/45 scale-105 ring-2 ring-indigo-400/40"
-                    : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-700 hover:text-indigo-600 dark:hover:text-indigo-400 border border-slate-200 dark:border-slate-700"
-                }`}
-              >
-                <span>{cat}</span>
-                <span
-                  className={`text-xs px-2 py-0.5 rounded-full font-bold ${
-                    activeCategory === cat
-                      ? "bg-indigo-500/50 text-white"
-                      : "bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400"
-                  }`}
-                >
-                  {count}
-                </span>
-              </button>
-            );
-          })}
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`inline-flex items-center px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 whitespace-nowrap ${
+                activeCategory === cat
+                  ? "bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/45 scale-105 ring-2 ring-indigo-400/40"
+                  : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-700 hover:text-indigo-600 dark:hover:text-indigo-400 border border-slate-200 dark:border-slate-700"
+              }`}
+            >
+              <span>{cat}</span>
+            </button>
+          ))}
         </div>
 
         {/* Projects Grid */}
