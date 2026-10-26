@@ -171,14 +171,9 @@ export default function Skills({ skills = [], skillCategories = [] }) {
 
                   {/* Domain Title & Subtitle */}
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center justify-between gap-2">
-                      <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">
-                        {domain.name}
-                      </h3>
-                      <span className="text-[11px] font-bold px-2 py-0.5 rounded-md bg-slate-100 dark:bg-[#151f38] text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-[#233155]">
-                        {domainSkills.length} Skills
-                      </span>
-                    </div>
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">
+                      {domain.name}
+                    </h3>
                     <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1.5 leading-relaxed max-w-lg">
                       {domain.description}
                     </p>
