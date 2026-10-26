@@ -11,14 +11,15 @@ import {
   ShieldCheck,
   CheckCircle2,
   Sparkles,
+  Rocket,
 } from "lucide-react";
 
 export default function About({ personalInfo = {}, onOpenResume }) {
   const pillars = [
     {
-      title: "Engineering Precision",
+      title: "Clean Architecture & Code",
       description:
-        "My Civil Engineering background instills analytical rigor, systematic problem-solving, and strict adherence to specifications in every codebase.",
+        "Applying SOLID principles, modular patterns, and systematic problem-solving to engineer scalable, maintainable, and bug-free web codebases.",
       icon: Compass,
       iconColor: "text-sky-400",
       iconBg: "bg-sky-500/10 border-sky-500/20",
@@ -26,7 +27,7 @@ export default function About({ personalInfo = {}, onOpenResume }) {
     {
       title: "Modern React & Mobile",
       description:
-        "Crafting pixel-perfect, interactive web applications and cross-platform mobile experiences with React, JavaScript (ES6+), and modern CSS frameworks.",
+        "Crafting pixel-perfect, interactive web applications and cross-platform mobile experiences with React, Next.js, TypeScript, and modern Tailwind CSS.",
       icon: Code2,
       iconColor: "text-indigo-400",
       iconBg: "bg-indigo-500/10 border-indigo-500/20",
@@ -34,16 +35,16 @@ export default function About({ personalInfo = {}, onOpenResume }) {
     {
       title: "Robust Full-Stack APIs",
       description:
-        "Designing clean backend architectures, reliable RESTful endpoints, and efficient database modeling using Node.js, Express, and modern data layers.",
+        "Designing clean backend microservices, high-performance RESTful & GraphQL endpoints, and optimized PostgreSQL & MongoDB database layers.",
       icon: ShieldCheck,
       iconColor: "text-emerald-400",
       iconBg: "bg-emerald-500/10 border-emerald-500/20",
     },
     {
-      title: "Project Governance",
+      title: "Agile & DevOps Delivery",
       description:
-        "Years of public sector contract administration at the Ethiopian Roads Authority ensure clear communication, milestone delivery, and quality compliance.",
-      icon: Briefcase,
+        "Delivering rapid sprint milestones, Docker containerization, automated testing, and CI/CD pipelines to ensure continuous deployment and quality compliance.",
+      icon: Rocket,
       iconColor: "text-amber-400",
       iconBg: "bg-amber-500/10 border-amber-500/20",
     },
@@ -84,9 +85,11 @@ export default function About({ personalInfo = {}, onOpenResume }) {
           </h2>
 
           <p className="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-            Bridging civil Engineering and Software Development through systems
-            thinking, technical precision, and Modern Digital Craftsmanship to
-            deliver practical, scalable solutions for real-world challenges.
+            I am a passionate software developer focused on building practical,
+            scalable, and user-centered digital solutions. By combining systems
+            thinking, clean code, and modern web technologies, I transform
+            complex problems into efficient, maintainable, and impactful web
+            applications.
           </p>
         </div>
 
@@ -109,7 +112,7 @@ export default function About({ personalInfo = {}, onOpenResume }) {
                 {/* Top Status Badge */}
                 <div className="absolute top-3.5 right-3.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0b0f19]/80 backdrop-blur-md border border-blue-500/35 text-[11px] font-bold uppercase tracking-wider text-[#38bdf8] shadow-[0_0_12px_rgba(56,189,248,0.2)]">
                   <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-                  <span>Available for Hire</span>
+                  <span>Available for Works</span>
                 </div>
 
                 {/* Bottom Overlay Pill */}
@@ -119,7 +122,7 @@ export default function About({ personalInfo = {}, onOpenResume }) {
                       {personalInfo.yearsOfExperience || "4+"}
                     </span>
                     <span className="text-xs sm:text-sm font-bold text-white tracking-wide">
-                      Dual-Discipline Excellence
+                      Full-Stack Web Excellence
                     </span>
                   </div>
                   <div className="hidden sm:flex items-center gap-1 text-[11px] text-slate-300 font-medium">
@@ -154,9 +157,8 @@ export default function About({ personalInfo = {}, onOpenResume }) {
 
               {/* Philosophy Quote Chip */}
               <div className="mt-5 p-4 rounded-2xl bg-gradient-to-br from-indigo-50/70 to-emerald-50/50 dark:from-slate-800/80 dark:to-slate-850/60 border border-indigo-100/80 dark:border-slate-700/60 text-xs sm:text-[13px] text-slate-700 dark:text-slate-300 italic leading-relaxed">
-                "Great software requires the same foundation as bridges:
-                structural precision, elegant architecture, and seamless
-                accessibility for all users."
+                "Great software is built on solid foundations: clean code craftsmanship,
+                modular system architecture, and seamless accessibility for all users."
               </div>
             </div>
           </div>
@@ -195,9 +197,6 @@ export default function About({ personalInfo = {}, onOpenResume }) {
                     </strong>
                     , and scalable database systems.
                   </p>
-                  {/* <p>
-                    In addition to software engineering, my background as a Project Engineer with the Ethiopian Roads Authority administrating complex public sector contracts instills deep analytical thinking, structural discipline, and milestone accountability into every software architecture I build.
-                  </p> */}
                 </div>
 
                 {/* 4 Statistics Metrics Banner */}

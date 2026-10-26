@@ -45,8 +45,7 @@ const ROLES = [
   "React & Node.js Specialist",
   "Cloud Solutions Architect",
   "Mobile App Engineer (React Native)",
-  "Civil Engineer & Project Lead",
-  "UI/UX & Systems Craftsman",
+    "UI/UX & Systems Craftsman",
 ];
 
 const TICKER_ITEMS = [
@@ -61,7 +60,6 @@ const TICKER_ITEMS = [
   { name: "REST APIs", symbol: "⚡" },
   { name: "Docker", symbol: "🐳" },
   { name: "GraphQL", symbol: "◈" },
-  { name: "Civil Engineering Rigor", symbol: "🏛" },
   { name: "Clean Architecture", symbol: "📐" },
 ];
 

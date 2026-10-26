@@ -155,7 +155,7 @@ export const resumeData = {
       id: "exp-3",
       role: "Frontend Web Developer & Technical Associate",
       company: "Client Web Services",
-      location: "Bahir Dar, Ethiopia",
+      location: "Addis Ababa, Ethiopia",
       period: "2015 – 2019",
       type: "Contract",
       description: "Crafted interactive websites and digital assets for regional businesses, restaurants, and retail clients from scratch.",
