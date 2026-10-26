@@ -76,7 +76,7 @@ export default function ExperienceEducation({ experience = [], education = [], o
         </div>
 
         {/* Timeline Columns */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           
           {/* Work Experience Column */}
           {(activeTab === 'both' || activeTab === 'experience') && (
@@ -148,7 +148,16 @@ export default function ExperienceEducation({ experience = [], education = [], o
                 </div>
               </div>
 
-              <div className="space-y-6 relative pl-6 border-l-2 border-indigo-200 dark:border-indigo-900/60 ml-3">
+              <div className={`space-y-6 relative ${
+                activeTab === 'both'
+                  ? 'pl-6 border-l-2 border-indigo-200 dark:border-indigo-900/60 ml-3 lg:border-l-0 lg:ml-0 lg:pl-0 lg:mr-[38px]'
+                  : 'pl-6 border-l-2 border-indigo-200 dark:border-indigo-900/60 ml-3'
+              }`}>
+                {/* Desktop Centered Timeline Line between left and right cards */}
+                {activeTab === 'both' && (
+                  <div className="hidden lg:block absolute -left-6 top-0 bottom-0 w-0.5 bg-indigo-200 dark:bg-indigo-900/60" />
+                )}
+
                 {education.map((item) => (
                   <div key={item.id} className="relative group">
                     {/* Glowing Node Marker */}
