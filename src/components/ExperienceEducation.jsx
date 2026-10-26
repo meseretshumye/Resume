@@ -76,12 +76,12 @@ export default function ExperienceEducation({ experience = [], education = [], o
         </div>
 
         {/* Timeline Columns */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
           
           {/* Work Experience Column */}
           {(activeTab === 'both' || activeTab === 'experience') && (
-            <div className={`flex flex-col ${activeTab === 'experience' ? 'lg:col-span-2 max-w-4xl mx-auto' : ''}`}>
-              <div className="flex items-center gap-3 pb-3 border-b border-slate-200 dark:border-slate-800 mb-6">
+            <div className={`space-y-6 ${activeTab === 'experience' ? 'lg:col-span-2 max-w-4xl mx-auto' : ''}`}>
+              <div className="flex items-center gap-3 pb-3 border-b border-slate-200 dark:border-slate-800">
                 <div className="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-blue-500/25 text-indigo-600 dark:text-sky-400 flex items-center justify-center shrink-0 shadow-xs">
                   <Briefcase className="w-5 h-5" />
                 </div>
@@ -91,14 +91,14 @@ export default function ExperienceEducation({ experience = [], education = [], o
                 </div>
               </div>
 
-              <div className="flex-1 flex flex-col justify-between gap-6 relative pl-6 border-l-2 border-indigo-200 dark:border-indigo-900/60 ml-3">
+              <div className="space-y-6 relative pl-6 border-l-2 border-indigo-200 dark:border-indigo-900/60 ml-3">
                 {experience.map((item) => (
                   <div key={item.id} className="relative group">
                     {/* Glowing Node Marker */}
                     <div className="absolute -left-[31px] top-2 w-3.5 h-3.5 rounded-full bg-indigo-600 dark:bg-sky-400 ring-4 ring-white dark:ring-[#060a14] group-hover:scale-125 transition-transform duration-200" />
 
-                    {/* Card Content - Standardized with Thin 1px Hover Border */}
-                    <div className="p-5 sm:p-6 rounded-3xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 hover:border-indigo-400/70 dark:hover:border-sky-400/60 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.6)] backdrop-blur-sm transition-all duration-200 group-hover:-translate-y-0.5">
+                    {/* Card Content - Standardized Equal Padding & Border */}
+                    <div className="p-6 sm:p-7 rounded-3xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 hover:border-indigo-400/70 dark:hover:border-sky-400/60 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.6)] backdrop-blur-sm transition-all duration-200 group-hover:-translate-y-0.5">
                       <div className="flex items-center gap-2 mb-3">
                         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-semibold bg-indigo-50/80 dark:bg-indigo-950/60 text-indigo-700 dark:text-sky-300 border border-indigo-200/70 dark:border-blue-500/25 shadow-xs">
                           <Calendar className="w-3.5 h-3.5 text-indigo-500 dark:text-sky-400" />
@@ -137,8 +137,8 @@ export default function ExperienceEducation({ experience = [], education = [], o
 
           {/* Education Column */}
           {(activeTab === 'both' || activeTab === 'education') && (
-            <div className={`flex flex-col ${activeTab === 'education' ? 'lg:col-span-2 max-w-4xl mx-auto' : ''}`}>
-              <div className="flex items-center gap-3 pb-3 border-b border-slate-200 dark:border-slate-800 mb-6">
+            <div className={`space-y-6 ${activeTab === 'education' ? 'lg:col-span-2 max-w-4xl mx-auto' : ''}`}>
+              <div className="flex items-center gap-3 pb-3 border-b border-slate-200 dark:border-slate-800">
                 <div className="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-blue-500/25 text-indigo-600 dark:text-sky-400 flex items-center justify-center shrink-0 shadow-xs">
                   <GraduationCap className="w-5 h-5" />
                 </div>
@@ -148,14 +148,14 @@ export default function ExperienceEducation({ experience = [], education = [], o
                 </div>
               </div>
 
-              <div className="flex-1 flex flex-col justify-between gap-4 sm:gap-5 relative pl-6 border-l-2 border-indigo-200 dark:border-indigo-900/60 ml-3">
+              <div className="space-y-6 relative pl-6 border-l-2 border-indigo-200 dark:border-indigo-900/60 ml-3">
                 {education.map((item) => (
                   <div key={item.id} className="relative group">
                     {/* Glowing Node Marker */}
                     <div className="absolute -left-[31px] top-2 w-3.5 h-3.5 rounded-full bg-indigo-600 dark:bg-sky-400 ring-4 ring-white dark:ring-[#060a14] group-hover:scale-125 transition-transform duration-200" />
 
-                    {/* Card Content - Standardized with Thin 1px Hover Border */}
-                    <div className="p-5 sm:p-6 rounded-3xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 hover:border-indigo-400/70 dark:hover:border-sky-400/60 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.6)] backdrop-blur-sm transition-all duration-200 group-hover:-translate-y-0.5">
+                    {/* Card Content - Standardized Equal Padding & Border */}
+                    <div className="p-6 sm:p-7 rounded-3xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 hover:border-indigo-400/70 dark:hover:border-sky-400/60 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.6)] backdrop-blur-sm transition-all duration-200 group-hover:-translate-y-0.5">
                       <div className="flex items-center gap-2 mb-3">
                         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-semibold bg-indigo-50/80 dark:bg-indigo-950/60 text-indigo-700 dark:text-sky-300 border border-indigo-200/70 dark:border-blue-500/25 shadow-xs">
                           <Calendar className="w-3.5 h-3.5 text-indigo-500 dark:text-sky-400" />
