@@ -137,19 +137,19 @@ export const resumeData = {
     },
     {
       id: "exp-2",
-      role: "Lead Full-Stack Web Developer",
-      company: "Freelance & Digital Solutions",
+      role: "Lead Full-Stack Web & Mobile Developer",
+      company: "Freelance & SaaS Solutions",
       location: "Remote / Hybrid",
-      period: "2020 – Present",
-      type: "Freelance",
-      description: "Designing and deploying modern web applications, e-commerce showcases, and custom digital portals for corporate and healthcare clients.",
+      period: "2025 – Present",
+      type: "Contract / Freelance",
+      description: "Architecting and deploying modern web applications, scalable SaaS platforms, and high-performance cross-platform mobile apps for diverse digital businesses.",
       responsibilities: [
-        "Architected and deployed responsive web solutions for healthcare providers, pharmacies, clinics, and commercial services.",
-        "Engineered the official web presence for Enat Healthcare Solutions, incorporating online consultation booking and responsive service portfolios.",
-        "Developed full-featured frontends utilizing React, modern CSS, Tailwind, and RESTful API integrations.",
-        "Delivered 100% responsive, mobile-first layouts with Core Web Vitals optimization and sub-second load times."
+        "Architected and deployed production-ready SaaS platforms, responsive web applications, and multi-tenant client portals.",
+        "Engineered intuitive cross-platform mobile apps and web user interfaces utilizing React, React Native, TypeScript, and modern Tailwind CSS.",
+        "Developed robust full-stack architectures, high-performance RESTful and GraphQL APIs, and scalable PostgreSQL and MongoDB data layers.",
+        "Delivered mobile-first, highly responsive applications with sub-second load times, Core Web Vitals optimization, and seamless user experiences."
       ],
-      technologies: ["React.js", "JavaScript (ES6+)", "Tailwind CSS", "REST APIs", "Node.js", "SEO Optimization"]
+      technologies: ["React.js", "React Native", "Next.js", "TypeScript", "Node.js", "SaaS Architecture", "Tailwind CSS", "REST & GraphQL APIs"]
     },
     {
       id: "exp-3",
