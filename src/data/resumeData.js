@@ -157,10 +157,10 @@ export const resumeData = {
   education: [
     {
       id: "edu-fullstack",
-      degree: "Full-Stack Web Development & Software Engineering",
+      degree: "Full-Stack Web Development",
       institution: "Eneho Tech • Udacity • Evangadi Tech",
       location: "Addis Ababa, Ethiopia (Hybrid / Online)",
-      period: "2023 – Present",
+      period: "2024 – 2025",
       grade: "Professional Certification",
       description: "Completed comprehensive full-stack software development training through Eneho Tech's formal engineering program, supplemented with extensive self-directed curriculum, video masterclasses, and hands-on project labs from Udacity and Evangadi Tech.",
       skillsAcquired: [
@@ -177,9 +177,9 @@ export const resumeData = {
       degree: "B.Sc. in Civil Engineering",
       institution: "Wollo University",
       location: "Ethiopia",
-      period: "2011 – 2014",
+      period: "2011 – 2015",
       grade: "Honors Graduate",
-      description: "Comprehensive 4-year engineering degree encompassing structural mechanics, project scheduling, structural design, materials engineering, and advanced analytical problem solving.",
+      description: "Comprehensive 5-year engineering degree attending all civil engineering courses, including structural analysis & design, hydraulics, geotechnical engineering, construction materials, and advanced analytical problem solving.",
       skillsAcquired: ["Structural Analysis", "Project Scheduling", "Engineering Mathematics", "Technical Drafting", "Systematic Problem Solving"]
     },
     {
