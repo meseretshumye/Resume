@@ -100,13 +100,10 @@ export default function ExperienceEducation({ experience = [], education = [], o
 
                     {/* Card Content - Standardized with Thin 1px Hover Border */}
                     <div className="p-6 sm:p-7 rounded-3xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 hover:border-indigo-400/70 dark:hover:border-sky-400/60 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.6)] backdrop-blur-sm transition-all duration-200 group-hover:-translate-y-0.5">
-                      <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                      <div className="flex items-center gap-2 mb-3">
                         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-semibold bg-indigo-50/80 dark:bg-indigo-950/60 text-indigo-700 dark:text-sky-300 border border-indigo-200/70 dark:border-blue-500/25 shadow-xs">
                           <Calendar className="w-3.5 h-3.5 text-indigo-500 dark:text-sky-400" />
                           {item.period}
-                        </span>
-                        <span className="text-xs font-semibold px-2.5 py-1 rounded-xl bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700/80">
-                          {item.type}
                         </span>
                       </div>
 
@@ -129,7 +126,7 @@ export default function ExperienceEducation({ experience = [], education = [], o
                       </p>
 
                       {/* Responsibilities list */}
-                      <ul className="space-y-2 mb-5">
+                      <ul className="space-y-2">
                         {item.responsibilities.map((resp, i) => (
                           <li key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
                             <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
@@ -137,18 +134,6 @@ export default function ExperienceEducation({ experience = [], education = [], o
                           </li>
                         ))}
                       </ul>
-
-                      {/* Tech Chips - Standardized with Thin 1px Borders */}
-                      <div className="flex flex-wrap gap-2 pt-3 border-t border-slate-100 dark:border-slate-800/80">
-                        {item.technologies.map((tech, idx) => (
-                          <span
-                            key={idx}
-                            className="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-700/60 text-slate-700 dark:text-slate-300 hover:border-indigo-400/60 dark:hover:border-sky-400/40 transition-all duration-150"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
                     </div>
                   </div>
                 ))}
@@ -177,13 +162,10 @@ export default function ExperienceEducation({ experience = [], education = [], o
 
                     {/* Card Content - Standardized with Thin 1px Hover Border */}
                     <div className="p-6 sm:p-7 rounded-3xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 hover:border-indigo-400/70 dark:hover:border-sky-400/60 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.6)] backdrop-blur-sm transition-all duration-200 group-hover:-translate-y-0.5">
-                      <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                      <div className="flex items-center gap-2 mb-3">
                         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-semibold bg-indigo-50/80 dark:bg-indigo-950/60 text-indigo-700 dark:text-sky-300 border border-indigo-200/70 dark:border-blue-500/25 shadow-xs">
                           <Calendar className="w-3.5 h-3.5 text-indigo-500 dark:text-sky-400" />
                           {item.period}
-                        </span>
-                        <span className="text-xs font-semibold px-2.5 py-1 rounded-xl bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700/80">
-                          {item.grade}
                         </span>
                       </div>
 
@@ -201,21 +183,9 @@ export default function ExperienceEducation({ experience = [], education = [], o
                         </span>
                       </div>
 
-                      <p className="text-sm text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+                      <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                         {item.description}
                       </p>
-
-                      {/* Acquired Skills - Standardized with Thin 1px Borders */}
-                      <div className="flex flex-wrap gap-2 pt-3 border-t border-slate-100 dark:border-slate-800/80">
-                        {item.skillsAcquired.map((skill, idx) => (
-                          <span
-                            key={idx}
-                            className="px-3 py-1 rounded-lg text-xs font-semibold bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-700/60 text-slate-700 dark:text-slate-300 hover:border-indigo-400/60 dark:hover:border-sky-400/40 transition-all duration-150"
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
                     </div>
                   </div>
                 ))}
