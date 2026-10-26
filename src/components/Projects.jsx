@@ -120,18 +120,6 @@ export default function Projects({ projects }) {
                       </li>
                     ))}
                   </ul>
-
-                  {/* Technology Architecture Tags */}
-                  <div className="flex flex-wrap gap-1.5 mb-6">
-                    {project.technologies.map((tech, idx) => (
-                      <span
-                        key={idx}
-                        className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-slate-100/90 dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700/80 hover:border-indigo-500/50 hover:bg-indigo-50/50 dark:hover:bg-indigo-950/40 transition-colors"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
                 </div>
 
                 {/* Action Buttons */}
