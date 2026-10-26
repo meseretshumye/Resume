@@ -3,7 +3,6 @@ import {
   Briefcase, 
   GraduationCap, 
   Calendar, 
-  MapPin, 
   CheckCircle2, 
   Building, 
   Download 
@@ -114,11 +113,6 @@ export default function ExperienceEducation({ experience = [], education = [], o
                       <div className="flex items-center gap-2 text-sm font-semibold text-slate-700 dark:text-slate-300 mt-1 mb-3">
                         <Building className="w-4 h-4 text-indigo-500 dark:text-sky-400" />
                         <span>{item.company}</span>
-                        <span className="text-slate-400 dark:text-slate-600">•</span>
-                        <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
-                          <MapPin className="w-3.5 h-3.5 text-slate-400" />
-                          {item.location}
-                        </span>
                       </div>
 
                       <p className="text-sm text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
@@ -176,11 +170,6 @@ export default function ExperienceEducation({ experience = [], education = [], o
                       <div className="flex items-center gap-2 text-sm font-semibold text-slate-700 dark:text-slate-300 mt-1 mb-3">
                         <Building className="w-4 h-4 text-indigo-500 dark:text-sky-400" />
                         <span>{item.institution}</span>
-                        <span className="text-slate-400 dark:text-slate-600">•</span>
-                        <span className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1">
-                          <MapPin className="w-3.5 h-3.5 text-slate-400" />
-                          {item.location}
-                        </span>
                       </div>
 
                       <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">

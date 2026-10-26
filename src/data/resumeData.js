@@ -184,20 +184,20 @@ export const resumeData = {
     },
     {
       id: "edu-2",
-      degree: "Higher Secondary & Preparatory School",
+      degree: "Preparatory Class",
       institution: "Ebinat Higher Secondary School",
       location: "Ebinat, Amhara, Ethiopia",
-      period: "2008 – 2010",
+      period: "2009 – 2010",
       grade: "University Qualification Standing",
       description: "Concentrated on Natural Sciences (Advanced Physics, Mathematics, Chemistry, and English), successfully earning qualification for national university engineering enrollment.",
       skillsAcquired: ["Natural Sciences", "Advanced Mathematics", "Analytical Thinking", "Scientific Methodology"]
     },
     {
       id: "edu-3",
-      degree: "Secondary School Certificate",
+      degree: "High School",
       institution: "Ebinat Secondary School",
       location: "Ebinat, Ethiopia",
-      period: "2006 – 2008",
+      period: "2007 – 2008",
       grade: "Exemplary Academic Record",
       description: "Foundational general secondary education emphasizing academic excellence and extracurricular leadership.",
       skillsAcquired: ["Foundational Mathematics", "Information Technology", "Communication Skills"]
