@@ -105,7 +105,7 @@ export default function About({ personalInfo = {}, onOpenResume }) {
                     personalInfo.avatar || "/images/meseret-shumye-portrait.jpg"
                   }
                   alt={personalInfo.name || "Meseret Shumye"}
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover object-[center_12%] contrast-[1.03] brightness-[1.02] group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
 
