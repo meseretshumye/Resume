@@ -151,7 +151,7 @@ export default function Hero({ personalInfo, stats = [], onOpenResume }) {
               </h1>
 
               {/* Sliding Role Title Rotator */}
-              <div className="role-slider-wrapper flex items-center gap-2 text-xl sm:text-2xl lg:text-3xl font-bold text-slate-800 dark:text-slate-200 mb-6 h-10 sm:h-12 overflow-hidden">
+              <div className="role-slider-wrapper flex items-center gap-2 text-xl sm:text-2xl lg:text-3xl font-bold text-slate-800 dark:text-slate-200 mb-8 h-10 sm:h-12 overflow-hidden">
                 <span className="role-prefix text-indigo-600 dark:text-sky-400 font-medium shrink-0">
                   I am a{" "}
                 </span>
@@ -169,16 +169,6 @@ export default function Hero({ personalInfo, stats = [], onOpenResume }) {
                 </div>
               </div>
             </div>
-
-            {/* Clean Elevator Pitch Tagline */}
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 mb-8 max-w-2xl leading-relaxed">
-              {personalInfo.tagline} Based in{" "}
-              <span className="text-indigo-600 dark:text-sky-400 font-semibold">
-                Addis Ababa, Ethiopia
-              </span>
-              , I bring 4+ years of Professional Engineering discipline,
-              delivering modern, accessible, and fast digital solutions.
-            </p>
 
             {/* Clean Hero Action Buttons (Explore My Work & View Resume) */}
             <div className="hero-actions flex flex-wrap items-center gap-4 w-full sm:w-auto mb-6">
