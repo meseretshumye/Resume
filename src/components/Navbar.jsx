@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, FileText, ArrowRight, Sparkles } from 'lucide-react';
+import { Menu, X, FileText } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import Logo from './Logo';
 
@@ -98,24 +98,6 @@ export default function Navbar({ darkMode, setDarkMode, onOpenResume, personalIn
 
           {/* Desktop Right Actions */}
           <div className="hidden lg:flex items-center gap-3">
-            {/* <button
-              onClick={onOpenResume}
-              className="flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-xl bg-indigo-50 hover:bg-indigo-100 dark:bg-indigo-950/60 dark:hover:bg-indigo-900/80 text-indigo-600 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800/60 transition-all hover:scale-105 shadow-sm"
-              title="View Printable Resume"
-            >
-              <FileText className="w-4 h-4" />
-              <span>Resume / CV</span>
-            </button> */}
-
-            <a
-              href="#contact"
-              onClick={(e) => handleLinkClick(e, '#contact')}
-              className="flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-700 hover:to-indigo-800 text-white shadow-md shadow-indigo-500/20 hover:shadow-indigo-500/30 transition-all hover:scale-105"
-            >
-              <span>Get In Touch</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
-
             <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
           </div>
 
@@ -166,14 +148,6 @@ export default function Navbar({ darkMode, setDarkMode, onOpenResume, personalIn
                 <FileText className="w-4 h-4" />
                 <span>View & Print Resume</span>
               </button>
-              <a
-                href="#contact"
-                onClick={(e) => handleLinkClick(e, '#contact')}
-                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 text-white font-semibold shadow-md"
-              >
-                <span>Contact Me</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
             </div>
           </div>
         </div>
