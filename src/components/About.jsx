@@ -1,66 +1,74 @@
-import React from 'react';
-import { 
-  GraduationCap, 
-  Briefcase, 
-  Code2, 
-  Compass, 
-  MapPin, 
-  FileText, 
+import React from "react";
+import {
+  GraduationCap,
+  Briefcase,
+  Code2,
+  Compass,
+  MapPin,
+  FileText,
   ArrowRight,
   Layers,
   ShieldCheck,
   CheckCircle2,
-  Sparkles
-} from 'lucide-react';
+  Sparkles,
+} from "lucide-react";
 
 export default function About({ personalInfo = {}, onOpenResume }) {
   const pillars = [
     {
       title: "Engineering Precision",
-      description: "My Civil Engineering background instills analytical rigor, systematic problem-solving, and strict adherence to specifications in every codebase.",
+      description:
+        "My Civil Engineering background instills analytical rigor, systematic problem-solving, and strict adherence to specifications in every codebase.",
       icon: Compass,
       iconColor: "text-sky-400",
-      iconBg: "bg-sky-500/10 border-sky-500/20"
+      iconBg: "bg-sky-500/10 border-sky-500/20",
     },
     {
       title: "Modern React & Mobile",
-      description: "Crafting pixel-perfect, interactive web applications and cross-platform mobile experiences with React, JavaScript (ES6+), and modern CSS frameworks.",
+      description:
+        "Crafting pixel-perfect, interactive web applications and cross-platform mobile experiences with React, JavaScript (ES6+), and modern CSS frameworks.",
       icon: Code2,
       iconColor: "text-indigo-400",
-      iconBg: "bg-indigo-500/10 border-indigo-500/20"
+      iconBg: "bg-indigo-500/10 border-indigo-500/20",
     },
     {
       title: "Robust Full-Stack APIs",
-      description: "Designing clean backend architectures, reliable RESTful endpoints, and efficient database modeling using Node.js, Express, and modern data layers.",
+      description:
+        "Designing clean backend architectures, reliable RESTful endpoints, and efficient database modeling using Node.js, Express, and modern data layers.",
       icon: ShieldCheck,
       iconColor: "text-emerald-400",
-      iconBg: "bg-emerald-500/10 border-emerald-500/20"
+      iconBg: "bg-emerald-500/10 border-emerald-500/20",
     },
     {
       title: "Project Governance",
-      description: "Years of public sector contract administration at the Ethiopian Roads Authority ensure clear communication, milestone delivery, and quality compliance.",
+      description:
+        "Years of public sector contract administration at the Ethiopian Roads Authority ensure clear communication, milestone delivery, and quality compliance.",
       icon: Briefcase,
       iconColor: "text-amber-400",
-      iconBg: "bg-amber-500/10 border-amber-500/20"
-    }
+      iconBg: "bg-amber-500/10 border-amber-500/20",
+    },
   ];
 
   const stats = [
-    { value: personalInfo.yearsOfExperience || "4+", label: "Years Experience" },
+    {
+      value: personalInfo.yearsOfExperience || "4+",
+      label: "Years Experience",
+    },
     { value: "25+", label: "Completed Projects" },
     { value: "15+", label: "Core Technologies" },
-    { value: "100%", label: "Quality Focus" }
+    { value: "100%", label: "Quality Focus" },
   ];
 
   return (
-    <section id="about" className="relative my-0 py-10 md:py-14 overflow-hidden bg-white dark:bg-[#0c1527] border-t border-slate-200/80 dark:border-blue-500/20 transition-colors duration-300">
-      
+    <section
+      id="about"
+      className="relative my-0 py-10 md:py-14 overflow-hidden bg-white dark:bg-[#0c1527] border-t border-slate-200/80 dark:border-blue-500/20 transition-colors duration-300"
+    >
       {/* Background ambient lighting */}
       <div className="absolute top-1/4 left-10 w-96 h-96 bg-indigo-500/10 dark:bg-blue-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
       <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-emerald-500/10 dark:bg-purple-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-10">
           <div className="inline-flex items-center px-6 py-2 rounded-full bg-gradient-to-r from-blue-500/10 via-sky-500/10 to-indigo-500/10 dark:from-[#0d182e]/95 dark:via-[#102040]/95 dark:to-[#0d182e]/95 backdrop-blur-md border border-blue-400/40 dark:border-blue-500/40 text-blue-600 dark:text-[#00d2ff] text-xs font-bold uppercase tracking-wider mb-3 shadow-[0_0_16px_rgba(0,210,255,0.12)] hover:border-sky-400 transition-all duration-300">
@@ -68,7 +76,7 @@ export default function About({ personalInfo = {}, onOpenResume }) {
           </div>
 
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            Passionate Engineer,{" "}
+            Passionate Web{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#60a5fa] via-[#a855f7] to-[#f472b6]">
               Developer
             </span>{" "}
@@ -84,15 +92,15 @@ export default function About({ personalInfo = {}, onOpenResume }) {
 
         {/* Structured 2-Column Arrangement */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
-          
           {/* Left Column: Unified Showcase Card */}
           <div className="lg:col-span-5 flex flex-col">
             <div className="relative rounded-3xl p-6 sm:p-7 bg-white dark:bg-[#0a101f] border border-slate-200/90 dark:border-blue-500/30 shadow-xl dark:shadow-[0_0_50px_rgba(37,99,235,0.18)] backdrop-blur-xl flex flex-col justify-between h-full group hover:border-indigo-400 dark:hover:border-blue-400/50 transition-all duration-300">
-              
               {/* Photo Container with Glass Overlays */}
               <div className="relative rounded-2xl overflow-hidden aspect-[4/4.5] sm:aspect-[4/4.2] bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md">
                 <img
-                  src={personalInfo.avatar || "/images/meseret-shumye-portrait.jpg"}
+                  src={
+                    personalInfo.avatar || "/images/meseret-shumye-portrait.jpg"
+                  }
                   alt={personalInfo.name || "Meseret Shumye"}
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                 />
@@ -146,30 +154,50 @@ export default function About({ personalInfo = {}, onOpenResume }) {
 
               {/* Philosophy Quote Chip */}
               <div className="mt-5 p-4 rounded-2xl bg-gradient-to-br from-indigo-50/70 to-emerald-50/50 dark:from-slate-800/80 dark:to-slate-850/60 border border-indigo-100/80 dark:border-slate-700/60 text-xs sm:text-[13px] text-slate-700 dark:text-slate-300 italic leading-relaxed">
-                "Great software requires the same foundation as bridges: structural precision, elegant architecture, and seamless accessibility for all users."
+                "Great software requires the same foundation as bridges:
+                structural precision, elegant architecture, and seamless
+                accessibility for all users."
               </div>
-
             </div>
           </div>
 
           {/* Right Column: Executive Narrative & 4 Pillars */}
           <div className="lg:col-span-7 flex flex-col">
             <div className="relative rounded-3xl p-7 sm:p-9 bg-white dark:bg-[#0a101f] border border-slate-200/90 dark:border-[#17223b] shadow-xl dark:shadow-2xl backdrop-blur-xl flex flex-col justify-between h-full">
-              
               <div>
                 {/* Headline */}
                 <h3 className="text-xl sm:text-2xl lg:text-[26px] font-bold text-slate-900 dark:text-white leading-snug tracking-tight mb-4">
-                  Turning Complex Problems Into High-Performance Digital Realities
+                  Turning Complex Problems Into High-Performance Digital
+                  Realities
                 </h3>
 
                 {/* Narrative Paragraphs */}
                 <div className="space-y-3.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
                   <p>
-                    I am a Full-Stack Software Developer with proven expertise in crafting robust web applications and interactive mobile platforms. Proficient across the modern JavaScript/TypeScript ecosystem including <strong className="text-slate-900 dark:text-white font-semibold">React</strong>, <strong className="text-slate-900 dark:text-white font-semibold">Node.js</strong>, <strong className="text-slate-900 dark:text-white font-semibold">Express</strong>, <strong className="text-slate-900 dark:text-white font-semibold">Tailwind CSS</strong>, and scalable database systems.
+                    I am a Full-Stack Software Developer with proven expertise
+                    in crafting robust web applications and interactive mobile
+                    platforms. Proficient across the modern
+                    JavaScript/TypeScript ecosystem including{" "}
+                    <strong className="text-slate-900 dark:text-white font-semibold">
+                      React
+                    </strong>
+                    ,{" "}
+                    <strong className="text-slate-900 dark:text-white font-semibold">
+                      Node.js
+                    </strong>
+                    ,{" "}
+                    <strong className="text-slate-900 dark:text-white font-semibold">
+                      Express
+                    </strong>
+                    ,{" "}
+                    <strong className="text-slate-900 dark:text-white font-semibold">
+                      Tailwind CSS
+                    </strong>
+                    , and scalable database systems.
                   </p>
-                  <p>
+                  {/* <p>
                     In addition to software engineering, my background as a Project Engineer with the Ethiopian Roads Authority administrating complex public sector contracts instills deep analytical thinking, structural discipline, and milestone accountability into every software architecture I build.
-                  </p>
+                  </p> */}
                 </div>
 
                 {/* 4 Statistics Metrics Banner */}
@@ -195,8 +223,12 @@ export default function About({ personalInfo = {}, onOpenResume }) {
                         key={idx}
                         className="p-4 rounded-2xl bg-slate-50/70 dark:bg-[#0d1424]/70 border border-slate-200/80 dark:border-[#1a253d] hover:border-indigo-400 dark:hover:border-indigo-500/50 hover:bg-slate-100/70 dark:hover:bg-[#11192e] transition-all duration-300 flex items-start gap-3.5 group shadow-xs"
                       >
-                        <div className={`w-9 h-9 rounded-xl ${pillar.iconBg} border flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform`}>
-                          <IconComponent className={`w-4 h-4 ${pillar.iconColor}`} />
+                        <div
+                          className={`w-9 h-9 rounded-xl ${pillar.iconBg} border flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform`}
+                        >
+                          <IconComponent
+                            className={`w-4 h-4 ${pillar.iconColor}`}
+                          />
                         </div>
                         <div>
                           <h4 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white mb-1 leading-snug">
@@ -211,33 +243,9 @@ export default function About({ personalInfo = {}, onOpenResume }) {
                   })}
                 </div>
               </div>
-
-              {/* Action Buttons Row */}
-              <div className="flex flex-wrap items-center gap-3 pt-5 border-t border-slate-200 dark:border-[#17223b]">
-                {onOpenResume && (
-                  <button
-                    onClick={onOpenResume}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-indigo-600 via-indigo-500 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-semibold text-xs sm:text-sm shadow-md shadow-indigo-600/25 hover:shadow-indigo-600/40 transition-all hover:scale-[1.02] cursor-pointer"
-                  >
-                    <FileText className="w-4 h-4" />
-                    <span>View Complete Resume</span>
-                  </button>
-                )}
-
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-[#131c33] border border-slate-200 dark:border-[#1e2c52] hover:bg-slate-200 dark:hover:bg-[#192544] text-slate-800 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-white text-xs sm:text-sm font-semibold transition-all hover:scale-[1.02]"
-                >
-                  <span>Get In Touch</span>
-                  <ArrowRight className="w-4 h-4 text-slate-500 dark:text-slate-400 group-hover:translate-x-0.5 transition-transform" />
-                </a>
-              </div>
-
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
   );

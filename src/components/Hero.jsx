@@ -11,8 +11,8 @@ const BACKGROUND_SLIDES = [
   {
     id: "portrait",
     url: "/images/hero-developer-portrait.jpg",
-    title: "Meseret Shumye • Lead Developer",
-    tag: "Workstation Battlestation",
+    title: "Meseret Shumye • Dual-Display Workstation",
+    tag: "Professional Engineering Rig",
   },
   {
     id: "code-screen",
@@ -23,8 +23,8 @@ const BACKGROUND_SLIDES = [
   {
     id: "loft",
     url: "/images/hero-developer-loft.jpg",
-    title: "Full-Stack Software Craftsman",
-    tag: "Disciplined Engineering Rigor",
+    title: "Meseret Shumye • Loft Studio Battlestation",
+    tag: "Ultrawide Architecture Setup",
   },
   {
     id: "coding-hands",
