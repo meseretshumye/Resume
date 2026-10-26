@@ -137,34 +137,20 @@ export const resumeData = {
     },
     {
       id: "exp-2",
-      role: "Lead Full-Stack Web & Mobile Developer",
+      role: "Full-Stack Developer",
       company: "Freelance & SaaS Solutions",
-      location: "Remote / Hybrid",
+      location: "Addis Ababa, Ethiopia (Remote / Hybrid)",
       period: "2025 – Present",
       type: "Contract / Freelance",
-      description: "Architecting and deploying modern web applications, scalable SaaS platforms, and high-performance cross-platform mobile apps for diverse digital businesses.",
+      description: "Architecting and deploying production-grade web applications, scalable SaaS platforms, and interactive mobile experiences—bridging pixel-perfect frontend craftsmanship with robust backend architectures.",
       responsibilities: [
-        "Architected and deployed production-ready SaaS platforms, responsive web applications, and multi-tenant client portals.",
-        "Engineered intuitive cross-platform mobile apps and web user interfaces utilizing React, React Native, TypeScript, and modern Tailwind CSS.",
-        "Developed robust full-stack architectures, high-performance RESTful and GraphQL APIs, and scalable PostgreSQL and MongoDB data layers.",
-        "Delivered mobile-first, highly responsive applications with sub-second load times, Core Web Vitals optimization, and seamless user experiences."
+        "Architected and deployed scalable SaaS web applications, responsive client portals, and multi-tenant digital platforms.",
+        "Engineered intuitive cross-platform mobile apps and modern web interfaces using React, React Native, TypeScript, Next.js, and Tailwind CSS.",
+        "Transformed complex client requirements and UI/UX mockups into pixel-perfect, accessible, and cross-browser compatible digital solutions.",
+        "Developed robust full-stack architectures, high-performance RESTful & GraphQL APIs, and optimized PostgreSQL and MongoDB databases.",
+        "Delivered mobile-first, high-speed applications with sub-second load times, Core Web Vitals optimization, and automated CI/CD pipelines."
       ],
-      technologies: ["React.js", "React Native", "Next.js", "TypeScript", "Node.js", "SaaS Architecture", "Tailwind CSS", "REST & GraphQL APIs"]
-    },
-    {
-      id: "exp-3",
-      role: "Frontend Web Developer & Technical Associate",
-      company: "Client Web Services",
-      location: "Addis Ababa, Ethiopia",
-      period: "2015 – 2019",
-      type: "Contract",
-      description: "Crafted interactive websites and digital assets for regional businesses, restaurants, and retail clients from scratch.",
-      responsibilities: [
-        "Transformed graphic design mockups and client requirements into pixel-perfect, cross-browser compatible websites.",
-        "Implemented interactive UI components using HTML5, CSS3, JavaScript, and Bootstrap.",
-        "Maintained existing codebases, performed bug fixes, and improved website accessibility and SEO structure."
-      ],
-      technologies: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "Responsive Layouts", "UI/UX"]
+      technologies: ["React.js", "React Native", "Next.js", "TypeScript", "Node.js", "SaaS Architecture", "Tailwind CSS", "REST & GraphQL APIs", "PostgreSQL", "MongoDB"]
     }
   ],
 
