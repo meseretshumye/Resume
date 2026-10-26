@@ -98,7 +98,7 @@ export default function ExperienceEducation({ experience = [], education = [], o
                     <div className="absolute -left-[31px] top-2 w-3.5 h-3.5 rounded-full bg-indigo-600 dark:bg-sky-400 ring-4 ring-white dark:ring-[#060a14] group-hover:scale-125 transition-transform duration-200" />
 
                     {/* Card Content - Standardized with Thin 1px Hover Border */}
-                    <div className="p-6 sm:p-7 rounded-3xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 hover:border-indigo-400/70 dark:hover:border-sky-400/60 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.6)] backdrop-blur-sm transition-all duration-200 group-hover:-translate-y-0.5">
+                    <div className="p-5 sm:p-6 rounded-3xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 hover:border-indigo-400/70 dark:hover:border-sky-400/60 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.6)] backdrop-blur-sm transition-all duration-200 group-hover:-translate-y-0.5">
                       <div className="flex items-center gap-2 mb-3">
                         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-semibold bg-indigo-50/80 dark:bg-indigo-950/60 text-indigo-700 dark:text-sky-300 border border-indigo-200/70 dark:border-blue-500/25 shadow-xs">
                           <Calendar className="w-3.5 h-3.5 text-indigo-500 dark:text-sky-400" />
@@ -155,7 +155,7 @@ export default function ExperienceEducation({ experience = [], education = [], o
                     <div className="absolute -left-[31px] top-2 w-3.5 h-3.5 rounded-full bg-indigo-600 dark:bg-sky-400 ring-4 ring-white dark:ring-[#060a14] group-hover:scale-125 transition-transform duration-200" />
 
                     {/* Card Content - Standardized with Thin 1px Hover Border */}
-                    <div className="p-6 sm:p-7 rounded-3xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 hover:border-indigo-400/70 dark:hover:border-sky-400/60 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.6)] backdrop-blur-sm transition-all duration-200 group-hover:-translate-y-0.5">
+                    <div className="p-5 sm:p-6 rounded-3xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 hover:border-indigo-400/70 dark:hover:border-sky-400/60 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.6)] backdrop-blur-sm transition-all duration-200 group-hover:-translate-y-0.5">
                       <div className="flex items-center gap-2 mb-3">
                         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-semibold bg-indigo-50/80 dark:bg-indigo-950/60 text-indigo-700 dark:text-sky-300 border border-indigo-200/70 dark:border-blue-500/25 shadow-xs">
                           <Calendar className="w-3.5 h-3.5 text-indigo-500 dark:text-sky-400" />
