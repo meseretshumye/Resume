@@ -189,7 +189,7 @@ export const resumeData = {
       location: "Ebinat, Amhara, Ethiopia",
       period: "2009 – 2010",
       grade: "University Qualification Standing",
-      description: "Completed intensive two-year university preparatory education in the Natural Sciences stream, specializing in Advanced Mathematics, Physics, Chemistry, and analytical reasoning. Excelled in the national Ethiopian Higher Education Entrance Examination (EHEEE), securing competitive qualification for university engineering enrollment.",
+      description: "Natural Sciences stream university preparatory education, specializing in Advanced Mathematics and Physics to qualify for engineering admission.",
       skillsAcquired: ["Natural Sciences", "Advanced Mathematics", "Analytical Thinking", "Scientific Methodology"]
     },
     {
@@ -199,7 +199,7 @@ export const resumeData = {
       location: "Ebinat, Ethiopia",
       period: "2007 – 2008",
       grade: "Exemplary Academic Record",
-      description: "Completed foundational general secondary education with strong academic focus on core natural sciences, mathematics, information technology, and language studies. Achieved top qualifying marks in the national Ethiopian General Secondary Education Certificate Examination (EGSECE), advancing directly to preparatory studies.",
+      description: "Foundational secondary education emphasizing natural sciences, mathematics, and technology, graduating with top qualifying marks.",
       skillsAcquired: ["Foundational Mathematics", "Information Technology", "Communication Skills"]
     }
   ],

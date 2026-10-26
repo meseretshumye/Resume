@@ -76,12 +76,12 @@ export default function ExperienceEducation({ experience = [], education = [], o
         </div>
 
         {/* Timeline Columns */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
           
           {/* Work Experience Column */}
           {(activeTab === 'both' || activeTab === 'experience') && (
-            <div className={`space-y-6 ${activeTab === 'experience' ? 'lg:col-span-2 max-w-4xl mx-auto' : ''}`}>
-              <div className="flex items-center gap-3 pb-3 border-b border-slate-200 dark:border-slate-800">
+            <div className={`flex flex-col ${activeTab === 'experience' ? 'lg:col-span-2 max-w-4xl mx-auto' : ''}`}>
+              <div className="flex items-center gap-3 pb-3 border-b border-slate-200 dark:border-slate-800 mb-6">
                 <div className="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-blue-500/25 text-indigo-600 dark:text-sky-400 flex items-center justify-center shrink-0 shadow-xs">
                   <Briefcase className="w-5 h-5" />
                 </div>
@@ -91,7 +91,7 @@ export default function ExperienceEducation({ experience = [], education = [], o
                 </div>
               </div>
 
-              <div className="space-y-6 relative pl-6 border-l-2 border-indigo-200 dark:border-indigo-900/60 ml-3">
+              <div className="flex-1 flex flex-col justify-between gap-6 relative pl-6 border-l-2 border-indigo-200 dark:border-indigo-900/60 ml-3">
                 {experience.map((item) => (
                   <div key={item.id} className="relative group">
                     {/* Glowing Node Marker */}
@@ -137,8 +137,8 @@ export default function ExperienceEducation({ experience = [], education = [], o
 
           {/* Education Column */}
           {(activeTab === 'both' || activeTab === 'education') && (
-            <div className={`space-y-6 ${activeTab === 'education' ? 'lg:col-span-2 max-w-4xl mx-auto' : ''}`}>
-              <div className="flex items-center gap-3 pb-3 border-b border-slate-200 dark:border-slate-800">
+            <div className={`flex flex-col ${activeTab === 'education' ? 'lg:col-span-2 max-w-4xl mx-auto' : ''}`}>
+              <div className="flex items-center gap-3 pb-3 border-b border-slate-200 dark:border-slate-800 mb-6">
                 <div className="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-blue-500/25 text-indigo-600 dark:text-sky-400 flex items-center justify-center shrink-0 shadow-xs">
                   <GraduationCap className="w-5 h-5" />
                 </div>
@@ -148,7 +148,7 @@ export default function ExperienceEducation({ experience = [], education = [], o
                 </div>
               </div>
 
-              <div className="space-y-6 relative pl-6 border-l-2 border-indigo-200 dark:border-indigo-900/60 ml-3">
+              <div className="flex-1 flex flex-col justify-between gap-4 sm:gap-5 relative pl-6 border-l-2 border-indigo-200 dark:border-indigo-900/60 ml-3">
                 {education.map((item) => (
                   <div key={item.id} className="relative group">
                     {/* Glowing Node Marker */}
