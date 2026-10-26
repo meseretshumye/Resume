@@ -109,12 +109,6 @@ export default function About({ personalInfo = {}, onOpenResume }) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent"></div>
 
-                {/* Top Status Badge */}
-                <div className="absolute top-3.5 right-3.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0b0f19]/80 backdrop-blur-md border border-blue-500/35 text-[11px] font-bold uppercase tracking-wider text-[#38bdf8] shadow-[0_0_12px_rgba(56,189,248,0.2)]">
-                  <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-                  <span>Available for Works</span>
-                </div>
-
                 {/* Bottom Overlay Pill */}
                 <div className="absolute bottom-3.5 left-3.5 right-3.5 p-3.5 rounded-2xl bg-slate-950/85 backdrop-blur-md border border-slate-700/60 shadow-xl flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
