@@ -9,16 +9,16 @@ const BACKGROUND_SLIDES = [
     tag: "Dual-Monitor IDE Rig",
   },
   {
-    id: "portrait",
-    url: "/images/hero-developer-portrait.jpg",
-    title: "Lead Engineer Workstation",
-    tag: "Disciplined Software Craft",
+    id: "code-screen",
+    url: "/images/hero-code-editor-screen.jpg",
+    title: "Full-Stack Code Architecture",
+    tag: "Production React & TypeScript",
   },
   {
-    id: "loft",
-    url: "/images/hero-developer-loft.jpg",
-    title: "Modern Studio Loft",
-    tag: "High-Performance Setup",
+    id: "coding-hands",
+    url: "/images/about-coding-hands.jpg",
+    title: "Active Software Engineering",
+    tag: "High-Performance Development Rig",
   },
   {
     id: "workspace",
@@ -30,13 +30,13 @@ const BACKGROUND_SLIDES = [
     id: "ide",
     url: "/images/code-dark-ide.jpg",
     title: "High-Tech Code IDE",
-    tag: "Full-Stack TypeScript & React",
+    tag: "Full-Stack TypeScript & Cloud",
   },
   {
-    id: "screen-perspective",
-    url: "/images/code-screen-perspective.jpg",
-    title: "Enterprise Architecture",
-    tag: "Scalable Systems in Motion",
+    id: "loft",
+    url: "/images/hero-developer-loft.jpg",
+    title: "Modern Studio Loft",
+    tag: "Creative Engineering Setup",
   },
 ];
 
