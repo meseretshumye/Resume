@@ -81,6 +81,91 @@
   pointer-events: none;
 }
 
+/* Hero Carousel & Presentation Styles */
+.hero-carousel-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+.hero-slide-item {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, opacity;
+}
+
+.hero-slide-item.active {
+  opacity: 0.85;
+  animation: heroSlowMotion 28s ease-in-out infinite alternate;
+}
+
+.dark .hero-slide-item.active {
+  opacity: 0.78;
+}
+
+.hero-overlay-sheet {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-grid-pattern {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.16;
+  background-image: radial-gradient(#808080 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 35%, #000 60%, transparent 100%);
+}
+
+.dark .hero-grid-pattern {
+  opacity: 0.22;
+}
+
+.hero-glow {
+  position: absolute;
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: 2;
+  filter: blur(80px);
+}
+
+.hero-glow-1 {
+  top: 22%;
+  left: 28%;
+  transform: translate(-50%, -50%);
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.16) 0%, rgba(56, 189, 248, 0.08) 60%, transparent 80%);
+}
+
+.dark .hero-glow-1 {
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.22) 0%, rgba(56, 189, 248, 0.12) 60%, transparent 80%);
+}
+
+.hero-glow-2 {
+  top: 18%;
+  right: 12%;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.14) 0%, rgba(99, 102, 241, 0.06) 60%, transparent 80%);
+}
+
+.dark .hero-glow-2 {
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.18) 0%, rgba(99, 102, 241, 0.09) 60%, transparent 80%);
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 9px;
