@@ -9,10 +9,22 @@ const BACKGROUND_SLIDES = [
     tag: "Dual-Monitor IDE Rig",
   },
   {
+    id: "portrait",
+    url: "/images/hero-developer-portrait.jpg",
+    title: "Meseret Shumye • Lead Developer",
+    tag: "Workstation Battlestation",
+  },
+  {
     id: "code-screen",
     url: "/images/hero-code-editor-screen.jpg",
     title: "Full-Stack Code Architecture",
     tag: "Production React & TypeScript",
+  },
+  {
+    id: "loft",
+    url: "/images/hero-developer-loft.jpg",
+    title: "Full-Stack Software Craftsman",
+    tag: "Disciplined Engineering Rigor",
   },
   {
     id: "coding-hands",
@@ -25,18 +37,6 @@ const BACKGROUND_SLIDES = [
     url: "/images/hero-developer-workspace.jpg",
     title: "Ambient Coding Environment",
     tag: "Focused Architecture Rig",
-  },
-  {
-    id: "ide",
-    url: "/images/code-dark-ide.jpg",
-    title: "High-Tech Code IDE",
-    tag: "Full-Stack TypeScript & Cloud",
-  },
-  {
-    id: "loft",
-    url: "/images/hero-developer-loft.jpg",
-    title: "Modern Studio Loft",
-    tag: "Creative Engineering Setup",
   },
 ];
 

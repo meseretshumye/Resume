@@ -12,6 +12,7 @@ export const resumeData = {
     yearsOfExperience: "4+",
     avatar: "/images/meseret-shumye-portrait.jpg",
     headshot: "/images/meseret-shumye-headshot.jpg",
+    deskPhoto: "/images/hero-developer-portrait.jpg",
     banner: "/images/developer-workspace-bg.jpg",
     logo: "/images/ms-luxury-logo.svg",
     logoSvg: "/images/ms-luxury-logo.svg",
