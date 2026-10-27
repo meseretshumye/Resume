@@ -6,9 +6,7 @@ import {
   Gauge, 
   Palette, 
   MessagesSquare, 
-  Check, 
-  Sparkles, 
-  ArrowRight 
+  Check 
 } from 'lucide-react';
 
 export default function Services({ services }) {
@@ -38,32 +36,32 @@ export default function Services({ services }) {
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Services Grid - Compact Minimized Card Width */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto justify-items-center">
           {services.map((service) => {
             const IconComponent = iconMap[service.icon] || Code2;
 
             return (
               <div
                 key={service.id}
-                className="group relative rounded-3xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 p-7 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.7)] hover:shadow-2xl hover:border-indigo-400 dark:hover:border-sky-400/60 transition-all duration-300 flex flex-col justify-between backdrop-blur-sm"
+                className="group relative rounded-3xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 p-6 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.7)] hover:shadow-2xl hover:border-indigo-400 dark:hover:border-sky-400/60 transition-all duration-300 flex flex-col backdrop-blur-sm w-full max-w-[340px]"
               >
                 <div>
                   {/* Icon Frame */}
-                  <div className="w-14 h-14 rounded-2xl bg-indigo-50 dark:bg-indigo-950/70 border border-indigo-100 dark:border-indigo-800/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300 shadow-sm">
-                    <IconComponent className="w-7 h-7" />
+                  <div className="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-950/70 border border-indigo-100 dark:border-indigo-800/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                    <IconComponent className="w-6 h-6" />
                   </div>
 
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors mb-3">
+                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors mb-2.5">
                     {service.title}
                   </h3>
 
-                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
                     {service.description}
                   </p>
 
                   {/* Deliverables List */}
-                  <div className="space-y-2 mb-6">
+                  <div className="space-y-2">
                     <p className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
                       Key Deliverables
                     </p>
@@ -76,17 +74,6 @@ export default function Services({ services }) {
                       </div>
                     ))}
                   </div>
-                </div>
-
-                {/* Bottom CTA */}
-                <div className="pt-4 border-t border-slate-100 dark:border-slate-700/60">
-                  <a
-                    href="#contact"
-                    className="inline-flex items-center gap-2 text-sm font-bold text-indigo-600 dark:text-indigo-400 group-hover:text-indigo-700 dark:group-hover:text-indigo-300 transition-colors"
-                  >
-                    <span>Request This Service</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </a>
                 </div>
               </div>
             );
