@@ -3,40 +3,46 @@ import { ArrowRight, Download } from "lucide-react";
 
 const BACKGROUND_SLIDES = [
   {
-    id: "battlestation",
-    url: "/images/hero-developer-battlestation.jpg",
-    title: "Multi-Screen Battlestation",
-    tag: "Dual-Monitor IDE Rig",
-  },
-  {
     id: "portrait",
-    url: "/images/hero-developer-portrait.jpg",
+    url: "/images/hero-developer-portrait.jpg?v=2",
     title: "Meseret Shumye • Dual-Display Workstation",
     tag: "Professional Engineering Rig",
-  },
-  {
-    id: "code-screen",
-    url: "/images/hero-code-editor-screen.jpg",
-    title: "Full-Stack Code Architecture",
-    tag: "Production React & TypeScript",
+    position: "center center",
   },
   {
     id: "loft",
-    url: "/images/hero-developer-loft.jpg",
+    url: "/images/hero-developer-loft.jpg?v=2",
     title: "Meseret Shumye • Loft Studio Battlestation",
     tag: "Ultrawide Architecture Setup",
+    position: "center center",
   },
   {
-    id: "coding-hands",
-    url: "/images/about-coding-hands.jpg",
-    title: "Active Software Engineering",
-    tag: "High-Performance Development Rig",
+    id: "battlestation",
+    url: "/images/hero-developer-battlestation.jpg?v=2",
+    title: "Multi-Screen Battlestation",
+    tag: "Dual-Monitor IDE Rig",
+    position: "center center",
+  },
+  {
+    id: "code-screen",
+    url: "/images/hero-code-editor-screen.jpg?v=2",
+    title: "Full-Stack Code Architecture",
+    tag: "Production React & TypeScript",
+    position: "center center",
   },
   {
     id: "workspace",
-    url: "/images/hero-developer-workspace.jpg",
+    url: "/images/hero-developer-workspace.jpg?v=2",
     title: "Ambient Coding Environment",
     tag: "Focused Architecture Rig",
+    position: "center center",
+  },
+  {
+    id: "coding-hands",
+    url: "/images/about-coding-hands.jpg?v=2",
+    title: "Active Software Engineering",
+    tag: "High-Performance Development Rig",
+    position: "center center",
   },
 ];
 
@@ -67,6 +73,14 @@ export default function Hero({ personalInfo, stats = [], onOpenResume }) {
   const [roleIndex, setRoleIndex] = useState(0);
   const [isSliding, setIsSliding] = useState(false);
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+
+  // Preload all background images so transitions are instant without blank flashes
+  useEffect(() => {
+    BACKGROUND_SLIDES.forEach((slide) => {
+      const img = new Image();
+      img.src = slide.url;
+    });
+  }, []);
 
   // Dynamic sliding role rotator
   useEffect(() => {
@@ -101,16 +115,19 @@ export default function Hero({ personalInfo, stats = [], onOpenResume }) {
           <div
             key={slide.id}
             className={`hero-slide-item ${idx === activeSlideIndex ? "active" : ""}`}
-            style={{ backgroundImage: `url("${slide.url}")` }}
+            style={{ 
+              backgroundImage: `url("${slide.url}")`,
+              backgroundPosition: slide.position || "center center"
+            }}
             aria-label={slide.title}
           />
         ))}
       </div>
 
-      {/* 2. Harmonized Vignette Overlay Sheets (Matching About Section) */}
+      {/* 2. Harmonized Vignette Overlay Sheets (Vibrant visibility for developer photos) */}
       <div className="hero-overlay-sheet">
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/30 dark:from-[#0c1527]/95 dark:via-[#0c1527]/85 dark:to-[#0c1527]/30 transition-colors duration-300 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-transparent/20 to-white dark:from-[#0c1527]/80 dark:via-transparent/20 dark:to-[#0c1527] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-white/15 dark:from-[#0c1527]/90 dark:via-[#0c1527]/60 dark:to-transparent transition-colors duration-300 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-transparent/10 to-white dark:from-[#0c1527]/60 dark:via-transparent/10 dark:to-[#0c1527] pointer-events-none" />
       </div>
 
       {/* 3. Subtle Matrix Grid Pattern */}
@@ -188,8 +205,33 @@ export default function Hero({ personalInfo, stats = [], onOpenResume }) {
             </div>
           </div>
 
-          {/* Right Hero Space - Fully Open & Unobstructed for the Slow-Motion Transition Flow */}
-          <div className="hidden lg:block lg:col-span-4" />
+          {/* Right Hero Space - Fully Open & Unobstructed with Interactive Slide Indicators */}
+          <div className="hidden lg:flex lg:col-span-4 flex-col justify-end items-end z-10 self-end pb-2">
+            <div className="bg-slate-900/60 dark:bg-[#0c1527]/75 backdrop-blur-md border border-white/20 dark:border-blue-500/30 rounded-2xl p-3 text-right max-w-xs shadow-lg transition-all duration-300">
+              <span className="text-[10px] uppercase font-bold tracking-wider text-indigo-400 dark:text-sky-300 block mb-0.5">
+                {BACKGROUND_SLIDES[activeSlideIndex].tag}
+              </span>
+              <p className="text-xs font-semibold text-white truncate mb-2.5">
+                {BACKGROUND_SLIDES[activeSlideIndex].title}
+              </p>
+              {/* Slide Navigation Dots */}
+              <div className="flex items-center justify-end gap-1.5">
+                {BACKGROUND_SLIDES.map((slide, i) => (
+                  <button
+                    key={slide.id}
+                    onClick={() => setActiveSlideIndex(i)}
+                    className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                      i === activeSlideIndex
+                        ? "w-6 bg-indigo-500 dark:bg-sky-400 shadow-sm"
+                        : "w-2 bg-white/40 dark:bg-slate-500/50 hover:bg-white/80"
+                    }`}
+                    aria-label={`Jump to slide: ${slide.title}`}
+                    title={slide.title}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

@@ -95,7 +95,7 @@
   position: absolute;
   inset: 0;
   background-size: cover;
-  background-position: 72% center;
+  background-position: center center;
   background-repeat: no-repeat;
   opacity: 0;
   transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -103,12 +103,12 @@
 }
 
 .hero-slide-item.active {
-  opacity: 0.85;
+  opacity: 0.90;
   animation: heroSlowMotion 28s ease-in-out infinite alternate;
 }
 
 .dark .hero-slide-item.active {
-  opacity: 0.78;
+  opacity: 0.88;
 }
 
 .hero-overlay-sheet {
