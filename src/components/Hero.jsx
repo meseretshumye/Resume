@@ -205,33 +205,8 @@ export default function Hero({ personalInfo, stats = [], onOpenResume }) {
             </div>
           </div>
 
-          {/* Right Hero Space - Fully Open & Unobstructed with Interactive Slide Indicators */}
-          <div className="hidden lg:flex lg:col-span-4 flex-col justify-end items-end z-10 self-end pb-2">
-            <div className="bg-slate-900/60 dark:bg-[#0c1527]/75 backdrop-blur-md border border-white/20 dark:border-blue-500/30 rounded-2xl p-3 text-right max-w-xs shadow-lg transition-all duration-300">
-              <span className="text-[10px] uppercase font-bold tracking-wider text-indigo-400 dark:text-sky-300 block mb-0.5">
-                {BACKGROUND_SLIDES[activeSlideIndex].tag}
-              </span>
-              <p className="text-xs font-semibold text-white truncate mb-2.5">
-                {BACKGROUND_SLIDES[activeSlideIndex].title}
-              </p>
-              {/* Slide Navigation Dots */}
-              <div className="flex items-center justify-end gap-1.5">
-                {BACKGROUND_SLIDES.map((slide, i) => (
-                  <button
-                    key={slide.id}
-                    onClick={() => setActiveSlideIndex(i)}
-                    className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                      i === activeSlideIndex
-                        ? "w-6 bg-indigo-500 dark:bg-sky-400 shadow-sm"
-                        : "w-2 bg-white/40 dark:bg-slate-500/50 hover:bg-white/80"
-                    }`}
-                    aria-label={`Jump to slide: ${slide.title}`}
-                    title={slide.title}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
+          {/* Right Hero Space - Fully Open & Unobstructed for the Slow-Motion Transition Flow */}
+          <div className="hidden lg:block lg:col-span-4" />
         </div>
       </div>
 
