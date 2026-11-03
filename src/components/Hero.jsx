@@ -144,8 +144,8 @@ export default function Hero({ personalInfo, stats = [], onOpenResume }) {
 
       {/* 2. Cinematic Vignette Overlay Sheets */}
       <div className="hero-overlay-sheet">
-        <div className="absolute inset-0 bg-slate-50/75 dark:bg-[#0c1527]/75 backdrop-blur-[0.5px] pointer-events-none transition-colors duration-300" />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-50/90 via-slate-50/30 to-slate-50/95 dark:from-slate-950/80 dark:via-transparent/20 dark:to-slate-950/90 pointer-events-none transition-colors duration-300" />
+        <div className="absolute inset-0 bg-slate-50/15 dark:bg-[#0c1527]/75 backdrop-blur-[0.5px] pointer-events-none transition-colors duration-300" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-50/80 via-black/25 to-slate-50/90 dark:from-slate-950/80 dark:via-transparent/20 dark:to-slate-950/90 pointer-events-none transition-colors duration-300" />
       </div>
 
       {/* 3. Subtle Matrix Grid Pattern */}
