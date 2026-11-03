@@ -47,11 +47,12 @@ const BACKGROUND_SLIDES = [
 ];
 
 const ROLES = [
+  "Meseret Shumye",
   "Full-Stack Web Developer",
   "React & Node.js Specialist",
   "Cloud Solutions Architect",
   "Mobile App Engineer (React Native)",
-    "UI/UX & Systems Craftsman",
+  "UI/UX & Systems Craftsman",
 ];
 
 const TICKER_ITEMS = [
@@ -140,26 +141,20 @@ export default function Hero({ personalInfo, stats = [], onOpenResume }) {
       {/* 5. Main Hero Container (Spacious, Clean Typography & Open Sightlines) */}
       <div className="container hero-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          {/* Left Column: Clean, High-Contrast Typography & Dynamic Sliding Text */}
-          <div className="hero-content lg:col-span-8 flex flex-col items-start text-left w-full">
-            {/* Heading Group with Sliding Role Rotator */}
-            <div className="hero-heading-group w-full">
-              <p className="hero-greeting text-sm sm:text-base font-semibold tracking-wider uppercase text-indigo-600 dark:text-sky-400 mb-1">
-                Hello, I'm
-              </p>
-              <h1 className="hero-name text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12] mb-3">
-                Meseret{" "}
-                <span className="gradient-text text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-500 dark:from-sky-400 dark:via-indigo-300 dark:to-emerald-400 drop-shadow-xs">
-                  Shumye
-                </span>
+          {/* Main Hero Column: Clean, High-Contrast Typography & Centered Sliding Text */}
+          <div className="hero-content lg:col-span-8 flex flex-col items-center text-center w-full">
+            {/* Heading Group with Centered Welcome & Sliding Role Rotator */}
+            <div className="hero-heading-group w-full text-center">
+              <h1 className="hero-name text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12] mb-3 text-center">
+                Welcome
               </h1>
 
-              {/* Sliding Role Title Rotator */}
-              <div className="role-slider-wrapper flex items-center gap-2 text-xl sm:text-2xl lg:text-3xl font-bold text-slate-800 dark:text-slate-200 mb-8 h-10 sm:h-12 overflow-hidden">
+              {/* Sliding Role Title Rotator - Centered Transition Texts */}
+              <div className="role-slider-wrapper flex items-center justify-center gap-2 text-xl sm:text-2xl lg:text-3xl font-bold text-slate-800 dark:text-slate-200 mb-8 h-10 sm:h-12 overflow-hidden w-full text-center mx-auto">
                 <span className="role-prefix text-indigo-600 dark:text-sky-400 font-medium shrink-0">
-                  I am a{" "}
+                  {ROLES[roleIndex] === "Meseret Shumye" ? "I am " : "I am a "}
                 </span>
-                <div className="relative overflow-hidden h-full flex items-center">
+                <div className="relative overflow-hidden h-full flex items-center justify-center">
                   <span
                     className={`role-title inline-block font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-sky-400 dark:via-indigo-300 dark:to-emerald-400 transition-all duration-300 transform ${
                       isSliding
@@ -175,7 +170,7 @@ export default function Hero({ personalInfo, stats = [], onOpenResume }) {
             </div>
 
             {/* Clean Hero Action Buttons (Explore My Work & View Resume) */}
-            <div className="hero-actions flex flex-wrap items-center gap-4 w-full sm:w-auto mb-6">
+            <div className="hero-actions flex flex-wrap items-center justify-center gap-4 w-full sm:w-auto mb-6">
               <a
                 href="#projects"
                 className="btn-primary-glow hero-btn-main flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-semibold text-sm border border-indigo-500 hover:border-indigo-400 shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/45 transition-all hover:scale-[1.02] cursor-pointer"
