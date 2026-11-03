@@ -142,17 +142,6 @@ export default function Hero({ personalInfo, stats = [], onOpenResume }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left Column: Clean, High-Contrast Typography & Dynamic Sliding Text */}
           <div className="hero-content lg:col-span-8 flex flex-col items-start text-left w-full">
-            {/* Status Badge */}
-            <div className="hero-badge inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 dark:bg-emerald-500/15 border border-emerald-500/30 text-emerald-700 dark:text-emerald-400 text-xs font-semibold backdrop-blur-md shadow-xs mb-4">
-              <span className="status-dot relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-              </span>
-              <span className="status-text font-medium tracking-wide">
-                Available for Remote & Hybrid Roles
-              </span>
-            </div>
-
             {/* Heading Group with Sliding Role Rotator */}
             <div className="hero-heading-group w-full">
               <p className="hero-greeting text-sm sm:text-base font-semibold tracking-wider uppercase text-indigo-600 dark:text-sky-400 mb-1">
