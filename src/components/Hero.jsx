@@ -46,13 +46,13 @@ const BACKGROUND_SLIDES = [
   },
 ];
 
-const ROLES = [
-  "Meseret Shumye",
-  "Full-Stack Web Developer",
-  "React & Node.js Specialist",
-  "Cloud Solutions Architect",
-  "Mobile App Engineer (React Native)",
-  "UI/UX & Systems Craftsman",
+const TYPEWRITER_PHRASES = [
+  "I'm Meseret Shumye.",
+  "I'm a Full-Stack Web Developer.",
+  "I'm a React & Node.js Specialist.",
+  "I'm a Cloud Solutions Architect.",
+  "I'm a Mobile App Engineer (React Native).",
+  "I'm a UI/UX & Systems Craftsman.",
 ];
 
 const TICKER_ITEMS = [
@@ -71,8 +71,9 @@ const TICKER_ITEMS = [
 ];
 
 export default function Hero({ personalInfo, stats = [], onOpenResume }) {
-  const [roleIndex, setRoleIndex] = useState(0);
-  const [isSliding, setIsSliding] = useState(false);
+  const [phraseIndex, setPhraseIndex] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
 
   // Preload all background images so transitions are instant without blank flashes
@@ -83,18 +84,34 @@ export default function Hero({ personalInfo, stats = [], onOpenResume }) {
     });
   }, []);
 
-  // Dynamic sliding role rotator
+  // Smooth Typewriter Transition Effect (matching the sample video)
   useEffect(() => {
-    const timer = setInterval(() => {
-      setIsSliding(true);
-      setTimeout(() => {
-        setRoleIndex((prev) => (prev + 1) % ROLES.length);
-        setIsSliding(false);
-      }, 350);
-    }, 3200);
+    const fullText = TYPEWRITER_PHRASES[phraseIndex];
+    let timer;
 
-    return () => clearInterval(timer);
-  }, []);
+    if (!isDeleting) {
+      if (displayText.length < fullText.length) {
+        timer = setTimeout(() => {
+          setDisplayText(fullText.slice(0, displayText.length + 1));
+        }, 80);
+      } else {
+        timer = setTimeout(() => {
+          setIsDeleting(true);
+        }, 2000);
+      }
+    } else {
+      if (displayText.length > 0) {
+        timer = setTimeout(() => {
+          setDisplayText(fullText.slice(0, displayText.length - 1));
+        }, 40);
+      } else {
+        setIsDeleting(false);
+        setPhraseIndex((prev) => (prev + 1) % TYPEWRITER_PHRASES.length);
+      }
+    }
+
+    return () => clearTimeout(timer);
+  }, [displayText, isDeleting, phraseIndex]);
 
   // Cinematic slow-motion developer carousel reel transition
   useEffect(() => {
@@ -140,32 +157,23 @@ export default function Hero({ personalInfo, stats = [], onOpenResume }) {
 
       {/* 5. Main Hero Container (Spacious, Clean Typography & Centered to the Page) */}
       <div className="container hero-container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10 flex flex-col items-center justify-center text-center">
-        <div className="hero-content flex flex-col items-center justify-center text-center w-full max-w-4xl mx-auto">
-          {/* Heading Group with Centered Welcome & Sliding Role Rotator */}
+        <div className="hero-content flex flex-col items-center justify-center text-center w-full max-w-5xl mx-auto">
+          {/* Centered Welcome & Typewriter Transition Headline matching sample video */}
           <div className="hero-heading-group w-full text-center mb-2">
-            <h1 className="hero-greeting text-2xl sm:text-3xl font-semibold text-white tracking-wide mb-3 text-center drop-shadow-sm">
+            <p className="hero-greeting text-lg sm:text-xl md:text-2xl font-medium text-white tracking-wide mb-3 text-center drop-shadow-sm">
               Welcome
-            </h1>
+            </p>
 
-            {/* Sliding Role Title Rotator - Centered to Page & Pure White */}
-            <div className="role-slider-wrapper flex items-center justify-center gap-2 sm:gap-3 text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-8 h-14 sm:h-20 overflow-hidden w-full text-center mx-auto drop-shadow-md">
-              <span className="role-prefix text-white font-extrabold shrink-0">
-                {ROLES[roleIndex] === "Meseret Shumye" ? "I'm " : "I'm a "}
-              </span>
-              <div className="relative overflow-hidden h-full flex items-center justify-center">
-                <span
-                  className={`role-title inline-block font-extrabold text-white transition-all duration-300 transform ${
-                    isSliding
-                      ? "fade-out -translate-y-full opacity-0"
-                      : "fade-in translate-y-0 opacity-100"
-                  }`}
-                >
-                  {ROLES[roleIndex]}
-                </span>
-                <span className="inline-block w-1 sm:w-1.5 h-8 sm:h-12 bg-white ml-2 animate-pulse shrink-0 rounded-xs" />
-              </div>
-            </div>
+            <h1 className="hero-name flex items-center justify-center text-center text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white min-h-[1.25em] w-full mx-auto drop-shadow-md">
+              <span className="text-white">{displayText}</span>
+              <span className="font-light text-white ml-0.5 animate-pulse select-none">|</span>
+            </h1>
           </div>
+
+          {/* Subtitle location matching the sample video */}
+          <p className="text-xs sm:text-sm md:text-base text-slate-300 font-medium mb-8 text-center drop-shadow-xs">
+            Based in {personalInfo?.location || "Addis Ababa, Ethiopia"}
+          </p>
 
           {/* Clean Hero Action Buttons (Explore My Work & View Resume) */}
           <div className="hero-actions flex flex-wrap items-center justify-center gap-4 w-full sm:w-auto mb-6">
