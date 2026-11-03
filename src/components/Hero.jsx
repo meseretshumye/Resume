@@ -125,7 +125,7 @@ export default function Hero({ personalInfo, stats = [], onOpenResume }) {
   return (
     <section
       id="home"
-      className="hero-section relative min-h-[92vh] lg:min-h-screen flex items-center justify-center pt-28 pb-20 md:pt-36 md:pb-24 my-0 overflow-hidden bg-slate-950 dark:bg-[#0c1527] border-b border-slate-800/80 dark:border-blue-500/20 transition-colors duration-300"
+      className="hero-section relative min-h-[92vh] lg:min-h-screen flex items-center justify-center pt-28 pb-20 md:pt-36 md:pb-24 my-0 overflow-hidden bg-slate-50 dark:bg-[#0c1527] border-b border-slate-200/80 dark:border-blue-500/20 transition-colors duration-300"
     >
       {/* 1. Unobstructed Slow-Motion Developer Video/Slide Background Reel */}
       <div className="hero-carousel-background">
@@ -142,10 +142,10 @@ export default function Hero({ personalInfo, stats = [], onOpenResume }) {
         ))}
       </div>
 
-      {/* 2. Dark Cinematic Vignette Overlay Sheets */}
+      {/* 2. Cinematic Vignette Overlay Sheets */}
       <div className="hero-overlay-sheet">
-        <div className="absolute inset-0 bg-slate-950/65 dark:bg-[#0c1527]/75 backdrop-blur-[0.5px] pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-transparent/20 to-slate-950/90 pointer-events-none" />
+        <div className="absolute inset-0 bg-slate-50/75 dark:bg-[#0c1527]/75 backdrop-blur-[0.5px] pointer-events-none transition-colors duration-300" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-50/90 via-slate-50/30 to-slate-50/95 dark:from-slate-950/80 dark:via-transparent/20 dark:to-slate-950/90 pointer-events-none transition-colors duration-300" />
       </div>
 
       {/* 3. Subtle Matrix Grid Pattern */}
