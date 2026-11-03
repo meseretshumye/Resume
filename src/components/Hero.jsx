@@ -108,7 +108,7 @@ export default function Hero({ personalInfo, stats = [], onOpenResume }) {
   return (
     <section
       id="home"
-      className="hero-section relative min-h-[92vh] lg:min-h-screen flex items-center pt-28 pb-20 md:pt-36 md:pb-24 my-0 overflow-hidden bg-white dark:bg-[#0c1527] border-b border-slate-200/80 dark:border-blue-500/20 transition-colors duration-300"
+      className="hero-section relative min-h-[92vh] lg:min-h-screen flex items-center justify-center pt-28 pb-20 md:pt-36 md:pb-24 my-0 overflow-hidden bg-slate-950 dark:bg-[#0c1527] border-b border-slate-800/80 dark:border-blue-500/20 transition-colors duration-300"
     >
       {/* 1. Unobstructed Slow-Motion Developer Video/Slide Background Reel */}
       <div className="hero-carousel-background">
@@ -125,10 +125,10 @@ export default function Hero({ personalInfo, stats = [], onOpenResume }) {
         ))}
       </div>
 
-      {/* 2. Harmonized Vignette Overlay Sheets (Vibrant visibility for developer photos) */}
+      {/* 2. Dark Cinematic Vignette Overlay Sheets */}
       <div className="hero-overlay-sheet">
-        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-white/15 dark:from-[#0c1527]/90 dark:via-[#0c1527]/60 dark:to-transparent transition-colors duration-300 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-transparent/10 to-white dark:from-[#0c1527]/60 dark:via-transparent/10 dark:to-[#0c1527] pointer-events-none" />
+        <div className="absolute inset-0 bg-slate-950/65 dark:bg-[#0c1527]/75 backdrop-blur-[0.5px] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-transparent/20 to-slate-950/90 pointer-events-none" />
       </div>
 
       {/* 3. Subtle Matrix Grid Pattern */}
@@ -138,59 +138,53 @@ export default function Hero({ personalInfo, stats = [], onOpenResume }) {
       <div className="hero-glow hero-glow-1 animate-pulse-slow" />
       <div className="hero-glow hero-glow-2" />
 
-      {/* 5. Main Hero Container (Spacious, Clean Typography & Open Sightlines) */}
-      <div className="container hero-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          {/* Main Hero Column: Clean, High-Contrast Typography & Centered Sliding Text */}
-          <div className="hero-content lg:col-span-8 flex flex-col items-center text-center w-full">
-            {/* Heading Group with Centered Welcome & Sliding Role Rotator */}
-            <div className="hero-heading-group w-full text-center">
-              <h1 className="hero-name text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12] mb-3 text-center">
-                Welcome
-              </h1>
+      {/* 5. Main Hero Container (Spacious, Clean Typography & Centered to the Page) */}
+      <div className="container hero-container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10 flex flex-col items-center justify-center text-center">
+        <div className="hero-content flex flex-col items-center justify-center text-center w-full max-w-4xl mx-auto">
+          {/* Heading Group with Centered Welcome & Sliding Role Rotator */}
+          <div className="hero-heading-group w-full text-center mb-2">
+            <h1 className="hero-greeting text-2xl sm:text-3xl font-semibold text-white tracking-wide mb-3 text-center drop-shadow-sm">
+              Welcome
+            </h1>
 
-              {/* Sliding Role Title Rotator - Centered Transition Texts */}
-              <div className="role-slider-wrapper flex items-center justify-center gap-2 text-xl sm:text-2xl lg:text-3xl font-bold text-slate-800 dark:text-slate-200 mb-8 h-10 sm:h-12 overflow-hidden w-full text-center mx-auto">
-                <span className="role-prefix text-indigo-600 dark:text-sky-400 font-medium shrink-0">
-                  {ROLES[roleIndex] === "Meseret Shumye" ? "I am " : "I am a "}
+            {/* Sliding Role Title Rotator - Centered to Page & Pure White */}
+            <div className="role-slider-wrapper flex items-center justify-center gap-2 sm:gap-3 text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-8 h-14 sm:h-20 overflow-hidden w-full text-center mx-auto drop-shadow-md">
+              <span className="role-prefix text-white font-extrabold shrink-0">
+                {ROLES[roleIndex] === "Meseret Shumye" ? "I'm " : "I'm a "}
+              </span>
+              <div className="relative overflow-hidden h-full flex items-center justify-center">
+                <span
+                  className={`role-title inline-block font-extrabold text-white transition-all duration-300 transform ${
+                    isSliding
+                      ? "fade-out -translate-y-full opacity-0"
+                      : "fade-in translate-y-0 opacity-100"
+                  }`}
+                >
+                  {ROLES[roleIndex]}
                 </span>
-                <div className="relative overflow-hidden h-full flex items-center justify-center">
-                  <span
-                    className={`role-title inline-block font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 dark:from-sky-400 dark:via-indigo-300 dark:to-emerald-400 transition-all duration-300 transform ${
-                      isSliding
-                        ? "fade-out -translate-y-full opacity-0"
-                        : "fade-in translate-y-0 opacity-100"
-                    }`}
-                  >
-                    {ROLES[roleIndex]}
-                  </span>
-                  <span className="inline-block w-0.5 h-6 sm:h-7 bg-indigo-500 dark:bg-sky-400 ml-1.5 animate-pulse shrink-0" />
-                </div>
+                <span className="inline-block w-1 sm:w-1.5 h-8 sm:h-12 bg-white ml-2 animate-pulse shrink-0 rounded-xs" />
               </div>
-            </div>
-
-            {/* Clean Hero Action Buttons (Explore My Work & View Resume) */}
-            <div className="hero-actions flex flex-wrap items-center justify-center gap-4 w-full sm:w-auto mb-6">
-              <a
-                href="#projects"
-                className="btn-primary-glow hero-btn-main flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-semibold text-sm border border-indigo-500 hover:border-indigo-400 shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/45 transition-all hover:scale-[1.02] cursor-pointer"
-              >
-                <span>Explore My Work</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
-
-              <button
-                onClick={onOpenResume}
-                className="btn-secondary-glass hero-btn-resume flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/80 hover:bg-slate-50 dark:bg-slate-900/80 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 font-semibold text-sm border border-slate-300/90 dark:border-slate-700/80 hover:border-indigo-400 dark:hover:border-sky-400/60 shadow-sm transition-all hover:scale-[1.02] backdrop-blur-md cursor-pointer"
-              >
-                <Download className="w-4 h-4 text-indigo-600 dark:text-sky-400" />
-                <span>View Resume</span>
-              </button>
             </div>
           </div>
 
-          {/* Right Hero Space - Fully Open & Unobstructed for the Slow-Motion Transition Flow */}
-          <div className="hidden lg:block lg:col-span-4" />
+          {/* Clean Hero Action Buttons (Explore My Work & View Resume) */}
+          <div className="hero-actions flex flex-wrap items-center justify-center gap-4 w-full sm:w-auto mb-6">
+            <a
+              href="#projects"
+              className="btn-primary-glow hero-btn-main flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-semibold text-sm border border-indigo-500 hover:border-indigo-400 shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/45 transition-all hover:scale-[1.02] cursor-pointer"
+            >
+              <span>Explore My Work</span>
+              <ArrowRight className="w-4 h-4" />
+            </a>
+
+            <button
+              onClick={onOpenResume}
+              className="btn-secondary-glass hero-btn-resume flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/25 hover:border-white/50 shadow-sm transition-all hover:scale-[1.02] backdrop-blur-md cursor-pointer"
+            >
+              <Download className="w-4 h-4 text-white" />
+              <span>View Resume</span>
+            </button>
+          </div>
         </div>
       </div>
 
