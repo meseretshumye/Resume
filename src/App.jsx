@@ -9,6 +9,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ResumeModal from './components/ResumeModal';
+import ColorSwitcher from './components/ColorSwitcher';
 import { resumeData } from './data/resumeData';
 
 export default function App() {
@@ -39,6 +40,9 @@ export default function App() {
         onOpenResume={() => setIsResumeOpen(true)}
         personalInfo={resumeData.personalInfo}
       />
+
+      {/* Floating Theme Color Switcher */}
+      <ColorSwitcher />
 
       {/* Main Sections */}
       <main>
@@ -94,4 +98,3 @@ export default function App() {
     </div>
   );
 }
-

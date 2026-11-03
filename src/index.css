@@ -8,7 +8,190 @@
   }
 }
 
-/* Custom glowing and glassmorphism utilities */
+/* ========================================================
+   Theme Color System (Dynamic CSS Custom Properties)
+   Defaults to Default Teal (#20c997)
+   ======================================================== */
+:root {
+  --theme-color: #20c997;
+  --theme-hover: #1baa80;
+  --theme-active: #16936e;
+  --theme-rgb: 32, 201, 151;
+  --theme-light: rgba(32, 201, 151, 0.12);
+  --theme-border: rgba(32, 201, 151, 0.45);
+  --theme-glow: rgba(32, 201, 151, 0.35);
+}
+
+/* Utility Theme Classes */
+.theme-bg {
+  background-color: var(--theme-color) !important;
+}
+
+.theme-bg-hover:hover {
+  background-color: var(--theme-hover) !important;
+}
+
+.theme-text {
+  color: var(--theme-color) !important;
+}
+
+.theme-border {
+  border-color: var(--theme-border) !important;
+}
+
+.theme-badge {
+  background-color: var(--theme-light) !important;
+  color: var(--theme-color) !important;
+  border-color: var(--theme-border) !important;
+}
+
+.theme-glow {
+  box-shadow: 0 10px 25px -5px var(--theme-glow), 0 8px 10px -6px var(--theme-glow) !important;
+}
+
+/* ========================================================
+   Universal Dynamic Color Bindings Across All Components
+   Buttons, Badges, Icons, Tabs, Borders, Highlights
+   ======================================================== */
+
+/* 1. BUTTONS & SOLID ACCENT BACKGROUNDS */
+.bg-indigo-600,
+.bg-indigo-700,
+.hero-btn-main,
+.btn-primary {
+  background-color: var(--theme-color) !important;
+  border-color: var(--theme-hover) !important;
+}
+
+.hover\:bg-indigo-500:hover,
+.hover\:bg-indigo-600:hover,
+.hover\:bg-indigo-700:hover {
+  background-color: var(--theme-hover) !important;
+}
+
+.active\:bg-indigo-700:active {
+  background-color: var(--theme-active) !important;
+}
+
+/* Button & Card Glow Shadows */
+.shadow-indigo-600\/20,
+.shadow-indigo-600\/25,
+.shadow-indigo-600\/30,
+.shadow-indigo-600\/45,
+.shadow-indigo-500\/20,
+.shadow-sky-500\/20,
+.btn-primary-glow {
+  box-shadow: 0 10px 25px -5px var(--theme-glow), 0 8px 10px -6px var(--theme-glow) !important;
+}
+
+/* 2. TEXT & ICONS */
+.text-indigo-600,
+.text-indigo-500,
+.text-indigo-400,
+.text-indigo-700,
+.hero-cursor,
+.hover\:text-indigo-600:hover,
+.hover\:text-indigo-400:hover,
+.group:hover .group-hover\:text-indigo-600,
+.group:hover .group-hover\:text-indigo-400 {
+  color: var(--theme-color) !important;
+}
+
+/* Dark mode icon & highlight accents */
+.dark .text-sky-400,
+.dark .text-sky-300,
+.dark .dark\:text-sky-400,
+.dark .dark\:text-sky-300,
+.dark .dark\:text-indigo-400,
+.dark .dark\:text-indigo-300,
+.dark .group:hover .dark\:group-hover\:text-sky-400,
+.dark .group:hover .dark\:group-hover\:text-indigo-400 {
+  color: var(--theme-color) !important;
+}
+
+/* 3. BADGES, PILLS & TINTED ICON BACKGROUNDS */
+.bg-indigo-50,
+.bg-indigo-50\/60,
+.bg-indigo-50\/70,
+.bg-indigo-50\/80,
+.bg-indigo-50\/90,
+.bg-indigo-100,
+.bg-indigo-500\/10,
+.bg-indigo-500\/20,
+.bg-indigo-600\/20,
+.bg-indigo-600\/30 {
+  background-color: var(--theme-light) !important;
+  border-color: var(--theme-border) !important;
+}
+
+.dark .dark\:bg-indigo-950\/60,
+.dark .dark\:bg-indigo-950\/70,
+.dark .dark\:bg-indigo-900\/60,
+.dark .dark\:bg-indigo-900\/80,
+.dark .dark\:bg-\[\#131d33\],
+.dark .dark\:bg-\[\#131d36\],
+.dark .dark\:bg-\[\#131d36\]\/80 {
+  background-color: rgba(var(--theme-rgb), 0.16) !important;
+  border-color: rgba(var(--theme-rgb), 0.32) !important;
+}
+
+/* 4. ACTIVE TABS & ACTIVE NAVIGATION */
+.dark .dark\:bg-indigo-600,
+.dark .dark\:hover\:bg-indigo-500:hover {
+  background-color: var(--theme-color) !important;
+}
+
+/* Services card icon hover transition */
+.group:hover .group-hover\:bg-indigo-600 {
+  background-color: var(--theme-color) !important;
+}
+
+/* 5. TIMELINE & BORDERS */
+.border-indigo-600,
+.border-indigo-500,
+.border-indigo-400,
+.border-indigo-400\/80,
+.border-indigo-400\/70,
+.border-indigo-400\/60,
+.border-indigo-300,
+.border-indigo-200,
+.border-indigo-200\/70,
+.border-indigo-100,
+.dark .dark\:border-indigo-900\/60,
+.hover\:border-indigo-400:hover,
+.hover\:border-indigo-500:hover,
+.group:hover .group-hover\:border-indigo-400 {
+  border-color: var(--theme-border) !important;
+}
+
+/* Timeline node dots */
+.bg-indigo-600.rounded-full,
+.dark .dark\:bg-sky-400.rounded-full {
+  background-color: var(--theme-color) !important;
+}
+
+/* 6. SECTION HEADER PILLS ("ABOUT ME", "MY EXPERTISE", etc.) */
+.section-pill,
+[class*="bg-gradient-to-r"][class*="rounded-full"][class*="uppercase"] {
+  border-color: var(--theme-border) !important;
+  color: var(--theme-color) !important;
+}
+
+.dark [class*="bg-gradient-to-r"][class*="rounded-full"][class*="uppercase"] {
+  color: var(--theme-color) !important;
+  border-color: var(--theme-border) !important;
+}
+
+/* 7. FORM FOCUS STATES */
+input:focus,
+textarea:focus {
+  border-color: var(--theme-color) !important;
+  --tw-ring-color: var(--theme-border) !important;
+}
+
+/* ========================================================
+   Animation & Visual Utilities
+   ======================================================== */
 @keyframes heroSlowMotion {
   0% {
     transform: scale(1.05) translate(0%, 0%);
@@ -74,7 +257,7 @@
   inset: -1px;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(to right, #6366f1, #06b6d4, #10b981);
+  background: linear-gradient(to right, var(--theme-color), #06b6d4, #10b981);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -147,11 +330,11 @@
   transform: translate(-50%, -50%);
   width: 520px;
   height: 520px;
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.16) 0%, rgba(56, 189, 248, 0.08) 60%, transparent 80%);
+  background: radial-gradient(circle, var(--theme-glow) 0%, rgba(56, 189, 248, 0.08) 60%, transparent 80%);
 }
 
 .dark .hero-glow-1 {
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.22) 0%, rgba(56, 189, 248, 0.12) 60%, transparent 80%);
+  background: radial-gradient(circle, var(--theme-glow) 0%, rgba(56, 189, 248, 0.12) 60%, transparent 80%);
 }
 
 .hero-glow-2 {
@@ -159,11 +342,11 @@
   right: 12%;
   width: 420px;
   height: 420px;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.14) 0%, rgba(99, 102, 241, 0.06) 60%, transparent 80%);
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.14) 0%, var(--theme-light) 60%, transparent 80%);
 }
 
 .dark .hero-glow-2 {
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.18) 0%, rgba(99, 102, 241, 0.09) 60%, transparent 80%);
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.18) 0%, var(--theme-light) 60%, transparent 80%);
 }
 
 /* Custom scrollbar */
@@ -205,4 +388,3 @@
     display: block !important;
   }
 }
-
