@@ -70,7 +70,7 @@ export default function Navbar({ darkMode, setDarkMode, onOpenResume, personalIn
                 {personalInfo.name}
               </span>
               <span className="text-xs text-slate-500 dark:text-slate-400 font-medium tracking-wide">
-                Full-Stack & Engineer
+                Full-Stack Web Developer
               </span>
             </div>
           </a>

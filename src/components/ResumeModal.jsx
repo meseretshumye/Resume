@@ -76,7 +76,7 @@ export default function ResumeModal({ isOpen, onClose, personalInfo, experience,
                   {personalInfo.title}
                 </p>
                 <p className="text-xs text-slate-500 dark:text-slate-400 print:text-slate-600 mt-1">
-                  Full-Stack Architecture • Civil Engineering Project Governance • Modern Web Systems
+                  Full-Stack Architecture • Scalable Web Systems • Cloud Deployment
                 </p>
               </div>
 

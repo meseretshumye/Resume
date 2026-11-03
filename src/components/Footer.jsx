@@ -41,7 +41,7 @@ export default function Footer({ personalInfo }) {
                   {personalInfo.name}
                 </h3>
                 <p className="text-xs text-sky-400 font-medium">
-                  Full-Stack Web Developer &amp; Civil Engineer
+                  Full-Stack Web Developer
                 </p>
               </div>
             </div>
