@@ -24,16 +24,8 @@ export const skills: Skill[] = [
   // --- Frontend & Mobile ---
   { name: "React.js", category: "frontend", level: 94, icon: "Atom", symbol: "⚛", popular: true },
   { name: "React Native", category: "frontend", level: 90, icon: "Smartphone", symbol: "📱", popular: true },
-  { name: "JavaScript (ES6+)", category: "frontend", level: 95, icon: "FileCode2", symbol: "JS", popular: true },
-  { name: "TypeScript", category: "frontend", level: 88, icon: "FileCode", symbol: "TS", popular: true },
   { name: "Next.js (App Router)", category: "frontend", level: 86, icon: "Globe", symbol: "▲", popular: true },
-  { name: "Expo (Mobile SDK)", category: "frontend", level: 88, icon: "Smartphone", symbol: "⇡", popular: false },
-  { name: "Redux Toolkit & State Management", category: "frontend", level: 88, icon: "Layers", symbol: "🔄", popular: false },
   { name: "Tailwind CSS", category: "frontend", level: 96, icon: "Sparkles", symbol: "🌊", popular: true },
-  { name: "HTML5 & Semantic Markup", category: "frontend", level: 98, icon: "Layout", symbol: "HTML", popular: true },
-  { name: "CSS3 & Modern Animations", category: "frontend", level: 95, icon: "Palette", symbol: "CSS", popular: true },
-  { name: "Bootstrap 5", category: "frontend", level: 92, icon: "Grid", symbol: "B", popular: false },
-  { name: "Responsive & Mobile-First UI", category: "frontend", level: 96, icon: "MonitorSmartphone", symbol: "📱", popular: true },
 
   // --- Backend & APIs ---
   { name: "Node.js Runtime", category: "backend", level: 88, icon: "Server", symbol: "Node", popular: true },

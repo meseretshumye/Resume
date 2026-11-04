@@ -228,7 +228,7 @@ export default function ResumeModal({ isOpen, onClose, personalInfo, experience,
                   <div>
                     <h4 className="text-xs font-bold text-slate-900 dark:text-white">Frontend &amp; Mobile</h4>
                     <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 mt-0.5 leading-relaxed">
-                      React.js, React Native, JavaScript (ES6+), TypeScript, Next.js, Redux Toolkit, Tailwind CSS, Bootstrap 5, HTML5, CSS3
+                      React.js, React Native, Next.js, Tailwind CSS
                     </p>
                   </div>
                   <div>

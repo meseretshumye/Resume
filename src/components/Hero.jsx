@@ -58,7 +58,7 @@ const TYPEWRITER_PHRASES = [
 const TICKER_ITEMS = [
   { name: "React.js", symbol: "⚛" },
   { name: "Node.js", symbol: "🟢" },
-  { name: "TypeScript", symbol: "TS" },
+  { name: "Git & GitHub", symbol: "⌥" },
   { name: "Next.js", symbol: "▲" },
   { name: "Tailwind CSS", symbol: "🌊" },
   { name: "PostgreSQL", symbol: "🐘" },

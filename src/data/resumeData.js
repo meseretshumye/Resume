@@ -82,14 +82,8 @@ export const resumeData = {
     // --- 1. Frontend & Mobile (Exact match to design) ---
     { name: "React.js", category: "frontend", level: 95, levelText: "Advanced", icon: "Atom", symbol: "⚛", popular: true },
     { name: "React Native", category: "frontend", level: 92, levelText: "Advanced", icon: "Smartphone", symbol: "📱", popular: true },
-    { name: "Expo Go", category: "frontend", level: 90, levelText: "Advanced", icon: "Smartphone", symbol: "⇡", popular: true },
     { name: "Next.js", category: "frontend", level: 88, levelText: "Proficient", icon: "Globe", symbol: "▲", popular: true },
-    { name: "TypeScript", category: "frontend", level: 90, levelText: "Advanced", icon: "FileCode", symbol: "TS", popular: true },
-    { name: "JavaScript (ES6+)", category: "frontend", level: 96, levelText: "Advanced", icon: "FileCode2", symbol: "JS", popular: true },
     { name: "Tailwind CSS", category: "frontend", level: 95, levelText: "Advanced", icon: "Sparkles", symbol: "🌊", popular: true },
-    { name: "Redux & Context API", category: "frontend", level: 90, levelText: "Advanced", icon: "Layers", symbol: "🔄", popular: true },
-    { name: "HTML5 / Semantic Web", category: "frontend", level: 98, levelText: "Advanced", icon: "Layout", symbol: "HTML", popular: true },
-    { name: "CSS3 / Sass", category: "frontend", level: 94, levelText: "Advanced", icon: "Palette", symbol: "CSS", popular: true },
 
     // --- 2. Backend & APIs (Exact match to design) ---
     { name: "NestJS", category: "backend", level: 90, levelText: "Advanced", icon: "Server", symbol: "Nest", popular: true },
@@ -134,12 +128,12 @@ export const resumeData = {
       description: "Architecting and deploying production-grade web applications, scalable SaaS platforms, and interactive mobile experiences—bridging pixel-perfect frontend craftsmanship with robust backend architectures.",
       responsibilities: [
         "Architected and deployed scalable SaaS web applications, responsive client portals, and multi-tenant digital platforms.",
-        "Engineered intuitive cross-platform mobile apps and modern web interfaces using React, React Native, TypeScript, Next.js, and Tailwind CSS.",
+        "Engineered intuitive cross-platform mobile apps and modern web interfaces using React, React Native, Next.js, and Tailwind CSS.",
         "Transformed complex client requirements and UI/UX mockups into pixel-perfect, accessible, and cross-browser compatible digital solutions.",
         "Developed robust full-stack architectures, high-performance RESTful APIs, and optimized PostgreSQL and MySQL databases.",
         "Delivered mobile-first, high-speed applications with sub-second load times, Core Web Vitals optimization, and reliable production deployments."
       ],
-      technologies: ["React.js", "React Native", "Next.js", "TypeScript", "Node.js", "SaaS Architecture", "Tailwind CSS", "RESTful APIs", "PostgreSQL", "MySQL"]
+      technologies: ["React.js", "React Native", "Next.js", "Node.js", "SaaS Architecture", "Tailwind CSS", "RESTful APIs", "PostgreSQL", "MySQL"]
     }
   ],
 
