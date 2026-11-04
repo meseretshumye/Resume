@@ -4,8 +4,7 @@ import {
   GraduationCap, 
   Calendar, 
   CheckCircle2, 
-  Building, 
-  Download 
+  Building 
 } from 'lucide-react';
 
 export default function ExperienceEducation({ experience = [], education = [], onOpenResume }) {
@@ -26,17 +25,6 @@ export default function ExperienceEducation({ experience = [], education = [], o
           <p className="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-300">
             A track record of engineering leadership, public sector contract governance, and production web development.
           </p>
-
-          {/* Quick Action to open printable resume */}
-          <div className="mt-6">
-            <button
-              onClick={onOpenResume}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-semibold text-sm border border-indigo-500 hover:border-indigo-400 shadow-md shadow-indigo-600/20 hover:shadow-indigo-600/30 transition-all duration-150 cursor-pointer"
-            >
-              <Download className="w-4 h-4 text-white" />
-              <span>View &amp; Print Complete Resume (PDF)</span>
-            </button>
-          </div>
         </div>
 
         {/* View Toggle Tabs - Standardized with Thin 1px Borders */}
