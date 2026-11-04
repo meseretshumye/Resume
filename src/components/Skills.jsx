@@ -3,7 +3,6 @@ import TechIcon from "./TechIcon";
 
 export default function Skills({ skills = [], skillCategories = [] }) {
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const [activeSkill, setActiveSkill] = useState(null);
 
   // 4 Core Domain Architecture Definitions
   const DOMAINS = useMemo(
@@ -12,8 +11,8 @@ export default function Skills({ skills = [], skillCategories = [] }) {
         id: "frontend",
         name: "Frontend & Mobile",
         filterLabel: "Frontend & Mobile",
-        description:
-          "Building fast, accessible, cross-platform mobile apps and responsive web interfaces with modern frameworks.",
+        // description:
+        //   "Building fast, accessible, cross-platform mobile apps and responsive web interfaces with modern frameworks.",
         iconSvg: (
           <svg
             viewBox="0 0 24 24"
@@ -32,8 +31,8 @@ export default function Skills({ skills = [], skillCategories = [] }) {
         id: "backend",
         name: "Backend & APIs",
         filterLabel: "Backend & APIs",
-        description:
-          "Engineering secure, scalable server applications, enterprise microservices, and robust REST/GraphQL endpoints.",
+        // description:
+        //   "Engineering secure, scalable server applications, enterprise microservices, and robust REST/GraphQL endpoints.",
         iconSvg: (
           <svg
             viewBox="0 0 24 24"
@@ -53,8 +52,8 @@ export default function Skills({ skills = [], skillCategories = [] }) {
         id: "database",
         name: "Databases & Cloud",
         filterLabel: "Databases & Cloud",
-        description:
-          "Designing efficient relational & NoSQL schemas, optimizing complex queries, and managing resilient cloud backends.",
+        // description:
+        //   "Designing efficient relational & NoSQL schemas, optimizing complex queries, and managing resilient cloud backends.",
         iconSvg: (
           <svg
             viewBox="0 0 24 24"
@@ -73,8 +72,8 @@ export default function Skills({ skills = [], skillCategories = [] }) {
         id: "devops",
         name: "DevOps & Engineering Tools",
         filterLabel: "DevOps & Tools",
-        description:
-          "Mobile testing, modern build tools, version control, API testing, and agile workflows.",
+        // description:
+        //   "Mobile testing, modern build tools, version control, API testing, and agile workflows.",
         iconSvg: (
           <svg
             viewBox="0 0 24 24"
@@ -109,15 +108,14 @@ export default function Skills({ skills = [], skillCategories = [] }) {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-10">
           <div className="inline-flex items-center px-6 py-2 rounded-full bg-gradient-to-r from-blue-500/10 via-sky-500/10 to-indigo-500/10 dark:from-[#0d182e]/95 dark:via-[#102040]/95 dark:to-[#0d182e]/95 backdrop-blur-md border border-blue-400/40 dark:border-blue-500/40 text-blue-600 dark:text-[#00d2ff] text-xs font-bold uppercase tracking-wider mb-3 shadow-[0_0_16px_rgba(0,210,255,0.12)] hover:border-sky-400 transition-all duration-300">
-            Architecture &amp; Capabilities
+            Technologies &amp; Expertise
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
             Technical Stack &amp; Skills
           </h2>
           <p className="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-            Enterprise-ready full-stack Engineering proficiency spanning modern
-            client interfaces, distributed backend APIs, scalable databases, and
-            DevOps automation.
+            The core technologies and tools I leverage to build scalable,
+            reliable, and high-performance full-stack applications.
           </p>
         </div>
 
@@ -182,47 +180,23 @@ export default function Skills({ skills = [], skillCategories = [] }) {
 
                 {/* Skills Pills Layout in Two Equal Sides */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
-                  {domainSkills.map((skill, idx) => {
-                    const isHighlighted = activeSkill?.name === skill.name;
+                  {domainSkills.map((skill, idx) => (
+                    <div
+                      key={idx}
+                      className="flex items-center gap-3 px-4 py-2.5 sm:px-4.5 sm:py-3 rounded-full cursor-default select-none border border-slate-200/90 dark:border-[#1e2a4a] bg-white dark:bg-[#0e172a] shadow-xs transition-colors duration-150"
+                    >
+                      {/* Authentic Tech Brand Icon */}
+                      <TechIcon
+                        name={skill.name}
+                        className="w-5 h-5 sm:w-5.5 sm:h-5.5 shrink-0"
+                      />
 
-                    return (
-                      <div
-                        key={idx}
-                        onMouseEnter={() => setActiveSkill(skill)}
-                        onClick={() =>
-                          setActiveSkill(
-                            activeSkill?.name === skill.name ? null : skill,
-                          )
-                        }
-                        className={`group flex items-center gap-3 px-4 py-2.5 sm:px-4.5 sm:py-3 rounded-full cursor-pointer select-none transition-all duration-150 border ${
-                          isHighlighted
-                            ? "bg-indigo-100 dark:bg-gradient-to-r dark:from-[#213264] dark:via-[#263c78] dark:to-[#1c2952] border-indigo-500 dark:border-sky-400 text-indigo-950 dark:text-white shadow-md shadow-indigo-500/20 -translate-y-0.5"
-                            : "bg-white dark:bg-[#0e172a] hover:bg-indigo-50/90 dark:hover:bg-[#162345] border-slate-200/90 dark:border-[#1e2a4a] hover:border-indigo-400/70 dark:hover:border-sky-400/50 hover:text-indigo-900 dark:hover:text-white hover:shadow-xs hover:-translate-y-0.5 shadow-xs"
-                        }`}
-                      >
-                        {/* Authentic Tech Brand Icon */}
-                        <TechIcon
-                          name={skill.name}
-                          className={`w-5 h-5 sm:w-5.5 sm:h-5.5 shrink-0 transition-transform duration-200 ${
-                            isHighlighted
-                              ? "scale-110 drop-shadow-[0_0_8px_rgba(99,102,241,0.5)]"
-                              : "group-hover:scale-110"
-                          }`}
-                        />
-
-                        {/* Skill Name */}
-                        <span
-                          className={`text-xs sm:text-sm font-semibold tracking-tight truncate transition-colors duration-200 ${
-                            isHighlighted
-                              ? "text-indigo-950 dark:text-white font-bold"
-                              : "text-slate-800 dark:text-slate-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-300"
-                          }`}
-                        >
-                          {skill.name}
-                        </span>
-                      </div>
-                    );
-                  })}
+                      {/* Skill Name */}
+                      <span className="text-xs sm:text-sm font-semibold tracking-tight truncate text-slate-800 dark:text-slate-200">
+                        {skill.name}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </div>
             );
