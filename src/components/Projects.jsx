@@ -79,12 +79,6 @@ export default function Projects({ projects }) {
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
-                {/* Top badge */}
-                <div className="absolute top-4 left-4 flex items-center">
-                  <span className="px-3 py-1 rounded-full text-xs font-bold bg-white/90 dark:bg-slate-900/90 backdrop-blur-md text-slate-800 dark:text-white shadow-sm">
-                    {project.category}
-                  </span>
-                </div>
 
                 {/* Bottom title inside image */}
                 <div className="absolute bottom-4 left-4 right-4 text-white">
