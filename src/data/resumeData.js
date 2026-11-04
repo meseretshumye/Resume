@@ -67,13 +67,13 @@ export const resumeData = {
     {
       id: "database",
       name: "Databases & Cloud",
-      description: "Designing efficient relational & NoSQL schemas, optimizing complex queries, and managing resilient cloud backends.",
+      description: "Designing efficient relational schemas, optimizing SQL queries, and maintaining data integrity.",
       icon: "Database"
     },
     {
       id: "devops",
       name: "DevOps & Engineering Tools",
-      description: "Mobile testing, modern build tools, version control, API testing, and agile workflows.",
+      description: "Version control management with Git & GitHub and comprehensive API testing with Postman.",
       icon: "Wrench"
     }
   ],
@@ -101,18 +101,10 @@ export const resumeData = {
     // --- 3. Databases & Cloud (Exact match to design) ---
     { name: "PostgreSQL", category: "database", level: 92, levelText: "Advanced", icon: "Database", symbol: "🐘", popular: true },
     { name: "MySQL", category: "database", level: 90, levelText: "Advanced", icon: "HardDrive", symbol: "🐬", popular: true },
-    { name: "MongoDB", category: "database", level: 85, levelText: "Intermediate", icon: "Database", symbol: "🍃", popular: false },
-    { name: "Firebase / Firestore", category: "database", level: 88, levelText: "Advanced", icon: "Flame", symbol: "🔥", popular: true },
-    { name: "AWS (EC2, SSM, S3)", category: "database", level: 80, levelText: "Intermediate", icon: "Cloud", symbol: "☁", popular: false },
-    { name: "Database Modeling", category: "database", level: 90, levelText: "Advanced", icon: "Database", symbol: "ERD", popular: true },
 
     // --- 4. DevOps & Engineering Tools (Exact match to design) ---
     { name: "Git & GitHub", category: "devops", level: 95, levelText: "Advanced", icon: "GitBranch", symbol: "⌥", popular: true },
-    { name: "Postman & Swagger", category: "devops", level: 92, levelText: "Advanced", icon: "Send", symbol: "🚀", popular: true },
-    { name: "Vite & Webpack", category: "devops", level: 90, levelText: "Advanced", icon: "Rocket", symbol: "⚡", popular: true },
-    { name: "Docker Basics", category: "devops", level: 82, levelText: "Intermediate", icon: "Box", symbol: "🐳", popular: false },
-    { name: "CI/CD & GitHub Actions", category: "devops", level: 88, levelText: "Advanced", icon: "GitBranch", symbol: "⚙", popular: true },
-    { name: "Agile / Scrum", category: "devops", level: 94, levelText: "Advanced", icon: "Workflow", symbol: "🔄", popular: true }
+    { name: "Postman & Swagger", category: "devops", level: 92, levelText: "Advanced", icon: "Send", symbol: "🚀", popular: true }
   ],
 
   experience: [
@@ -144,10 +136,10 @@ export const resumeData = {
         "Architected and deployed scalable SaaS web applications, responsive client portals, and multi-tenant digital platforms.",
         "Engineered intuitive cross-platform mobile apps and modern web interfaces using React, React Native, TypeScript, Next.js, and Tailwind CSS.",
         "Transformed complex client requirements and UI/UX mockups into pixel-perfect, accessible, and cross-browser compatible digital solutions.",
-        "Developed robust full-stack architectures, high-performance RESTful APIs, and optimized PostgreSQL and MongoDB databases.",
-        "Delivered mobile-first, high-speed applications with sub-second load times, Core Web Vitals optimization, and automated CI/CD pipelines."
+        "Developed robust full-stack architectures, high-performance RESTful APIs, and optimized PostgreSQL and MySQL databases.",
+        "Delivered mobile-first, high-speed applications with sub-second load times, Core Web Vitals optimization, and reliable production deployments."
       ],
-      technologies: ["React.js", "React Native", "Next.js", "TypeScript", "Node.js", "SaaS Architecture", "Tailwind CSS", "RESTful APIs", "PostgreSQL", "MongoDB"]
+      technologies: ["React.js", "React Native", "Next.js", "TypeScript", "Node.js", "SaaS Architecture", "Tailwind CSS", "RESTful APIs", "PostgreSQL", "MySQL"]
     }
   ],
 

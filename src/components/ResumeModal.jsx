@@ -240,13 +240,13 @@ export default function ResumeModal({ isOpen, onClose, personalInfo, experience,
                   <div>
                     <h4 className="text-xs font-bold text-slate-900 dark:text-white">Databases</h4>
                     <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 mt-0.5 leading-relaxed">
-                      PostgreSQL, MongoDB, MySQL, Redis, Firebase Firestore, Supabase, SQLite
+                      PostgreSQL, MySQL, Relational Database Management, SQL Query Optimization
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-xs font-bold text-slate-900 dark:text-white">DevOps &amp; Engineering</h4>
+                    <h4 className="text-xs font-bold text-slate-900 dark:text-white">DevOps &amp; Tools</h4>
                     <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 mt-0.5 leading-relaxed">
-                      Docker, Git &amp; GitHub, CI/CD Actions, Vite, Postman, Linux / Bash, Figma, Quality Assurance
+                      Git &amp; GitHub, Postman, Swagger, Version Control Workflows, Quality Assurance
                     </p>
                   </div>
                 </div>

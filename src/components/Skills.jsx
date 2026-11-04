@@ -53,7 +53,7 @@ export default function Skills({ skills = [], skillCategories = [] }) {
         name: "Databases & Cloud",
         filterLabel: "Databases & Cloud",
         // description:
-        //   "Designing efficient relational & NoSQL schemas, optimizing complex queries, and managing resilient cloud backends.",
+        //   "Designing efficient relational schemas, optimizing SQL queries, and maintaining data integrity.",
         iconSvg: (
           <svg
             viewBox="0 0 24 24"
@@ -73,7 +73,7 @@ export default function Skills({ skills = [], skillCategories = [] }) {
         name: "DevOps & Engineering Tools",
         filterLabel: "DevOps & Tools",
         // description:
-        //   "Mobile testing, modern build tools, version control, API testing, and agile workflows.",
+        //   "Version control management with Git & GitHub and comprehensive API testing with Postman.",
         iconSvg: (
           <svg
             viewBox="0 0 24 24"

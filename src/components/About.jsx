@@ -40,9 +40,9 @@ export default function About({ personalInfo = {}, onOpenResume }) {
       iconBg: "bg-indigo-500/10 border-indigo-500/20",
     },
     {
-      title: "Cloud & DevOps Delivery",
+      title: "DevOps & Engineering Tools",
       description:
-        "Automated CI/CD pipelines, Docker containers, and rapid deployment.",
+        "Git version control, Postman API testing, and reliable software delivery.",
       icon: Rocket,
       iconColor: "text-indigo-400",
       iconBg: "bg-indigo-500/10 border-indigo-500/20",

@@ -43,17 +43,12 @@ export const skills: Skill[] = [
 
   // --- Databases ---
   { name: "PostgreSQL", category: "database", level: 88, icon: "Database", symbol: "🐘", popular: true },
-  { name: "MongoDB & Mongoose (NoSQL)", category: "database", level: 86, icon: "Database", symbol: "🍃", popular: true },
   { name: "MySQL / Relational DBs", category: "database", level: 85, icon: "HardDrive", symbol: "🐬", popular: false },
   { name: "Redis (In-Memory Caching)", category: "database", level: 82, icon: "Zap", symbol: "⚡", popular: false },
-  { name: "Firebase & Cloud Firestore", category: "database", level: 84, icon: "Flame", symbol: "🔥", popular: false },
   { name: "Supabase & SQLite", category: "database", level: 84, icon: "HardDrive", symbol: "⚡", popular: false },
 
   // --- DevOps & Engineering Tools ---
-  { name: "Docker & Containerization", category: "devops", level: 84, icon: "Box", symbol: "🐳", popular: true },
   { name: "Git & GitHub Version Control", category: "devops", level: 94, icon: "GitBranch", symbol: "⌥", popular: true },
-  { name: "CI/CD & GitHub Actions", category: "devops", level: 82, icon: "Workflow", symbol: "⚙", popular: false },
-  { name: "Vite & Modern Build Tooling", category: "devops", level: 90, icon: "Rocket", symbol: "⚡", popular: true },
   { name: "Postman & Automated API Testing", category: "devops", level: 88, icon: "Send", symbol: "🚀", popular: false },
   { name: "Linux & Bash Shell Scripting", category: "devops", level: 84, icon: "Terminal", symbol: "sh", popular: false },
   { name: "Figma & UI Prototyping", category: "devops", level: 85, icon: "Figma", symbol: "❖", popular: false },
