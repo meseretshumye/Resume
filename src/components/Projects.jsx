@@ -5,9 +5,8 @@ import {
   Sparkles, 
   Layers, 
   CheckCircle2, 
-  Eye, 
-  X, 
-  ArrowRight 
+  X,
+ArrowRight 
 } from 'lucide-react';
 
 export default function Projects({ projects }) {
@@ -64,7 +63,8 @@ export default function Projects({ projects }) {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="group rounded-3xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 overflow-hidden shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.7)] hover:shadow-2xl hover:border-sky-400 dark:hover:border-sky-400/60 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between backdrop-blur-sm"
+              onClick={() => setSelectedProject(project)}
+              className="group rounded-3xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 overflow-hidden shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.7)] hover:shadow-2xl hover:border-sky-400 dark:hover:border-sky-400/60 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between backdrop-blur-sm cursor-pointer"
             >
               {/* Image Preview Box */}
               <div className="relative h-60 sm:h-72 overflow-hidden bg-slate-100 dark:bg-slate-900">
@@ -101,47 +101,6 @@ export default function Projects({ projects }) {
                   <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                     {project.description}
                   </p>
-                </div>
-
-                {/* Action Buttons */}
-                <div className="pt-4 border-t border-slate-100 dark:border-slate-700/60 flex items-center justify-between gap-3">
-                  <button
-                    onClick={() => setSelectedProject(project)}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
-                  >
-                    <Eye className="w-4 h-4" />
-                    <span>View Case Study</span>
-                  </button>
-
-                  <div className="flex items-center gap-2">
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="p-2 rounded-xl bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 transition-colors"
-                      title="Source Code"
-                    >
-                      <Github className="w-4 h-4" />
-                    </a>
-                    {project.liveUrl && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="p-2 rounded-xl bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 transition-colors"
-                        title="Live Demo"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    )}
-                    <a
-                      href="#contact"
-                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold shadow-sm transition-all"
-                    >
-                      <span>Inquire Demo</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </a>
-                  </div>
                 </div>
               </div>
             </div>
