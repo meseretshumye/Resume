@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  GraduationCap,
   Briefcase,
   Code2,
   Compass,
@@ -17,9 +16,9 @@ import {
 export default function About({ personalInfo = {}, onOpenResume }) {
   const pillars = [
     {
-      title: "Clean Architecture & Code",
+      title: "Clean Architecture",
       description:
-        "Applying SOLID principles, modular patterns, and systematic problem-solving to engineer scalable, maintainable, and bug-free web codebases.",
+        "Engineered with SOLID principles for high scalability, maintainability, and enterprise-grade performance.",
       icon: Compass,
       iconColor: "text-sky-400",
       iconBg: "bg-sky-500/10 border-sky-500/20",
@@ -27,23 +26,23 @@ export default function About({ personalInfo = {}, onOpenResume }) {
     {
       title: "Modern React & Mobile",
       description:
-        "Crafting pixel-perfect, interactive web applications and cross-platform mobile experiences with React, Next.js, TypeScript, and modern Tailwind CSS.",
+        "Building responsive, high-performance web and mobile platforms with React, Next.js, and TypeScript.",
       icon: Code2,
       iconColor: "text-indigo-400",
       iconBg: "bg-indigo-500/10 border-indigo-500/20",
     },
     {
-      title: "Robust Full-Stack APIs",
+      title: "Scalable Backend APIs",
       description:
-        "Designing clean backend microservices, high-performance RESTful & GraphQL endpoints, and optimized PostgreSQL & MongoDB database layers.",
+        "Designing secure microservices and high-throughput RESTful & GraphQL endpoints with Node.js.",
       icon: ShieldCheck,
       iconColor: "text-emerald-400",
       iconBg: "bg-emerald-500/10 border-emerald-500/20",
     },
     {
-      title: "Agile & DevOps Delivery",
+      title: "Cloud & DevOps Delivery",
       description:
-        "Delivering rapid sprint milestones, Docker containerization, automated testing, and CI/CD pipelines to ensure continuous deployment and quality compliance.",
+        "Automating CI/CD pipelines, Docker containerization, and reliable agile delivery workflows.",
       icon: Rocket,
       iconColor: "text-amber-400",
       iconBg: "bg-amber-500/10 border-amber-500/20",
@@ -93,9 +92,9 @@ export default function About({ personalInfo = {}, onOpenResume }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
           {/* Left Column: Unified Showcase Card */}
           <div className="lg:col-span-5 flex flex-col">
-            <div className="relative rounded-3xl p-6 sm:p-7 bg-white dark:bg-[#0a101f] border border-slate-200/90 dark:border-blue-500/30 shadow-xl dark:shadow-[0_0_50px_rgba(37,99,235,0.18)] backdrop-blur-xl flex flex-col justify-between h-full group hover:border-indigo-400 dark:hover:border-blue-400/50 transition-all duration-300">
+            <div className="relative rounded-3xl p-6 sm:p-7 bg-white dark:bg-[#0a101f] border border-slate-200/90 dark:border-blue-500/30 shadow-xl dark:shadow-[0_0_50px_rgba(37,99,235,0.18)] backdrop-blur-xl flex flex-col justify-center h-full group hover:border-indigo-400 dark:hover:border-blue-400/50 transition-all duration-300">
               {/* Photo Container with Glass Overlays */}
-              <div className="relative rounded-2xl overflow-hidden aspect-[4/4.5] sm:aspect-[4/4.2] bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md">
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/4.5] sm:aspect-[4/4.2] lg:aspect-auto lg:h-full min-h-[360px] bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md flex-1">
                 <img
                   src={
                     personalInfo.avatar || "/images/meseret-shumye-portrait.jpg"
@@ -121,35 +120,6 @@ export default function About({ personalInfo = {}, onOpenResume }) {
                   </div>
                 </div>
               </div>
-
-              {/* Credential Bars */}
-              <div className="mt-5 space-y-3">
-                <div className="flex items-center justify-between px-4.5 py-3.5 rounded-2xl bg-slate-50 dark:bg-[#0d1424] border border-slate-200/80 dark:border-[#1a253d] text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200 transition-colors">
-                  <div className="flex items-center gap-2.5">
-                    <GraduationCap className="w-4 h-4 text-indigo-500 dark:text-sky-400 shrink-0" />
-                    <span>B.Sc. Civil Eng. • Wollo University</span>
-                  </div>
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-indigo-600 dark:text-sky-400 px-2 py-0.5 rounded-md bg-indigo-50 dark:bg-[#131d33] border border-indigo-200 dark:border-[#213052]">
-                    Degree
-                  </span>
-                </div>
-
-                <div className="flex items-center justify-between px-4.5 py-3.5 rounded-2xl bg-slate-50 dark:bg-[#0d1424] border border-slate-200/80 dark:border-[#1a253d] text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200 transition-colors">
-                  <div className="flex items-center gap-2.5">
-                    <Code2 className="w-4 h-4 text-emerald-500 dark:text-emerald-400 shrink-0" />
-                    <span>Full-Stack Web &amp; Mobile Architecture</span>
-                  </div>
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-emerald-600 dark:text-emerald-400 px-2 py-0.5 rounded-md bg-emerald-50 dark:bg-[#131d33] border border-emerald-200 dark:border-[#213052]">
-                    Core
-                  </span>
-                </div>
-              </div>
-
-              {/* Philosophy Quote Chip */}
-              <div className="mt-5 p-4 rounded-2xl bg-gradient-to-br from-indigo-50/70 to-emerald-50/50 dark:from-slate-800/80 dark:to-slate-850/60 border border-indigo-100/80 dark:border-slate-700/60 text-xs sm:text-[13px] text-slate-700 dark:text-slate-300 italic leading-relaxed">
-                "Great software is built on solid foundations: clean code craftsmanship,
-                modular system architecture, and seamless accessibility for all users."
-              </div>
             </div>
           </div>
 
@@ -163,13 +133,10 @@ export default function About({ personalInfo = {}, onOpenResume }) {
                   Realities
                 </h3>
 
-                {/* Narrative Paragraphs */}
-                <div className="space-y-3.5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                {/* Executive Narrative */}
+                <div className="space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
                   <p>
-                    I am a Full-Stack Software Developer with proven expertise
-                    in crafting robust web applications and interactive mobile
-                    platforms. Proficient across the modern
-                    JavaScript/TypeScript ecosystem including{" "}
+                    Full-Stack Software Developer engineering scalable, enterprise-grade web applications. Proficient across the modern JavaScript &amp; TypeScript ecosystem —{" "}
                     <strong className="text-slate-900 dark:text-white font-semibold">
                       React
                     </strong>
@@ -185,7 +152,7 @@ export default function About({ personalInfo = {}, onOpenResume }) {
                     <strong className="text-slate-900 dark:text-white font-semibold">
                       Tailwind CSS
                     </strong>
-                    , and scalable database systems.
+                    , and high-throughput database systems.
                   </p>
                 </div>
 
