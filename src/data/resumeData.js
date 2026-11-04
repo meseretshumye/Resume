@@ -108,11 +108,10 @@ export const resumeData = {
       location: "Addis Ababa, Ethiopia (Remote / Hybrid)",
       period: "2025 – Present",
       type: "Contract / Freelance",
-      description: "Architecting and delivering scalable SaaS web apps and responsive mobile interfaces with modern full-stack technologies.",
+      description: "",
       responsibilities: [
         "Engineered modern web and mobile apps with React, React Native, Next.js, and Tailwind CSS.",
-        "Built robust server architectures and high-performance databases with Node.js and PostgreSQL/MySQL.",
-        "Delivered mobile-first applications with sub-second load times and Core Web Vitals optimization."
+        "Built robust server architectures and high-performance databases with Node.js and PostgreSQL/MySQL."
       ],
       technologies: ["React.js", "React Native", "Next.js", "Node.js", "SaaS Architecture", "Tailwind CSS", "PostgreSQL", "MySQL"]
     },
@@ -123,7 +122,7 @@ export const resumeData = {
       location: "Ethiopia",
       period: "2019 – Present",
       type: "Full-Time",
-      description: "Administering national infrastructure contracts, managing diverse stakeholder correspondence, and enforcing strict quality assurance.",
+      description: "",
       responsibilities: [
         "Oversee and administer consulting service contracts according to international standard specifications.",
         "Author official engineering assessments, contractual evaluations, and technical correspondence.",

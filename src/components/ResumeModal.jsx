@@ -164,9 +164,11 @@ export default function ResumeModal({ isOpen, onClose, personalInfo, experience,
                         </span>
                       </div>
 
-                      <p className="text-xs text-slate-600 dark:text-slate-400 mt-1.5 mb-2 leading-relaxed">
-                        {item.description}
-                      </p>
+                      {item.description && (
+                        <p className="text-xs text-slate-600 dark:text-slate-400 mt-1.5 mb-2 leading-relaxed">
+                          {item.description}
+                        </p>
+                      )}
 
                       <ul className="space-y-1">
                         {item.responsibilities.map((resp, i) => (

@@ -102,9 +102,11 @@ export default function ExperienceEducation({ experience = [], education = [], o
                         <span>{item.company}</span>
                       </div>
 
-                      <p className="text-sm text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
-                        {item.description}
-                      </p>
+                      {item.description && (
+                        <p className="text-sm text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+                          {item.description}
+                        </p>
+                      )}
 
                       {/* Responsibilities list */}
                       <ul className="space-y-2">
