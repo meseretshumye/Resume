@@ -7,7 +7,7 @@ import {
   FileText,
   ArrowRight,
   Layers,
-  ShieldCheck,
+  Server,
   CheckCircle2,
   Sparkles,
   Rocket,
@@ -18,15 +18,15 @@ export default function About({ personalInfo = {}, onOpenResume }) {
     {
       title: "Clean Architecture",
       description:
-        "Engineered with SOLID principles for high scalability, maintainability, and enterprise-grade performance.",
+        "SOLID principles, modular patterns, and maintainable enterprise code.",
       icon: Compass,
-      iconColor: "text-sky-400",
-      iconBg: "bg-sky-500/10 border-sky-500/20",
+      iconColor: "text-indigo-400",
+      iconBg: "bg-indigo-500/10 border-indigo-500/20",
     },
     {
       title: "Modern React & Mobile",
       description:
-        "Building responsive, high-performance web and mobile platforms with React, Next.js, and TypeScript.",
+        "High-performance responsive web and mobile interfaces with React & Next.js.",
       icon: Code2,
       iconColor: "text-indigo-400",
       iconBg: "bg-indigo-500/10 border-indigo-500/20",
@@ -34,18 +34,18 @@ export default function About({ personalInfo = {}, onOpenResume }) {
     {
       title: "Scalable Backend APIs",
       description:
-        "Designing secure microservices and high-throughput RESTful & GraphQL endpoints with Node.js.",
-      icon: ShieldCheck,
-      iconColor: "text-emerald-400",
-      iconBg: "bg-emerald-500/10 border-emerald-500/20",
+        "High-throughput RESTful & GraphQL microservices built with Node.js.",
+      icon: Server,
+      iconColor: "text-indigo-400",
+      iconBg: "bg-indigo-500/10 border-indigo-500/20",
     },
     {
       title: "Cloud & DevOps Delivery",
       description:
-        "Automating CI/CD pipelines, Docker containerization, and reliable agile delivery workflows.",
+        "Automated CI/CD pipelines, Docker containers, and rapid deployment.",
       icon: Rocket,
-      iconColor: "text-amber-400",
-      iconBg: "bg-amber-500/10 border-amber-500/20",
+      iconColor: "text-indigo-400",
+      iconBg: "bg-indigo-500/10 border-indigo-500/20",
     },
   ];
 
@@ -79,13 +79,13 @@ export default function About({ personalInfo = {}, onOpenResume }) {
             Passionate Web Developer &amp; Problem Solver
           </h2>
 
-          <p className="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+          {/* <p className="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
             I am a passionate software developer focused on building practical,
             scalable, and user-centered digital solutions. By combining systems
             thinking, clean code, and modern web technologies, I transform
             complex problems into efficient, maintainable, and impactful web
             applications.
-          </p>
+          </p> */}
         </div>
 
         {/* Structured 2-Column Arrangement */}
@@ -136,8 +136,9 @@ export default function About({ personalInfo = {}, onOpenResume }) {
                 {/* Executive Narrative */}
                 <div className="space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
                   <p>
-                    Full-Stack Software Developer engineering scalable, enterprise-grade web applications. Proficient across the modern JavaScript &amp; TypeScript ecosystem —{" "}
-                    <strong className="text-slate-900 dark:text-white font-semibold">
+                    I'm a Full-Stack Software Developer passionate about designing, building, and delivering scalable,
+                    high-performance web applications.
+                    {/* <strong className="text-slate-900 dark:text-white font-semibold">
                       React
                     </strong>
                     ,{" "}
@@ -152,7 +153,7 @@ export default function About({ personalInfo = {}, onOpenResume }) {
                     <strong className="text-slate-900 dark:text-white font-semibold">
                       Tailwind CSS
                     </strong>
-                    , and high-throughput database systems.
+                    , and high-throughput database systems. */}
                   </p>
                 </div>
 
