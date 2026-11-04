@@ -61,7 +61,7 @@ export const resumeData = {
     {
       id: "backend",
       name: "Backend & APIs",
-      description: "Engineering secure, scalable server applications, and robust RESTful API endpoints.",
+      description: "Engineering secure, scalable server applications and robust backend services.",
       icon: "Server"
     },
     {
@@ -89,7 +89,6 @@ export const resumeData = {
     { name: "NestJS", category: "backend", level: 90, levelText: "Advanced", icon: "Server", symbol: "Nest", popular: true },
     { name: "Node.js", category: "backend", level: 92, levelText: "Advanced", icon: "Server", symbol: "Node", popular: true },
     { name: "Express.js", category: "backend", level: 92, levelText: "Advanced", icon: "Network", symbol: "ex", popular: true },
-    { name: "RESTful API Design", category: "backend", level: 95, levelText: "Advanced", icon: "Cpu", symbol: "REST", popular: true },
     { name: "JWT & OAuth 2.0", category: "backend", level: 90, levelText: "Advanced", icon: "KeyRound", symbol: "🔑", popular: true },
 
     // --- 3. Databases & Cloud (Exact match to design) ---

@@ -30,7 +30,6 @@ export const skills: Skill[] = [
   // --- Backend & APIs ---
   { name: "Node.js Runtime", category: "backend", level: 88, icon: "Server", symbol: "Node", popular: true },
   { name: "Express.js Framework", category: "backend", level: 88, icon: "Network", symbol: "ex", popular: true },
-  { name: "RESTful API Architecture", category: "backend", level: 92, icon: "Cpu", symbol: "REST", popular: true },
   { name: "JWT & API Security", category: "backend", level: 88, icon: "KeyRound", symbol: "🔑", popular: true },
 
   // --- Databases ---

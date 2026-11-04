@@ -64,7 +64,7 @@ const TICKER_ITEMS = [
   { name: "PostgreSQL", symbol: "🐘" },
   { name: "React Native", symbol: "📱" },
   { name: "NestJS", symbol: "🦁" },
-  { name: "REST APIs", symbol: "⚡" },
+  { name: "Postman", symbol: "📮" },
   { name: "MySQL", symbol: "🐬" },
   { name: "Express.js", symbol: "🚀" },
   { name: "Clean Architecture", symbol: "📐" },

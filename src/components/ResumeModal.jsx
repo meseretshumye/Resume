@@ -234,7 +234,7 @@ export default function ResumeModal({ isOpen, onClose, personalInfo, experience,
                   <div>
                     <h4 className="text-xs font-bold text-slate-900 dark:text-white">Backend &amp; APIs</h4>
                     <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 mt-0.5 leading-relaxed">
-                      Node.js, Express.js, NestJS, RESTful APIs, JWT, OAuth 2.0, API Security
+                      Node.js, Express.js, NestJS, JWT, OAuth 2.0, API Security
                     </p>
                   </div>
                   <div>

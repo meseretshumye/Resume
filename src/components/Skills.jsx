@@ -32,7 +32,7 @@ export default function Skills({ skills = [], skillCategories = [] }) {
         name: "Backend & APIs",
         filterLabel: "Backend & APIs",
         // description:
-        //   "Engineering secure, scalable server applications, and robust RESTful API endpoints.",
+        //   "Engineering secure, scalable server applications and robust backend services.",
         iconSvg: (
           <svg
             viewBox="0 0 24 24"
