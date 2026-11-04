@@ -163,26 +163,6 @@ export const resumeData = {
       grade: "Honors Graduate",
       description: "Comprehensive 5-year engineering degree attending all civil engineering courses, including structural analysis & design, hydraulics, geotechnical engineering, construction materials, and advanced analytical problem solving.",
       skillsAcquired: ["Structural Analysis", "Project Scheduling", "Engineering Mathematics", "Technical Drafting", "Systematic Problem Solving"]
-    },
-    {
-      id: "edu-2",
-      degree: "Preparatory Class",
-      institution: "Ebinat Higher Secondary School",
-      location: "Ebinat, Amhara, Ethiopia",
-      period: "2009 – 2010",
-      grade: "University Qualification Standing",
-      description: "Natural Sciences stream university preparatory education, specializing in Advanced Mathematics and Physics to qualify for engineering admission.",
-      skillsAcquired: ["Natural Sciences", "Advanced Mathematics", "Analytical Thinking", "Scientific Methodology"]
-    },
-    {
-      id: "edu-3",
-      degree: "High School",
-      institution: "Ebinat Secondary School",
-      location: "Ebinat, Ethiopia",
-      period: "2007 – 2008",
-      grade: "Exemplary Academic Record",
-      description: "Foundational secondary education emphasizing natural sciences, mathematics, and technology, graduating with top qualifying marks.",
-      skillsAcquired: ["Foundational Mathematics", "Information Technology", "Communication Skills"]
     }
   ],
 
