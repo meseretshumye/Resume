@@ -89,9 +89,6 @@ export default function Projects({ projects }) {
                 {/* Bottom title inside image */}
                 <div className="absolute bottom-4 left-4 right-4 text-white">
                   <h3 className="text-xl font-bold">{project.title}</h3>
-                  <p className="text-xs text-slate-300 mt-0.5">
-                    {project.subtitle}
-                  </p>
                 </div>
               </div>
 
