@@ -102,37 +102,34 @@ export const resumeData = {
 
   experience: [
     {
-      id: "exp-1",
-      role: "Project Engineer & Contract Administrator",
-      company: "Ethiopian Roads Authority",
-      location: "Ethiopia",
-      period: "2019 – Present",
-      type: "Full-Time",
-      description: "Managing engineering works and consultancy service contracts for high-stakes road construction infrastructure projects across the country.",
-      responsibilities: [
-        "Oversee and administer works and consulting service contracts in accordance with national and international standard specifications.",
-        "Author official engineering correspondence, contractual assessments, and dispute evaluations for diverse stakeholders.",
-        "Coordinate high-level meetings between regional contractors, supervising consultant engineers, and government authorities.",
-        "Implement rigorous quality control protocols and monitor milestone compliance to ensure on-time, within-budget completion."
-      ],
-      technologies: ["Contract Management", "FIDIC Standards", "Technical Correspondence", "Quality Assurance", "Project Lifecycle"]
-    },
-    {
       id: "exp-2",
       role: "Full-Stack Developer",
       company: "Freelance & SaaS Solutions",
       location: "Addis Ababa, Ethiopia (Remote / Hybrid)",
       period: "2025 – Present",
       type: "Contract / Freelance",
-      description: "Architecting and deploying production-grade web applications, scalable SaaS platforms, and interactive mobile experiences—bridging pixel-perfect frontend craftsmanship with robust backend architectures.",
+      description: "Architecting and delivering scalable SaaS web apps and responsive mobile interfaces with modern full-stack technologies.",
       responsibilities: [
-        "Architected and deployed scalable SaaS web applications, responsive client portals, and multi-tenant digital platforms.",
-        "Engineered intuitive cross-platform mobile apps and modern web interfaces using React, React Native, Next.js, and Tailwind CSS.",
-        "Transformed complex client requirements and UI/UX mockups into pixel-perfect, accessible, and cross-browser compatible digital solutions.",
-        "Developed robust full-stack architectures, high-performance RESTful APIs, and optimized PostgreSQL and MySQL databases.",
-        "Delivered mobile-first, high-speed applications with sub-second load times, Core Web Vitals optimization, and reliable production deployments."
+        "Engineered modern web and mobile apps with React, React Native, Next.js, and Tailwind CSS.",
+        "Built robust server architectures and high-performance databases with Node.js and PostgreSQL/MySQL.",
+        "Delivered mobile-first applications with sub-second load times and Core Web Vitals optimization."
       ],
-      technologies: ["React.js", "React Native", "Next.js", "Node.js", "SaaS Architecture", "Tailwind CSS", "RESTful APIs", "PostgreSQL", "MySQL"]
+      technologies: ["React.js", "React Native", "Next.js", "Node.js", "SaaS Architecture", "Tailwind CSS", "PostgreSQL", "MySQL"]
+    },
+    {
+      id: "exp-1",
+      role: "Project Engineer & Contract Administrator",
+      company: "Ethiopian Roads Authority",
+      location: "Ethiopia",
+      period: "2019 – Present",
+      type: "Full-Time",
+      description: "Administering national infrastructure contracts, managing diverse stakeholder correspondence, and enforcing strict quality assurance.",
+      responsibilities: [
+        "Oversee and administer consulting service contracts according to international standard specifications.",
+        "Author official engineering assessments, contractual evaluations, and technical correspondence.",
+        "Implement rigorous quality control protocols to ensure on-time and within-budget completion."
+      ],
+      technologies: ["Contract Management", "FIDIC Standards", "Technical Correspondence", "Quality Assurance", "Project Lifecycle"]
     }
   ],
 
