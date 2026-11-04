@@ -5,8 +5,7 @@ import {
   Building2, 
   Gauge, 
   Palette, 
-  MessagesSquare, 
-  Check 
+  MessagesSquare 
 } from 'lucide-react';
 
 export default function Services({ services }) {
@@ -56,24 +55,9 @@ export default function Services({ services }) {
                     {service.title}
                   </h3>
 
-                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
+                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                     {service.description}
                   </p>
-
-                  {/* Deliverables List */}
-                  <div className="space-y-2">
-                    <p className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
-                      Key Deliverables
-                    </p>
-                    {service.deliverables.map((item, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-xs text-slate-700 dark:text-slate-300 font-medium">
-                        <div className="w-4 h-4 rounded-full bg-emerald-50 dark:bg-emerald-950/70 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
-                          <Check className="w-3 h-3" />
-                        </div>
-                        <span>{item}</span>
-                      </div>
-                    ))}
-                  </div>
                 </div>
               </div>
             );
