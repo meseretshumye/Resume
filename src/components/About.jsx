@@ -34,7 +34,7 @@ export default function About({ personalInfo = {}, onOpenResume }) {
     {
       title: "Scalable Backend APIs",
       description:
-        "High-throughput RESTful & GraphQL microservices built with Node.js.",
+        "High-throughput RESTful APIs and reliable backend systems built with Node.js.",
       icon: Server,
       iconColor: "text-indigo-400",
       iconBg: "bg-indigo-500/10 border-indigo-500/20",

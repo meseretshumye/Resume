@@ -66,7 +66,7 @@ const TICKER_ITEMS = [
   { name: "NestJS", symbol: "🦁" },
   { name: "REST APIs", symbol: "⚡" },
   { name: "Docker", symbol: "🐳" },
-  { name: "GraphQL", symbol: "◈" },
+  { name: "Express.js", symbol: "🚀" },
   { name: "Clean Architecture", symbol: "📐" },
 ];
 

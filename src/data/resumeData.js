@@ -61,7 +61,7 @@ export const resumeData = {
     {
       id: "backend",
       name: "Backend & APIs",
-      description: "Engineering secure, scalable server applications, enterprise microservices, and robust REST/GraphQL endpoints.",
+      description: "Engineering secure, scalable server applications, and robust RESTful API endpoints.",
       icon: "Server"
     },
     {
@@ -97,9 +97,6 @@ export const resumeData = {
     { name: "Express.js", category: "backend", level: 92, levelText: "Advanced", icon: "Network", symbol: "ex", popular: true },
     { name: "RESTful API Design", category: "backend", level: 95, levelText: "Advanced", icon: "Cpu", symbol: "REST", popular: true },
     { name: "JWT & OAuth 2.0", category: "backend", level: 90, levelText: "Advanced", icon: "KeyRound", symbol: "🔑", popular: true },
-    { name: "WebSockets / Socket.io", category: "backend", level: 88, levelText: "Advanced", icon: "Radio", symbol: "⚡", popular: true },
-    { name: "GraphQL", category: "backend", level: 82, levelText: "Intermediate", icon: "Share2", symbol: "◈", popular: false },
-    { name: "Microservices Basics", category: "backend", level: 80, levelText: "Intermediate", icon: "Boxes", symbol: "⬡", popular: false },
 
     // --- 3. Databases & Cloud (Exact match to design) ---
     { name: "PostgreSQL", category: "database", level: 92, levelText: "Advanced", icon: "Database", symbol: "🐘", popular: true },
@@ -147,10 +144,10 @@ export const resumeData = {
         "Architected and deployed scalable SaaS web applications, responsive client portals, and multi-tenant digital platforms.",
         "Engineered intuitive cross-platform mobile apps and modern web interfaces using React, React Native, TypeScript, Next.js, and Tailwind CSS.",
         "Transformed complex client requirements and UI/UX mockups into pixel-perfect, accessible, and cross-browser compatible digital solutions.",
-        "Developed robust full-stack architectures, high-performance RESTful & GraphQL APIs, and optimized PostgreSQL and MongoDB databases.",
+        "Developed robust full-stack architectures, high-performance RESTful APIs, and optimized PostgreSQL and MongoDB databases.",
         "Delivered mobile-first, high-speed applications with sub-second load times, Core Web Vitals optimization, and automated CI/CD pipelines."
       ],
-      technologies: ["React.js", "React Native", "Next.js", "TypeScript", "Node.js", "SaaS Architecture", "Tailwind CSS", "REST & GraphQL APIs", "PostgreSQL", "MongoDB"]
+      technologies: ["React.js", "React Native", "Next.js", "TypeScript", "Node.js", "SaaS Architecture", "Tailwind CSS", "RESTful APIs", "PostgreSQL", "MongoDB"]
     }
   ],
 
