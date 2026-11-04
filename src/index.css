@@ -97,6 +97,17 @@
   color: var(--theme-color) !important;
 }
 
+/* Ensure explicit white text and active navbar pill text take precedence in dark mode */
+.text-white,
+.dark .dark\:text-white,
+.dark .text-white,
+.dark\:text-white,
+.dark nav a.dark\:bg-indigo-600,
+.dark nav a[class*="dark:bg-indigo-600"],
+.dark nav a[class*="bg-indigo-600"] {
+  color: #ffffff !important;
+}
+
 /* Dark mode icon & highlight accents */
 .dark .text-sky-400,
 .dark .text-sky-300,

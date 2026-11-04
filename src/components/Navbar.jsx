@@ -86,7 +86,7 @@ export default function Navbar({ darkMode, setDarkMode, onOpenResume, personalIn
                   onClick={(e) => handleLinkClick(e, link.href)}
                   className={`px-4 py-1.5 text-sm font-medium rounded-full transition-all duration-200 ${
                     isActive
-                      ? 'bg-white hover:bg-slate-50 dark:bg-indigo-600 dark:hover:bg-indigo-500 text-indigo-600 dark:text-white shadow-sm hover:shadow-md font-semibold'
+                      ? 'bg-white hover:bg-slate-50 text-indigo-600 dark:bg-indigo-600 dark:hover:bg-indigo-500 dark:!text-white shadow-sm hover:shadow-md font-semibold'
                       : 'text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white hover:bg-white/50 dark:hover:bg-slate-700/50'
                   }`}
                 >
