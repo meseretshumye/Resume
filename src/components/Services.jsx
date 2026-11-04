@@ -19,9 +19,11 @@ export default function Services({ services }) {
   };
 
   return (
-    <section id="services" className="relative my-0 py-10 md:py-14 bg-slate-100 dark:bg-[#0a1529] border-t border-slate-200/80 dark:border-blue-500/20 transition-colors duration-300">
+    <section
+      id="services"
+      className="relative my-0 py-10 md:py-14 bg-slate-100 dark:bg-[#0a1529] border-t border-slate-200/80 dark:border-blue-500/20 transition-colors duration-300"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-10">
           <div className="inline-flex items-center px-6 py-2 rounded-full bg-gradient-to-r from-blue-500/10 via-sky-500/10 to-indigo-500/10 dark:from-[#0d182e]/95 dark:via-[#102040]/95 dark:to-[#0d182e]/95 backdrop-blur-md border border-blue-400/40 dark:border-blue-500/40 text-blue-600 dark:text-[#00d2ff] text-xs font-bold uppercase tracking-wider mb-3 shadow-[0_0_16px_rgba(0,210,255,0.12)] hover:border-sky-400 transition-all duration-300">
@@ -31,7 +33,9 @@ export default function Services({ services }) {
             Services & Value Offerings
           </h2>
           <p className="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-300">
-            End-to-end digital development tailored for clinics, pharmacies, restaurants, small businesses, and enterprise infrastructure.
+            End-to-end full-stack development, covering every stage from
+            planning and architecture to implementation, deployment, and ongoing
+            maintenance..
           </p>
         </div>
 
@@ -63,7 +67,6 @@ export default function Services({ services }) {
             );
           })}
         </div>
-
       </div>
     </section>
   );

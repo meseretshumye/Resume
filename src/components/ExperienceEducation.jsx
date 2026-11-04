@@ -59,7 +59,7 @@ export default function ExperienceEducation({ experience = [], education = [], o
             }`}
           >
             <GraduationCap className="w-3.5 h-3.5" />
-            <span>Academic Education</span>
+            <span>Educational Background</span>
           </button>
         </div>
 

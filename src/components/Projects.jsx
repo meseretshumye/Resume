@@ -98,22 +98,9 @@ export default function Projects({ projects }) {
               {/* Card Body */}
               <div className="p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                     {project.description}
                   </p>
-
-                  {/* Highlights */}
-                  <ul className="space-y-1.5 mb-5">
-                    {project.highlights.slice(0, 2).map((item, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-start gap-2 text-xs text-slate-600 dark:text-slate-300"
-                      >
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
 
                 {/* Action Buttons */}
