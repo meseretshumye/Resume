@@ -48,7 +48,7 @@ export default function Services({ services }) {
               >
                 <div>
                   {/* Icon Frame */}
-                  <div className="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-950/70 border border-indigo-100 dark:border-indigo-800/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                  <div className="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-[#131d36] border border-indigo-100 dark:border-[#1e2e5c] text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-5 group-hover:scale-110 group-hover:border-indigo-300 dark:group-hover:border-indigo-500/60 transition-all duration-300 shadow-sm">
                     <IconComponent className="w-6 h-6" />
                   </div>
 
