@@ -6,7 +6,6 @@ import {
   Twitter, 
   Facebook, 
   Github, 
-  MessageCircle, 
   Mail 
 } from 'lucide-react';
 
@@ -126,17 +125,6 @@ export default function Footer({ personalInfo }) {
                 aria-label="GitHub"
               >
                 <Github className="w-4 h-4" />
-              </a>
-            )}
-            {personalInfo.socialLinks?.whatsapp && (
-              <a
-                href={personalInfo.socialLinks.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-[#0e1629] border border-sky-500/70 text-white hover:bg-emerald-500 hover:border-emerald-400 hover:text-white hover:scale-110 hover:shadow-[0_0_12px_rgba(16,185,129,0.5)] flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer"
-                aria-label="WhatsApp"
-              >
-                <MessageCircle className="w-4 h-4" />
               </a>
             )}
             {personalInfo.email && (

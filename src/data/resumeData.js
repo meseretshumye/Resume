@@ -4,7 +4,7 @@ export const resumeData = {
     title: "Full-Stack Web Developer",
     subtitle: "Turning complex concepts into pixel-perfect, scalable web experiences",
     tagline: "Bridging engineering rigor with modern digital web craftsmanship to build fast, beautiful, and accessible web applications.",
-    email: "Meseretshumye6@gmail.com",
+    email: "meseretshumye12@gmail.com",
     phone: "+251 921 250 464",
     location: "Addis Ababa, Ethiopia",
     availability: "Available for Full-time, Remote & Freelance Projects",
@@ -21,8 +21,7 @@ export const resumeData = {
       twitter: "https://x.com/shumye19303/photo",
       facebook: "https://www.facebook.com/meseret.shumye.5",
       github: "https://github.com",
-      whatsapp: "https://wa.me/251921250464",
-      email: "mailto:Meseretshumye6@gmail.com"
+      email: "mailto:meseretshumye12@gmail.com"
     },
     bioSummary: "Meseret Shumye is a passionate Full-Stack Web Developer based in Addis Ababa, Ethiopia. With extensive expertise in modern frontend engineering (React, JavaScript ES6+, Tailwind CSS, Bootstrap) and backend systems, he blends structural problem-solving with digital artistry to deliver high-performance web applications.",
     detailedBio: [

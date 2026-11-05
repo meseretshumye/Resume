@@ -4,7 +4,6 @@ import {
   Phone, 
   MapPin, 
   Send, 
-  MessageCircle, 
   CheckCircle2, 
   Copy, 
   Check 
@@ -118,14 +117,14 @@ export default function Contact({ personalInfo }) {
                   </button>
                 </div>
 
-                {/* Item 2: Phone & WhatsApp */}
+                {/* Item 2: Phone */}
                 <div className="p-4 sm:p-5 rounded-2xl bg-slate-50/80 dark:bg-slate-900/50 border border-slate-200/80 dark:border-blue-500/15 hover:border-indigo-400/60 dark:hover:border-sky-400/40 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group transition-all duration-200">
                   <div className="flex items-center gap-4 min-w-0">
                     <div className="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-blue-500/25 text-indigo-600 dark:text-sky-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200 shadow-xs">
                       <Phone className="w-6 h-6" />
                     </div>
                     <div className="min-w-0">
-                      <h4 className="font-bold text-slate-900 dark:text-white text-base">Phone & WhatsApp</h4>
+                      <h4 className="font-bold text-slate-900 dark:text-white text-base">Phone Number</h4>
                       <a
                         href={`tel:${personalInfo.phone}`}
                         className="text-sm font-semibold text-emerald-600 dark:text-emerald-400 hover:underline block mt-0.5"
@@ -136,13 +135,11 @@ export default function Contact({ personalInfo }) {
                   </div>
 
                   <a
-                    href={personalInfo.socialLinks.whatsapp}
-                    target="_blank"
-                    rel="noreferrer"
+                    href={`tel:${personalInfo.phone}`}
                     className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700/80 hover:border-indigo-400 dark:hover:border-sky-400 active:border-indigo-500 dark:active:border-sky-400 hover:bg-slate-50 dark:hover:bg-slate-700/60 shadow-xs transition-all duration-150 cursor-pointer shrink-0 self-start sm:self-auto"
                   >
-                    <MessageCircle className="w-3.5 h-3.5 text-emerald-500" />
-                    <span>Chat on WhatsApp</span>
+                    <Phone className="w-3.5 h-3.5 text-emerald-500" />
+                    <span>Call Now</span>
                   </a>
                 </div>
 
