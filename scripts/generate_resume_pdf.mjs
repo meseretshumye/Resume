@@ -3,12 +3,9 @@ import fs from 'fs';
 import path from 'path';
 
 function createPDF() {
-  const objects = [];
-  
-  function addObject(content) {
-    objects.push(content);
-    return objects.length; // 1-based index
-  }
+  // A4 dimensions: 595.28 x 841.89 points
+  const pageWidth = 595.28;
+  const pageHeight = 841.89;
 
   // Escape special PDF characters in strings
   function esc(str) {
@@ -16,31 +13,9 @@ function createPDF() {
     return str.replace(/\\/g, '\\\\').replace(/\(/g, '\\(').replace(/\)/g, '\\)');
   }
 
-  // We will build a 2-page clean A4 PDF document
-  // A4 dimensions: 595.28 x 841.89 points
-  const pageWidth = 595.28;
-  const pageHeight = 841.89;
-
-  // We will define fonts
-  // Object 1: Catalog
-  // Object 2: Pages
-  // Object 3: Helvetica
-  // Object 4: Helvetica-Bold
-  // Object 5: Page 1
-  // Object 6: Stream Page 1
-  // Object 7: Page 2
-  // Object 8: Stream Page 2
-
-  // Object 1: Catalog (placeholder, will fill)
-  // Object 2: Pages (placeholder)
-  // Object 3: Font F1 (Helvetica)
-  // Object 4: Font F2 (Helvetica-Bold)
-
-  // Streams for Page 1 & Page 2
   let p1Ops = [];
   let p2Ops = [];
 
-  // Helper drawing functions
   function rect(ops, x, y, w, h, r, g, b, fill = true, stroke = false) {
     ops.push(`${r.toFixed(3)} ${g.toFixed(3)} ${b.toFixed(3)} ${fill ? 'rg' : 'RG'}`);
     ops.push(`${x.toFixed(2)} ${y.toFixed(2)} ${w.toFixed(2)} ${h.toFixed(2)} re ${fill ? (stroke ? 'B' : 'f') : 'S'}`);
@@ -62,22 +37,24 @@ function createPDF() {
   }
 
   // ==================== PAGE 1 ====================
-  // Top Banner / Header background
-  rect(p1Ops, 0, 720, pageWidth, 122, 0.05, 0.08, 0.15); // Dark navy banner
-  // Accent bar
-  rect(p1Ops, 0, 716, pageWidth, 4, 0.13, 0.77, 0.58); // Teal/Emerald accent
+  // 1. Top "Back to Home / Portfolio" Interactive Bar (y: 818 to 842)
+  rect(p1Ops, 0, 818, pageWidth, 23.89, 0.04, 0.07, 0.14);
+  text(p1Ops, 'F2', 9, 30, 826, '<-- BACK TO HOME / PORTFOLIO  |  Click anywhere on this bar to return to website', 0.2, 0.85, 0.65);
 
-  // Name & Title
-  text(p1Ops, 'F2', 26, 40, 785, 'MESERET SHUMYE', 1, 1, 1);
-  text(p1Ops, 'F1', 12, 40, 765, 'Full-Stack Developer  |  Project Engineer & Contract Administrator', 0.13, 0.77, 0.58);
-  text(p1Ops, 'F1', 9.5, 40, 746, 'Addis Ababa, Ethiopia   |   meseretshumye12@gmail.com   |   +251 912 91 80 18', 0.82, 0.86, 0.92);
-  text(p1Ops, 'F1', 9.5, 40, 732, 'GitHub: github.com/meseretshumye   |   LinkedIn: linkedin.com/in/meseret-shumye', 0.82, 0.86, 0.92);
+  // 2. Main Executive Header (y: 710 to 818)
+  rect(p1Ops, 0, 712, pageWidth, 106, 0.05, 0.08, 0.15); // Dark navy banner
+  rect(p1Ops, 0, 708, pageWidth, 4, 0.13, 0.77, 0.58);  // Teal accent line
+
+  text(p1Ops, 'F2', 25, 35, 778, 'MESERET SHUMYE', 1, 1, 1);
+  text(p1Ops, 'F1', 11.5, 35, 759, 'Full-Stack Developer  |  Project Engineer & Contract Administrator', 0.13, 0.77, 0.58);
+  text(p1Ops, 'F1', 9.5, 35, 740, 'Addis Ababa, Ethiopia   |   meseretshumye12@gmail.com   |   +251 912 91 80 18', 0.82, 0.86, 0.92);
+  text(p1Ops, 'F1', 9.5, 35, 725, 'GitHub: github.com/meseretshumye   |   LinkedIn: linkedin.com/in/meseret-shumye', 0.82, 0.86, 0.92);
 
   // Section 1: Executive Profile
-  let y = 685;
-  text(p1Ops, 'F2', 12, 40, y, 'EXECUTIVE PROFILE', 0.05, 0.08, 0.15);
-  line(p1Ops, 40, y - 4, pageWidth - 40, y - 4, 0.13, 0.77, 0.58, 1.5);
-  y -= 20;
+  let y = 678;
+  text(p1Ops, 'F2', 11.5, 35, y, 'EXECUTIVE PROFILE', 0.05, 0.08, 0.15);
+  line(p1Ops, 35, y - 4, pageWidth - 35, y - 4, 0.13, 0.77, 0.58, 1.5);
+  y -= 18;
 
   const profileLines = [
     'Passionate Full-Stack Developer and seasoned Project Engineer & Contract Administrator bridging the gap',
@@ -86,15 +63,15 @@ function createPDF() {
     'complex engineering contracts with rigorous quality assurance and international compliance.'
   ];
   for (const pl of profileLines) {
-    text(p1Ops, 'F1', 9.5, 40, y, pl, 0.2, 0.22, 0.26);
+    text(p1Ops, 'F1', 9.5, 35, y, pl, 0.2, 0.22, 0.26);
     y -= 13;
   }
 
   // Section 2: Technical Skills
-  y -= 12;
-  text(p1Ops, 'F2', 12, 40, y, 'TECHNICAL SKILLS & COMPETENCIES', 0.05, 0.08, 0.15);
-  line(p1Ops, 40, y - 4, pageWidth - 40, y - 4, 0.13, 0.77, 0.58, 1.5);
-  y -= 22;
+  y -= 10;
+  text(p1Ops, 'F2', 11.5, 35, y, 'TECHNICAL SKILLS & COMPETENCIES', 0.05, 0.08, 0.15);
+  line(p1Ops, 35, y - 4, pageWidth - 35, y - 4, 0.13, 0.77, 0.58, 1.5);
+  y -= 20;
 
   const skillGroups = [
     { title: 'Frontend & Mobile:', list: 'React.js, React Native, Next.js, Tailwind CSS' },
@@ -105,81 +82,85 @@ function createPDF() {
   ];
 
   for (const sg of skillGroups) {
-    text(p1Ops, 'F2', 9.5, 40, y, sg.title, 0.05, 0.08, 0.15);
+    text(p1Ops, 'F2', 9.5, 35, y, sg.title, 0.05, 0.08, 0.15);
     text(p1Ops, 'F1', 9.5, 175, y, sg.list, 0.25, 0.28, 0.32);
-    y -= 15;
+    y -= 14.5;
   }
 
   // Section 3: Professional Experience
-  y -= 12;
-  text(p1Ops, 'F2', 12, 40, y, 'PROFESSIONAL EXPERIENCE', 0.05, 0.08, 0.15);
-  line(p1Ops, 40, y - 4, pageWidth - 40, y - 4, 0.13, 0.77, 0.58, 1.5);
-  y -= 22;
+  y -= 10;
+  text(p1Ops, 'F2', 11.5, 35, y, 'PROFESSIONAL EXPERIENCE', 0.05, 0.08, 0.15);
+  line(p1Ops, 35, y - 4, pageWidth - 35, y - 4, 0.13, 0.77, 0.58, 1.5);
+  y -= 20;
 
   // Experience 1: Full-Stack Developer
-  text(p1Ops, 'F2', 11, 40, y, 'Full-Stack Developer', 0.05, 0.08, 0.15);
-  text(p1Ops, 'F2', 10, pageWidth - 140, y, '2022 - Present', 0.13, 0.77, 0.58);
-  y -= 14;
-  text(p1Ops, 'F1', 10, 40, y, 'Freelance / Remote Consultancy  -  Addis Ababa, Ethiopia', 0.4, 0.44, 0.48);
-  y -= 16;
+  text(p1Ops, 'F2', 11, 35, y, 'Full-Stack Developer', 0.05, 0.08, 0.15);
+  text(p1Ops, 'F2', 9.5, pageWidth - 135, y, '2022 - Present', 0.13, 0.77, 0.58);
+  y -= 13;
+  text(p1Ops, 'F1', 9.5, 35, y, 'Freelance / Remote Consultancy  -  Addis Ababa, Ethiopia', 0.4, 0.44, 0.48);
+  y -= 15;
 
   const exp1Bullets = [
     'Architecting and delivering scalable SaaS web apps and responsive mobile interfaces with modern full-stack technologies.',
     'Developing high-performance APIs, database architectures, and automated testing pipelines.'
   ];
   for (const b of exp1Bullets) {
-    text(p1Ops, 'F2', 10, 48, y, '-', 0.13, 0.77, 0.58);
-    text(p1Ops, 'F1', 9.5, 58, y, b, 0.2, 0.22, 0.26);
-    y -= 14;
+    text(p1Ops, 'F2', 10, 42, y, '-', 0.13, 0.77, 0.58);
+    text(p1Ops, 'F1', 9.5, 52, y, b, 0.2, 0.22, 0.26);
+    y -= 13.5;
   }
 
   // Experience 2: Project Engineer & Contract Administrator
-  y -= 12;
-  text(p1Ops, 'F2', 11, 40, y, 'Project Engineer & Contract Administrator', 0.05, 0.08, 0.15);
-  text(p1Ops, 'F2', 10, pageWidth - 140, y, '2018 - 2022', 0.13, 0.77, 0.58);
-  y -= 14;
-  text(p1Ops, 'F1', 10, 40, y, 'Infrastructure Engineering Consultancy  -  Ethiopia', 0.4, 0.44, 0.48);
-  y -= 16;
+  y -= 10;
+  text(p1Ops, 'F2', 11, 35, y, 'Project Engineer & Contract Administrator', 0.05, 0.08, 0.15);
+  text(p1Ops, 'F2', 9.5, pageWidth - 135, y, '2018 - 2022', 0.13, 0.77, 0.58);
+  y -= 13;
+  text(p1Ops, 'F1', 9.5, 35, y, 'Infrastructure Engineering Consultancy  -  Ethiopia', 0.4, 0.44, 0.48);
+  y -= 15;
 
   const exp2Bullets = [
     'Administering national infrastructure contracts, managing diverse stakeholder correspondence, and enforcing strict quality assurance.',
     'Managing engineering correspondence, claim assessments, and contractual compliance under FIDIC conditions of contract.'
   ];
   for (const b of exp2Bullets) {
-    text(p1Ops, 'F2', 10, 48, y, '-', 0.13, 0.77, 0.58);
-    text(p1Ops, 'F1', 9.5, 58, y, b, 0.2, 0.22, 0.26);
-    y -= 14;
+    text(p1Ops, 'F2', 10, 42, y, '-', 0.13, 0.77, 0.58);
+    text(p1Ops, 'F1', 9.5, 52, y, b, 0.2, 0.22, 0.26);
+    y -= 13.5;
   }
 
   // Page 1 Footer
-  text(p1Ops, 'F1', 8.5, 40, 25, 'Meseret Shumye  -  Executive Curriculum Vitae (Page 1 of 2)', 0.55, 0.58, 0.62);
-  line(p1Ops, 40, 36, pageWidth - 40, 36, 0.88, 0.9, 0.92, 0.75);
+  text(p1Ops, 'F1', 8.5, 35, 25, 'Meseret Shumye  -  Executive Curriculum Vitae (Page 1 of 2)  |  Return home: http://localhost:3000/', 0.55, 0.58, 0.62);
+  line(p1Ops, 35, 36, pageWidth - 35, 36, 0.88, 0.9, 0.92, 0.75);
 
   // ==================== PAGE 2 ====================
-  // Top Banner Page 2
-  rect(p2Ops, 0, 795, pageWidth, 47, 0.05, 0.08, 0.15);
-  rect(p2Ops, 0, 792, pageWidth, 3, 0.13, 0.77, 0.58);
-  text(p2Ops, 'F2', 14, 40, 810, 'MESERET SHUMYE  -  CURRICULUM VITAE (CONT.)', 1, 1, 1);
+  // Top "Back to Home" Bar Page 2
+  rect(p2Ops, 0, 818, pageWidth, 23.89, 0.04, 0.07, 0.14);
+  text(p2Ops, 'F2', 9, 30, 826, '<-- BACK TO HOME / PORTFOLIO  |  Click anywhere on this bar to return to website', 0.2, 0.85, 0.65);
 
-  let y2 = 760;
+  // Subheader Page 2
+  rect(p2Ops, 0, 770, pageWidth, 44, 0.05, 0.08, 0.15);
+  rect(p2Ops, 0, 767, pageWidth, 3, 0.13, 0.77, 0.58);
+  text(p2Ops, 'F2', 13, 35, 786, 'MESERET SHUMYE  -  CURRICULUM VITAE (CONT.)', 1, 1, 1);
+
+  let y2 = 735;
 
   // Education Section
-  text(p2Ops, 'F2', 12, 40, y2, 'ACADEMIC QUALIFICATIONS', 0.05, 0.08, 0.15);
-  line(p2Ops, 40, y2 - 4, pageWidth - 40, y2 - 4, 0.13, 0.77, 0.58, 1.5);
-  y2 -= 22;
+  text(p2Ops, 'F2', 11.5, 35, y2, 'ACADEMIC QUALIFICATIONS', 0.05, 0.08, 0.15);
+  line(p2Ops, 35, y2 - 4, pageWidth - 35, y2 - 4, 0.13, 0.77, 0.58, 1.5);
+  y2 -= 20;
 
-  text(p2Ops, 'F2', 11, 40, y2, 'B.Sc. in Civil & Environmental Engineering', 0.05, 0.08, 0.15);
-  text(p2Ops, 'F2', 10, pageWidth - 140, y2, '2013 - 2018', 0.13, 0.77, 0.58);
+  text(p2Ops, 'F2', 11, 35, y2, 'B.Sc. in Civil & Environmental Engineering', 0.05, 0.08, 0.15);
+  text(p2Ops, 'F2', 9.5, pageWidth - 135, y2, '2013 - 2018', 0.13, 0.77, 0.58);
+  y2 -= 13;
+  text(p2Ops, 'F1', 9.5, 35, y2, 'Addis Ababa University (AAiT)  -  Addis Ababa, Ethiopia', 0.4, 0.44, 0.48);
   y2 -= 14;
-  text(p2Ops, 'F1', 10, 40, y2, 'Addis Ababa University (AAiT)  -  Addis Ababa, Ethiopia', 0.4, 0.44, 0.48);
-  y2 -= 15;
-  text(p2Ops, 'F1', 9.5, 40, y2, 'Rigorous 5-year engineering curriculum covering structural analysis, computational modeling, and project management.', 0.25, 0.28, 0.32);
+  text(p2Ops, 'F1', 9.5, 35, y2, 'Rigorous 5-year engineering curriculum covering structural analysis, computational modeling, and project management.', 0.25, 0.28, 0.32);
 
   // Featured Projects Section
-  y2 -= 30;
-  text(p2Ops, 'F2', 12, 40, y2, 'KEY PROJECTS & TECHNICAL HIGHLIGHTS', 0.05, 0.08, 0.15);
-  line(p2Ops, 40, y2 - 4, pageWidth - 40, y2 - 4, 0.13, 0.77, 0.58, 1.5);
-  y2 -= 22;
+  y2 -= 26;
+  text(p2Ops, 'F2', 11.5, 35, y2, 'KEY PROJECTS & TECHNICAL HIGHLIGHTS', 0.05, 0.08, 0.15);
+  line(p2Ops, 35, y2 - 4, pageWidth - 35, y2 - 4, 0.13, 0.77, 0.58, 1.5);
+  y2 -= 20;
 
   const projList = [
     {
@@ -200,19 +181,19 @@ function createPDF() {
   ];
 
   for (const pr of projList) {
-    text(p2Ops, 'F2', 10.5, 40, y2, pr.name, 0.05, 0.08, 0.15);
-    y2 -= 13;
-    text(p2Ops, 'F1', 9, 40, y2, `Technologies: ${pr.tech}`, 0.13, 0.77, 0.58);
-    y2 -= 13;
-    text(p2Ops, 'F1', 9.5, 40, y2, pr.desc, 0.25, 0.28, 0.32);
-    y2 -= 20;
+    text(p2Ops, 'F2', 10, 35, y2, pr.name, 0.05, 0.08, 0.15);
+    y2 -= 12;
+    text(p2Ops, 'F1', 8.8, 35, y2, `Technologies: ${pr.tech}`, 0.13, 0.77, 0.58);
+    y2 -= 12;
+    text(p2Ops, 'F1', 9.2, 35, y2, pr.desc, 0.25, 0.28, 0.32);
+    y2 -= 18;
   }
 
   // Core Strengths & Languages
-  y2 -= 8;
-  text(p2Ops, 'F2', 12, 40, y2, 'CORE STRENGTHS & LANGUAGES', 0.05, 0.08, 0.15);
-  line(p2Ops, 40, y2 - 4, pageWidth - 40, y2 - 4, 0.13, 0.77, 0.58, 1.5);
-  y2 -= 22;
+  y2 -= 6;
+  text(p2Ops, 'F2', 11.5, 35, y2, 'CORE STRENGTHS & LANGUAGES', 0.05, 0.08, 0.15);
+  line(p2Ops, 35, y2 - 4, pageWidth - 35, y2 - 4, 0.13, 0.77, 0.58, 1.5);
+  y2 -= 20;
 
   const strengths = [
     'Contract Administration (FIDIC) & Engineering Law',
@@ -222,14 +203,14 @@ function createPDF() {
     'Amharic: Native / Bilingual Proficiency'
   ];
   for (const s of strengths) {
-    text(p2Ops, 'F2', 10, 48, y2, '*', 0.13, 0.77, 0.58);
-    text(p2Ops, 'F1', 9.5, 60, y2, s, 0.2, 0.22, 0.26);
-    y2 -= 15;
+    text(p2Ops, 'F2', 10, 42, y2, '*', 0.13, 0.77, 0.58);
+    text(p2Ops, 'F1', 9.5, 54, y2, s, 0.2, 0.22, 0.26);
+    y2 -= 14;
   }
 
   // Page 2 Footer
-  text(p2Ops, 'F1', 8.5, 40, 25, 'Meseret Shumye  -  Executive Curriculum Vitae (Page 2 of 2)  -  References available upon request', 0.55, 0.58, 0.62);
-  line(p2Ops, 40, 36, pageWidth - 40, 36, 0.88, 0.9, 0.92, 0.75);
+  text(p2Ops, 'F1', 8.5, 35, 25, 'Meseret Shumye  -  Executive Curriculum Vitae (Page 2 of 2)  |  Return home: http://localhost:3000/', 0.55, 0.58, 0.62);
+  line(p2Ops, 35, 36, pageWidth - 35, 36, 0.88, 0.9, 0.92, 0.75);
 
   // Compile streams
   const s1 = p1Ops.join('\n');
@@ -244,6 +225,8 @@ function createPDF() {
   // 6: Stream 1
   // 7: Page 2
   // 8: Stream 2
+  // 9: Link Annotation 1
+  // 10: Link Annotation 2
 
   const objList = [];
 
@@ -251,27 +234,29 @@ function createPDF() {
   objList[2] = `<< /Type /Pages /Kids [5 0 R 7 0 R] /Count 2 >>`;
   objList[3] = `<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>`;
   objList[4] = `<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>`;
-  objList[5] = `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${pageWidth} ${pageHeight}] /Contents 6 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>`;
+  objList[5] = `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${pageWidth} ${pageHeight}] /Contents 6 0 R /Annots [ 9 0 R ] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>`;
   objList[6] = `<< /Length ${Buffer.byteLength(s1, 'utf8')} >>\nstream\n${s1}\nendstream`;
-  objList[7] = `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${pageWidth} ${pageHeight}] /Contents 8 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>`;
+  objList[7] = `<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${pageWidth} ${pageHeight}] /Contents 8 0 R /Annots [ 10 0 R ] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> >>`;
   objList[8] = `<< /Length ${Buffer.byteLength(s2, 'utf8')} >>\nstream\n${s2}\nendstream`;
+  objList[9] = `<< /Type /Annot /Subtype /Link /Rect [0 818 ${pageWidth} 841.89] /Border [0 0 0] /A << /Type /Action /S /URI /URI (http://localhost:3000/) >> >>`;
+  objList[10] = `<< /Type /Annot /Subtype /Link /Rect [0 818 ${pageWidth} 841.89] /Border [0 0 0] /A << /Type /Action /S /URI /URI (http://localhost:3000/) >> >>`;
 
   let out = `%PDF-1.4\n%\xE2\xE3\xCF\xD3\n`;
   const xref = [0];
 
-  for (let i = 1; i <= 8; i++) {
+  for (let i = 1; i <= 10; i++) {
     xref[i] = Buffer.byteLength(out, 'utf8');
     out += `${i} 0 obj\n${objList[i]}\nendobj\n`;
   }
 
   const xrefOffset = Buffer.byteLength(out, 'utf8');
-  out += `xref\n0 9\n`;
+  out += `xref\n0 11\n`;
   out += `0000000000 65535 f \n`;
-  for (let i = 1; i <= 8; i++) {
+  for (let i = 1; i <= 10; i++) {
     out += `${String(xref[i]).padStart(10, '0')} 00000 n \n`;
   }
 
-  out += `trailer\n<< /Size 9 /Root 1 0 R >>\nstartxref\n${xrefOffset}\n%%EOF\n`;
+  out += `trailer\n<< /Size 11 /Root 1 0 R >>\nstartxref\n${xrefOffset}\n%%EOF\n`;
 
   const destDir = path.resolve('public');
   if (!fs.existsSync(destDir)) {
@@ -280,7 +265,7 @@ function createPDF() {
 
   const destPath = path.join(destDir, 'Meseret_Shumye_Resume.pdf');
   fs.writeFileSync(destPath, Buffer.from(out, 'utf8'));
-  console.log(`PDF successfully generated at: ${destPath} (${fs.statSync(destPath).size} bytes)`);
+  console.log(`PDF successfully generated with Back-to-Home link annotations at: ${destPath} (${fs.statSync(destPath).size} bytes)`);
 }
 
 createPDF();

@@ -27,6 +27,29 @@ export default function App() {
     setIsResumeOpen(true);
   };
 
+  const handleCloseResume = () => {
+    setIsResumeOpen(false);
+    if (window.location.hash === '#resume' || window.location.hash === '#cv') {
+      window.history.pushState(null, '', window.location.pathname);
+    }
+  };
+
+  // Keyboard shortcut (Escape to close resume) and hash-based deep linking
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && isResumeOpen) {
+        handleCloseResume();
+      }
+    };
+
+    if (window.location.hash === '#resume' || window.location.hash === '#cv') {
+      setIsResumeOpen(true);
+    }
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isResumeOpen]);
+
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add('dark');
@@ -95,7 +118,7 @@ export default function App() {
       {/* Printable Executive CV Modal */}
       <ResumeModal
         isOpen={isResumeOpen}
-        onClose={() => setIsResumeOpen(false)}
+        onClose={handleCloseResume}
         personalInfo={resumeData.personalInfo}
         experience={resumeData.experience}
         education={resumeData.education}
