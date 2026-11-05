@@ -111,12 +111,21 @@ a.bg-indigo-600,
 }
 
 /* Light Mode (White Mode) High-Contrast Consistency for Headings & Subtitles */
-html:not(.dark) h1:not(.hero-name-light-exception),
-html:not(.dark) h2,
-html:not(.dark) h3,
-html:not(.dark) h4,
-html:not(.dark) .section-title {
+html:not(.dark) h1:not(.hero-name-light-exception):not(footer *),
+html:not(.dark) h2:not(footer *),
+html:not(.dark) h3:not(footer *),
+html:not(.dark) h4:not(footer *),
+html:not(.dark) .section-title:not(footer *) {
   color: #0f172a !important; /* Deep Slate-900 */
+}
+
+/* Ensure headings & titles inside dark footer remain crisp white in white/light mode */
+html:not(.dark) footer h1,
+html:not(.dark) footer h2,
+html:not(.dark) footer h3,
+html:not(.dark) footer h4,
+html:not(.dark) footer .footer-brand-title {
+  color: #ffffff !important;
 }
 
 html:not(.dark) .text-slate-900 {

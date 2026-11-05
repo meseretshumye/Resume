@@ -37,7 +37,7 @@ export default function Footer({ personalInfo }) {
             <div className="flex items-center gap-3.5">
               <Logo size="md" />
               <div>
-                <h3 className="font-extrabold text-lg text-white leading-tight">
+                <h3 className="font-extrabold text-lg !text-white footer-brand-title leading-tight">
                   {personalInfo.name}
                 </h3>
                 <p className="text-xs text-sky-400 font-medium">
