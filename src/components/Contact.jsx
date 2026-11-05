@@ -90,7 +90,6 @@ export default function Contact({ personalInfo }) {
                     </div>
                     <div className="min-w-0">
                       <h4 className="font-bold text-slate-900 dark:text-white text-base">Direct Email</h4>
-                      <p className="text-xs text-slate-500 dark:text-slate-400">Fastest response time</p>
                       <a
                         href={`mailto:${personalInfo.email}`}
                         className="text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline break-all block mt-0.5"
@@ -127,7 +126,6 @@ export default function Contact({ personalInfo }) {
                     </div>
                     <div className="min-w-0">
                       <h4 className="font-bold text-slate-900 dark:text-white text-base">Phone & WhatsApp</h4>
-                      <p className="text-xs text-slate-500 dark:text-slate-400">Available for urgent inquiries</p>
                       <a
                         href={`tel:${personalInfo.phone}`}
                         className="text-sm font-semibold text-emerald-600 dark:text-emerald-400 hover:underline block mt-0.5"
@@ -156,17 +154,11 @@ export default function Contact({ personalInfo }) {
                     </div>
                     <div className="min-w-0">
                       <h4 className="font-bold text-slate-900 dark:text-white text-base">Current Location</h4>
-                      <p className="text-xs text-slate-500 dark:text-slate-400">Open to Remote Worldwide</p>
                       <p className="text-sm font-semibold text-slate-800 dark:text-slate-200 mt-0.5">
                         {personalInfo.location}
                       </p>
                     </div>
                   </div>
-
-                  <span className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700/80 hover:border-indigo-400 dark:hover:border-sky-400 shadow-xs transition-all duration-150 shrink-0 self-start sm:self-auto">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span>UTC+3 Timezone</span>
-                  </span>
                 </div>
               </div>
             </div>
