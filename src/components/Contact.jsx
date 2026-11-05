@@ -204,7 +204,7 @@ export default function Contact({ personalInfo }) {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Full Name"
-                    className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700/80 text-slate-900 dark:text-white text-sm placeholder:text-slate-400 dark:placeholder:text-slate-500 hover:border-slate-300 dark:hover:border-slate-600 focus:outline-none focus:border-indigo-500 dark:focus:border-sky-400 focus:ring-1 focus:ring-indigo-500/20 dark:focus:ring-sky-400/20 transition-all duration-150"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700/80 text-slate-900 dark:text-white text-sm placeholder:text-slate-400 dark:placeholder:text-slate-500 hover:border-slate-300 dark:hover:border-slate-600 focus:outline-none focus:border-indigo-500 dark:focus:border-sky-400 focus:ring-0 transition-colors duration-150"
                   />
                 </div>
 
@@ -219,7 +219,7 @@ export default function Contact({ personalInfo }) {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="Your Email"
-                    className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700/80 text-slate-900 dark:text-white text-sm placeholder:text-slate-400 dark:placeholder:text-slate-500 hover:border-slate-300 dark:hover:border-slate-600 focus:outline-none focus:border-indigo-500 dark:focus:border-sky-400 focus:ring-1 focus:ring-indigo-500/20 dark:focus:ring-sky-400/20 transition-all duration-150"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700/80 text-slate-900 dark:text-white text-sm placeholder:text-slate-400 dark:placeholder:text-slate-500 hover:border-slate-300 dark:hover:border-slate-600 focus:outline-none focus:border-indigo-500 dark:focus:border-sky-400 focus:ring-0 transition-colors duration-150"
                   />
                 </div>
 
@@ -233,7 +233,7 @@ export default function Contact({ personalInfo }) {
                     value={formData.subject}
                     onChange={handleChange}
                     placeholder="scope of your project or inquiry"
-                    className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700/80 text-slate-900 dark:text-white text-sm placeholder:text-slate-400 dark:placeholder:text-slate-500 hover:border-slate-300 dark:hover:border-slate-600 focus:outline-none focus:border-indigo-500 dark:focus:border-sky-400 focus:ring-1 focus:ring-indigo-500/20 dark:focus:ring-sky-400/20 transition-all duration-150"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700/80 text-slate-900 dark:text-white text-sm placeholder:text-slate-400 dark:placeholder:text-slate-500 hover:border-slate-300 dark:hover:border-slate-600 focus:outline-none focus:border-indigo-500 dark:focus:border-sky-400 focus:ring-0 transition-colors duration-150"
                   />
                 </div>
 
@@ -248,7 +248,7 @@ export default function Contact({ personalInfo }) {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Describe your project, timeline, and requirements..."
-                    className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700/80 text-slate-900 dark:text-white text-sm placeholder:text-slate-400 dark:placeholder:text-slate-500 hover:border-slate-300 dark:hover:border-slate-600 focus:outline-none focus:border-indigo-500 dark:focus:border-sky-400 focus:ring-1 focus:ring-indigo-500/20 dark:focus:ring-sky-400/20 transition-all duration-150 resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700/80 text-slate-900 dark:text-white text-sm placeholder:text-slate-400 dark:placeholder:text-slate-500 hover:border-slate-300 dark:hover:border-slate-600 focus:outline-none focus:border-indigo-500 dark:focus:border-sky-400 focus:ring-0 transition-colors duration-150 resize-none"
                   ></textarea>
                 </div>
 

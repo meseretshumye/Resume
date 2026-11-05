@@ -228,11 +228,17 @@ html:not(.dark) .text-slate-500 {
   border-color: var(--theme-border) !important;
 }
 
-/* 7. FORM FOCUS STATES */
+/* 7. FORM FOCUS & ACTIVE STATES (Crisp 1px hairline border matching cards and buttons) */
 input:focus,
-textarea:focus {
+input:active,
+textarea:focus,
+textarea:active {
+  border-width: 1px !important;
   border-color: var(--theme-color) !important;
-  --tw-ring-color: var(--theme-border) !important;
+  outline: none !important;
+  box-shadow: none !important;
+  --tw-ring-shadow: 0 0 #0000 !important;
+  --tw-ring-offset-shadow: 0 0 #0000 !important;
 }
 
 /* ========================================================
