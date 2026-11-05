@@ -20,6 +20,12 @@ export default function App() {
   });
 
   const [isResumeOpen, setIsResumeOpen] = useState(false);
+  const [resumeTab, setResumeTab] = useState('print');
+
+  const handleOpenResume = (tab = 'print') => {
+    setResumeTab(tab);
+    setIsResumeOpen(true);
+  };
 
   useEffect(() => {
     if (darkMode) {
@@ -37,7 +43,7 @@ export default function App() {
       <Navbar
         darkMode={darkMode}
         setDarkMode={setDarkMode}
-        onOpenResume={() => setIsResumeOpen(true)}
+        onOpenResume={handleOpenResume}
         personalInfo={resumeData.personalInfo}
       />
 
@@ -49,12 +55,12 @@ export default function App() {
         <Hero
           personalInfo={resumeData.personalInfo}
           stats={resumeData.stats}
-          onOpenResume={() => setIsResumeOpen(true)}
+          onOpenResume={handleOpenResume}
         />
 
         <About
           personalInfo={resumeData.personalInfo}
-          onOpenResume={() => setIsResumeOpen(true)}
+          onOpenResume={handleOpenResume}
         />
 
         <Skills
@@ -65,7 +71,7 @@ export default function App() {
         <ExperienceEducation
           experience={resumeData.experience}
           education={resumeData.education}
-          onOpenResume={() => setIsResumeOpen(true)}
+          onOpenResume={handleOpenResume}
         />
 
         <Services
@@ -94,6 +100,7 @@ export default function App() {
         experience={resumeData.experience}
         education={resumeData.education}
         skills={resumeData.skills}
+        initialTab={resumeTab}
       />
     </div>
   );

@@ -392,10 +392,35 @@ textarea:focus {
     background: white !important;
     color: black !important;
   }
-  .no-print {
+  header, nav, main, footer, .no-print {
     display: none !important;
   }
   .print-only {
     display: block !important;
+  }
+  .resume-modal-backdrop {
+    position: static !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+  .resume-modal-card {
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    background: white !important;
+  }
+  #printable-cv {
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: white !important;
+    color: black !important;
+    border: none !important;
+    box-shadow: none !important;
   }
 }
