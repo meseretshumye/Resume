@@ -79,13 +79,9 @@ export default function About({ personalInfo = {}, onOpenResume }) {
             Passionate Web Developer &amp; Problem Solver
           </h2>
 
-          {/* <p className="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-            I am a passionate software developer focused on building practical,
-            scalable, and user-centered digital solutions. By combining systems
-            thinking, clean code, and modern web technologies, I transform
-            complex problems into efficient, maintainable, and impactful web
-            applications.
-          </p> */}
+          <p className="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+            Bridging engineering rigor with modern digital craftsmanship to build fast, scalable, and intuitive web applications.
+          </p>
         </div>
 
         {/* Structured 2-Column Arrangement */}

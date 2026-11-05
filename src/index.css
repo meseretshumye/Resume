@@ -97,15 +97,46 @@
   color: var(--theme-color) !important;
 }
 
-/* Ensure explicit white text and active navbar pill text take precedence in dark mode */
-.text-white,
+/* Dark mode text colors & active solid button text */
 .dark .dark\:text-white,
-.dark .text-white,
-.dark\:text-white,
+.dark [class*="dark:text-white"],
 .dark nav a.dark\:bg-indigo-600,
 .dark nav a[class*="dark:bg-indigo-600"],
-.dark nav a[class*="bg-indigo-600"] {
+.dark nav a[class*="bg-indigo-600"],
+.btn-primary,
+button.bg-indigo-600,
+a.bg-indigo-600,
+.hero-btn-main {
   color: #ffffff !important;
+}
+
+/* Light Mode (White Mode) High-Contrast Consistency for Headings & Subtitles */
+html:not(.dark) h1:not(.hero-name-light-exception),
+html:not(.dark) h2,
+html:not(.dark) h3,
+html:not(.dark) h4,
+html:not(.dark) .section-title {
+  color: #0f172a !important; /* Deep Slate-900 */
+}
+
+html:not(.dark) .text-slate-900 {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .text-slate-800 {
+  color: #1e293b !important;
+}
+
+html:not(.dark) .text-slate-700 {
+  color: #334155 !important;
+}
+
+html:not(.dark) .text-slate-600 {
+  color: #475569 !important; /* Crisp, legible subtitle text */
+}
+
+html:not(.dark) .text-slate-500 {
+  color: #64748b !important;
 }
 
 /* Dark mode icon & highlight accents */
@@ -302,6 +333,13 @@ textarea:focus {
 
 .hero-greeting,
 .hero-name {
+  color: #0f172a;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
+}
+
+.dark .hero-greeting,
+.dark .hero-name {
+  color: #ffffff !important;
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75), 0 1px 4px rgba(0, 0, 0, 0.9);
 }
 

@@ -35,7 +35,7 @@ export default function Services({ services }) {
           <p className="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-300">
             End-to-end full-stack development, covering every stage from
             planning and architecture to implementation, deployment, and ongoing
-            maintenance..
+            maintenance.
           </p>
         </div>
 

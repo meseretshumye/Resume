@@ -160,18 +160,18 @@ export default function Hero({ personalInfo, stats = [], onOpenResume }) {
         <div className="hero-content flex flex-col items-center justify-center text-center w-full max-w-5xl mx-auto">
           {/* Centered Welcome & Typewriter Transition Headline matching sample video */}
           <div className="hero-heading-group w-full text-center mb-2">
-            <p className="hero-greeting text-lg sm:text-xl md:text-2xl font-medium text-white tracking-wide mb-3 text-center drop-shadow-sm">
+            <p className="hero-greeting text-lg sm:text-xl md:text-2xl font-medium text-slate-800 dark:text-white tracking-wide mb-3 text-center drop-shadow-sm">
               Welcome
             </p>
 
-            <h1 className="hero-name flex items-center justify-center text-center text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white min-h-[1.25em] w-full mx-auto drop-shadow-md">
-              <span className="text-white">{displayText}</span>
-              <span className="font-light text-white ml-0.5 animate-pulse select-none">|</span>
+            <h1 className="hero-name flex items-center justify-center text-center text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-950 dark:text-white min-h-[1.25em] w-full mx-auto drop-shadow-md">
+              <span className="text-slate-950 dark:text-white">{displayText}</span>
+              <span className="font-light text-indigo-600 dark:text-sky-400 ml-0.5 animate-pulse select-none">|</span>
             </h1>
           </div>
 
           {/* Subtitle location matching the sample video */}
-          <p className="text-xs sm:text-sm md:text-base text-slate-300 font-medium mb-8 text-center drop-shadow-xs">
+          <p className="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 font-semibold mb-8 text-center drop-shadow-xs">
             Based in {personalInfo?.location || "Addis Ababa, Ethiopia"}
           </p>
 
@@ -187,9 +187,9 @@ export default function Hero({ personalInfo, stats = [], onOpenResume }) {
 
             <button
               onClick={onOpenResume}
-              className="btn-secondary-glass hero-btn-resume flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold text-sm border border-white/25 hover:border-white/50 shadow-sm transition-all hover:scale-[1.02] backdrop-blur-md cursor-pointer"
+              className="btn-secondary-glass hero-btn-resume flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-slate-900/10 hover:bg-slate-900/15 dark:bg-white/10 dark:hover:bg-white/20 text-slate-900 dark:text-white font-semibold text-sm border border-slate-300/80 dark:border-white/25 hover:border-slate-400 dark:hover:border-white/50 shadow-sm transition-all hover:scale-[1.02] backdrop-blur-md cursor-pointer"
             >
-              <Download className="w-4 h-4 text-white" />
+              <Download className="w-4 h-4 text-slate-800 dark:text-white" />
               <span>View Resume</span>
             </button>
           </div>
@@ -197,12 +197,12 @@ export default function Hero({ personalInfo, stats = [], onOpenResume }) {
       </div>
 
       {/* 6. Sliding Tech Stack Ticker (Infinite Slow Motion Marquee) */}
-      <div className="absolute bottom-0 left-0 right-0 py-2.5 bg-white/85 dark:bg-[#0c1527]/85 backdrop-blur-md border-t border-slate-200/80 dark:border-blue-500/20 overflow-hidden z-20 select-none">
+      <div className="absolute bottom-0 left-0 right-0 py-2.5 bg-white/95 dark:bg-[#0c1527]/85 backdrop-blur-md border-t border-slate-200/80 dark:border-blue-500/20 overflow-hidden z-20 select-none">
         <div className="animate-hero-marquee flex items-center gap-8 whitespace-nowrap">
           {[...TICKER_ITEMS, ...TICKER_ITEMS].map((item, idx) => (
             <div
               key={idx}
-              className="inline-flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-xs font-semibold text-slate-800 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white transition-colors"
             >
               <span className="text-indigo-600 dark:text-sky-400 font-bold">
                 {item.symbol}
