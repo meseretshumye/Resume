@@ -39,7 +39,7 @@ export default function Services({ services }) {
           </p>
         </div>
 
-        {/* Services Grid - Compact Minimized Card Width */}
+        {/* Services Grid - Topic Title Next to Icon */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 max-w-5xl mx-auto justify-items-center">
           {services.map((service) => {
             const IconComponent = iconMap[service.icon] || Code2;
@@ -50,14 +50,16 @@ export default function Services({ services }) {
                 className="group relative rounded-2xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 p-4.5 sm:p-5 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.7)] hover:shadow-2xl hover:border-indigo-400 dark:hover:border-sky-400/60 transition-all duration-300 flex flex-col backdrop-blur-sm w-full max-w-[340px]"
               >
                 <div>
-                  {/* Icon Frame */}
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-indigo-50 dark:bg-[#131d36] border border-indigo-100 dark:border-[#1e2e5c] text-indigo-600 dark:text-indigo-400 flex items-center justify-center mb-3.5 group-hover:scale-110 group-hover:border-indigo-300 dark:group-hover:border-indigo-500/60 transition-all duration-300 shadow-sm">
-                    <IconComponent className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
-                  </div>
+                  {/* Card Header: Icon + Topic Title Next to It */}
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-indigo-50 dark:bg-[#131d36] border border-indigo-100 dark:border-[#1e2e5c] text-indigo-600 dark:text-indigo-400 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:border-indigo-300 dark:group-hover:border-indigo-500/60 transition-all duration-300 shadow-sm">
+                      <IconComponent className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
+                    </div>
 
-                  <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors mb-1.5">
-                    {service.title}
-                  </h3>
+                    <h3 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors leading-snug">
+                      {service.title}
+                    </h3>
+                  </div>
 
                   <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                     {service.description}
