@@ -22,7 +22,7 @@ export default function Contact({ personalInfo }) {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Clean phone number (strictly digits and leading plus) for valid RFC 3966 tel: protocol
+  // Clean phone number (strictly digits and leading plus, no spaces) for valid RFC 3966 tel: protocol matching melakumulu.com
   const cleanPhone = (personalInfo.phone || '').replace(/[^0-9+]/g, '');
 
   const handleCopyEmail = (e) => {
@@ -39,29 +39,6 @@ export default function Contact({ personalInfo }) {
     navigator.clipboard?.writeText(cleanPhone);
     setPhoneCopied(true);
     setTimeout(() => setPhoneCopied(false), 2500);
-  };
-
-  const handleEmailClick = (e) => {
-    // Automatically copy email to clipboard so user has it immediately
-    navigator.clipboard?.writeText(personalInfo.email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
-
-    const isMobile = typeof navigator !== 'undefined' && /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (!isMobile) {
-      // On desktop, open Gmail Web compose in a new tab so it always opens regardless of OS mail app configuration
-      window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(personalInfo.email)}`, '_blank', 'noopener,noreferrer');
-    }
-  };
-
-  const handlePhoneClick = (e) => {
-    // Always copy phone number to clipboard with feedback
-    navigator.clipboard?.writeText(cleanPhone);
-    setPhoneCopied(true);
-    setTimeout(() => setPhoneCopied(false), 2500);
-
-    // Trigger dialer with clean phone
-    window.location.href = `tel:${cleanPhone}`;
   };
 
   const handleChange = (e) => {
@@ -118,13 +95,12 @@ export default function Contact({ personalInfo }) {
               </p>
 
               <div className="space-y-3">
-                {/* Item 1: Direct Email - Fully Clickable with 100% Guaranteed Web & Native Support */}
+                {/* Item 1: Direct Email - Clean mailto link without opening any browser tabs */}
                 <div className="p-3.5 sm:p-4 rounded-xl bg-slate-50/80 dark:bg-slate-900/50 border border-slate-200/80 dark:border-blue-500/15 hover:border-indigo-400/60 dark:hover:border-sky-400/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3 group transition-all duration-200">
                   <a
                     href={`mailto:${personalInfo.email}`}
-                    onClick={handleEmailClick}
                     className="flex items-center gap-3 min-w-0 flex-1 group/link cursor-pointer text-left"
-                    title="Click to compose email to Meseret Shumye"
+                    title="Email Meseret Shumye"
                   >
                     <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-blue-500/25 text-indigo-600 dark:text-sky-400 flex items-center justify-center shrink-0 group-hover/link:scale-105 group-hover/link:bg-indigo-100 dark:group-hover/link:bg-indigo-900/80 transition-all duration-200 shadow-xs">
                       <Mail className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
@@ -142,9 +118,8 @@ export default function Contact({ personalInfo }) {
                   <div className="flex items-center gap-2 shrink-0 self-start sm:self-auto">
                     <a
                       href={`mailto:${personalInfo.email}`}
-                      onClick={handleEmailClick}
                       className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg sm:rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white shadow-xs transition-all duration-150 cursor-pointer"
-                      title="Open Gmail or mail client"
+                      title="Send email"
                     >
                       <Mail className="w-3.5 h-3.5" />
                       <span>Send Email</span>
@@ -171,13 +146,12 @@ export default function Contact({ personalInfo }) {
                   </div>
                 </div>
 
-                {/* Item 2: Phone - Fully Clickable with Sanitized tel: URI (No Spaces) */}
+                {/* Item 2: Phone - Clean tel: link without spaces and without opening any browser tabs */}
                 <div className="p-3.5 sm:p-4 rounded-xl bg-slate-50/80 dark:bg-slate-900/50 border border-slate-200/80 dark:border-blue-500/15 hover:border-indigo-400/60 dark:hover:border-sky-400/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3 group transition-all duration-200">
                   <a
                     href={`tel:${cleanPhone}`}
-                    onClick={handlePhoneClick}
                     className="flex items-center gap-3 min-w-0 flex-1 group/link cursor-pointer text-left"
-                    title="Click to call Meseret Shumye"
+                    title="Call Meseret Shumye"
                   >
                     <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-blue-500/25 text-indigo-600 dark:text-sky-400 flex items-center justify-center shrink-0 group-hover/link:scale-105 group-hover/link:bg-indigo-100 dark:group-hover/link:bg-indigo-900/80 transition-all duration-200 shadow-xs">
                       <Phone className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
@@ -195,7 +169,6 @@ export default function Contact({ personalInfo }) {
                   <div className="flex items-center gap-2 shrink-0 self-start sm:self-auto">
                     <a
                       href={`tel:${cleanPhone}`}
-                      onClick={handlePhoneClick}
                       className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg sm:rounded-xl text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white shadow-xs transition-all duration-150 cursor-pointer"
                       title="Call phone number"
                     >
