@@ -4,9 +4,7 @@ import {
   Phone, 
   MapPin, 
   Send, 
-  CheckCircle2, 
-  Copy, 
-  Check 
+  CheckCircle2 
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
@@ -17,29 +15,11 @@ export default function Contact({ personalInfo }) {
     subject: '',
     message: ''
   });
-  const [copied, setCopied] = useState(false);
-  const [phoneCopied, setPhoneCopied] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Clean phone number (strictly digits and leading plus, no spaces) for valid RFC 3966 tel: protocol matching melakumulu.com
+  // Clean phone number (strictly digits and leading plus, no spaces) for valid RFC 3966 tel: protocol
   const cleanPhone = (personalInfo.phone || '').replace(/[^0-9+]/g, '');
-
-  const handleCopyEmail = (e) => {
-    e?.preventDefault?.();
-    e?.stopPropagation?.();
-    navigator.clipboard?.writeText(personalInfo.email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
-  };
-
-  const handleCopyPhone = (e) => {
-    e?.preventDefault?.();
-    e?.stopPropagation?.();
-    navigator.clipboard?.writeText(cleanPhone);
-    setPhoneCopied(true);
-    setTimeout(() => setPhoneCopied(false), 2500);
-  };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -95,120 +75,48 @@ export default function Contact({ personalInfo }) {
               </p>
 
               <div className="space-y-3">
-                {/* Item 1: Direct Email - Clean mailto link without opening any browser tabs */}
-                <div className="p-3.5 sm:p-4 rounded-xl bg-slate-50/80 dark:bg-slate-900/50 border border-slate-200/80 dark:border-blue-500/15 hover:border-indigo-400/60 dark:hover:border-sky-400/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3 group transition-all duration-200">
-                  <a
-                    href={`mailto:${personalInfo.email}`}
-                    className="flex items-center gap-3 min-w-0 flex-1 group/link cursor-pointer text-left"
-                    title="Email Meseret Shumye"
-                  >
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-blue-500/25 text-indigo-600 dark:text-sky-400 flex items-center justify-center shrink-0 group-hover/link:scale-105 group-hover/link:bg-indigo-100 dark:group-hover/link:bg-indigo-900/80 transition-all duration-200 shadow-xs">
-                      <Mail className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
-                    </div>
-                    <div className="min-w-0">
-                      <h4 className="font-bold text-slate-900 dark:text-white text-sm sm:text-base group-hover/link:text-indigo-600 dark:group-hover/link:text-sky-400 transition-colors">
-                        Direct Email
-                      </h4>
-                      <span className="text-xs sm:text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline break-all block mt-0.5">
-                        {personalInfo.email}
-                      </span>
-                    </div>
-                  </a>
-                  
-                  <div className="flex items-center gap-2 shrink-0 self-start sm:self-auto">
+                {/* Item 1: Direct Email */}
+                <div className="p-3.5 sm:p-4 rounded-xl bg-slate-50/80 dark:bg-slate-900/50 border border-slate-200/80 dark:border-blue-500/15 hover:border-indigo-400/60 dark:hover:border-sky-400/40 flex items-center gap-3 group transition-all duration-200">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-blue-500/25 text-indigo-600 dark:text-sky-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200 shadow-xs">
+                    <Mail className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
+                  </div>
+                  <div className="min-w-0">
+                    <h4 className="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Direct Email</h4>
                     <a
                       href={`mailto:${personalInfo.email}`}
-                      className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg sm:rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white shadow-xs transition-all duration-150 cursor-pointer"
-                      title="Send email"
+                      className="text-xs sm:text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline break-all block mt-0.5"
                     >
-                      <Mail className="w-3.5 h-3.5" />
-                      <span>Send Email</span>
+                      {personalInfo.email}
                     </a>
-
-                    <button
-                      type="button"
-                      onClick={handleCopyEmail}
-                      className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 sm:px-3 sm:py-2 rounded-lg sm:rounded-xl text-xs font-semibold bg-white dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700/80 hover:border-indigo-400 dark:hover:border-sky-400 active:border-indigo-500 dark:active:border-sky-400 hover:bg-slate-50 dark:hover:bg-slate-700/60 shadow-xs transition-all duration-150 cursor-pointer"
-                      title="Copy email to clipboard"
-                    >
-                      {copied ? (
-                        <>
-                          <Check className="w-3.5 h-3.5 text-emerald-500" />
-                          <span className="text-emerald-600 dark:text-emerald-400 font-bold">Copied!</span>
-                        </>
-                      ) : (
-                        <>
-                          <Copy className="w-3.5 h-3.5" />
-                          <span>Copy</span>
-                        </>
-                      )}
-                    </button>
                   </div>
                 </div>
 
-                {/* Item 2: Phone - Clean tel: link without spaces and without opening any browser tabs */}
-                <div className="p-3.5 sm:p-4 rounded-xl bg-slate-50/80 dark:bg-slate-900/50 border border-slate-200/80 dark:border-blue-500/15 hover:border-indigo-400/60 dark:hover:border-sky-400/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3 group transition-all duration-200">
-                  <a
-                    href={`tel:${cleanPhone}`}
-                    className="flex items-center gap-3 min-w-0 flex-1 group/link cursor-pointer text-left"
-                    title="Call Meseret Shumye"
-                  >
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-blue-500/25 text-indigo-600 dark:text-sky-400 flex items-center justify-center shrink-0 group-hover/link:scale-105 group-hover/link:bg-indigo-100 dark:group-hover/link:bg-indigo-900/80 transition-all duration-200 shadow-xs">
-                      <Phone className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
-                    </div>
-                    <div className="min-w-0">
-                      <h4 className="font-bold text-slate-900 dark:text-white text-sm sm:text-base group-hover/link:text-emerald-600 dark:group-hover/link:text-emerald-400 transition-colors">
-                        Phone Number
-                      </h4>
-                      <span className="text-xs sm:text-sm font-semibold text-emerald-600 dark:text-emerald-400 hover:underline block mt-0.5">
-                        {personalInfo.phone}
-                      </span>
-                    </div>
-                  </a>
-
-                  <div className="flex items-center gap-2 shrink-0 self-start sm:self-auto">
+                {/* Item 2: Phone */}
+                <div className="p-3.5 sm:p-4 rounded-xl bg-slate-50/80 dark:bg-slate-900/50 border border-slate-200/80 dark:border-blue-500/15 hover:border-indigo-400/60 dark:hover:border-sky-400/40 flex items-center gap-3 group transition-all duration-200">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-blue-500/25 text-indigo-600 dark:text-sky-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200 shadow-xs">
+                    <Phone className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
+                  </div>
+                  <div className="min-w-0">
+                    <h4 className="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Phone Number</h4>
                     <a
                       href={`tel:${cleanPhone}`}
-                      className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg sm:rounded-xl text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white shadow-xs transition-all duration-150 cursor-pointer"
-                      title="Call phone number"
+                      className="text-xs sm:text-sm font-semibold text-emerald-600 dark:text-emerald-400 hover:underline block mt-0.5"
                     >
-                      <Phone className="w-3.5 h-3.5" />
-                      <span>Call Now</span>
+                      {personalInfo.phone}
                     </a>
-
-                    <button
-                      type="button"
-                      onClick={handleCopyPhone}
-                      className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 sm:px-3 sm:py-2 rounded-lg sm:rounded-xl text-xs font-semibold bg-white dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700/80 hover:border-emerald-400 dark:hover:border-emerald-400 active:border-emerald-500 hover:bg-slate-50 dark:hover:bg-slate-700/60 shadow-xs transition-all duration-150 cursor-pointer"
-                      title="Copy phone number to clipboard"
-                    >
-                      {phoneCopied ? (
-                        <>
-                          <Check className="w-3.5 h-3.5 text-emerald-500" />
-                          <span className="text-emerald-600 dark:text-emerald-400 font-bold">Copied!</span>
-                        </>
-                      ) : (
-                        <>
-                          <Copy className="w-3.5 h-3.5" />
-                          <span>Copy</span>
-                        </>
-                      )}
-                    </button>
                   </div>
                 </div>
 
                 {/* Item 3: Current Location */}
-                <div className="p-3.5 sm:p-4 rounded-xl bg-slate-50/80 dark:bg-slate-900/50 border border-slate-200/80 dark:border-blue-500/15 hover:border-indigo-400/60 dark:hover:border-sky-400/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3 group transition-all duration-200">
-                  <div className="flex items-center gap-3 min-w-0">
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-blue-500/25 text-indigo-600 dark:text-sky-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200 shadow-xs">
-                      <MapPin className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
-                    </div>
-                    <div className="min-w-0">
-                      <h4 className="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Current Location</h4>
-                      <p className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 mt-0.5">
-                        {personalInfo.location}
-                      </p>
-                    </div>
+                <div className="p-3.5 sm:p-4 rounded-xl bg-slate-50/80 dark:bg-slate-900/50 border border-slate-200/80 dark:border-blue-500/15 hover:border-indigo-400/60 dark:hover:border-sky-400/40 flex items-center gap-3 group transition-all duration-200">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-blue-500/25 text-indigo-600 dark:text-sky-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200 shadow-xs">
+                    <MapPin className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
+                  </div>
+                  <div className="min-w-0">
+                    <h4 className="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Current Location</h4>
+                    <p className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 mt-0.5">
+                      {personalInfo.location}
+                    </p>
                   </div>
                 </div>
               </div>
