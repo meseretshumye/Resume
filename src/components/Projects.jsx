@@ -6,7 +6,7 @@ import {
   Layers, 
   CheckCircle2, 
   X,
-ArrowRight 
+  ArrowRight 
 } from 'lucide-react';
 
 export default function Projects({ projects }) {
@@ -24,30 +24,30 @@ export default function Projects({ projects }) {
   return (
     <section
       id="projects"
-      className="relative my-0 py-10 md:py-14 bg-white dark:bg-[#070c17] border-t border-slate-200/80 dark:border-blue-500/20 transition-colors duration-300"
+      className="relative my-0 py-8 md:py-10 bg-white dark:bg-[#070c17] border-t border-slate-200/80 dark:border-blue-500/20 transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-8 md:mb-10">
-          <div className="inline-flex items-center px-6 py-2 rounded-full bg-gradient-to-r from-blue-500/10 via-sky-500/10 to-indigo-500/10 dark:from-[#0d182e]/95 dark:via-[#102040]/95 dark:to-[#0d182e]/95 backdrop-blur-md border border-blue-400/40 dark:border-blue-500/40 text-blue-600 dark:text-[#00d2ff] text-xs font-bold uppercase tracking-wider mb-3 shadow-[0_0_16px_rgba(0,210,255,0.12)] hover:border-sky-400 transition-all duration-300">
+        <div className="text-center max-w-3xl mx-auto mb-6 md:mb-7">
+          <div className="inline-flex items-center px-5 py-1.5 rounded-full bg-gradient-to-r from-blue-500/10 via-sky-500/10 to-indigo-500/10 dark:from-[#0d182e]/95 dark:via-[#102040]/95 dark:to-[#0d182e]/95 backdrop-blur-md border border-blue-400/40 dark:border-blue-500/40 text-blue-600 dark:text-[#00d2ff] text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5 shadow-[0_0_16px_rgba(0,210,255,0.12)] hover:border-sky-400 transition-all duration-300">
             Featured Projects &amp; Showcase
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Featured Projects & Works
           </h2>
-          <p className="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-300">
+          <p className="mt-2.5 text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
             Real-world enterprise SaaS architectures, mobile applications, and
             high-conversion e-commerce systems.
           </p>
         </div>
 
         {/* Category Filter Tabs */}
-        <div className="flex flex-wrap justify-center gap-2.5 mb-8 md:mb-10">
+        <div className="flex flex-wrap justify-center gap-2 mb-6 md:mb-7">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`inline-flex items-center px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-150 whitespace-nowrap border ${
+              className={`inline-flex items-center px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-150 whitespace-nowrap border ${
                 activeCategory === cat
                   ? "bg-indigo-600 hover:bg-indigo-500 text-white shadow-md shadow-indigo-600/25 border-indigo-400/80 scale-[1.02]"
                   : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-indigo-50/60 dark:hover:bg-slate-700 hover:text-indigo-600 dark:hover:text-sky-300 hover:border-indigo-400/60 dark:hover:border-sky-400/40 border-slate-200 dark:border-slate-700"
@@ -59,15 +59,15 @@ export default function Projects({ projects }) {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
           {filteredProjects.map((project) => (
             <div
               key={project.id}
               onClick={() => setSelectedProject(project)}
-              className="group rounded-3xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 overflow-hidden shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.7)] hover:shadow-2xl hover:border-sky-400 dark:hover:border-sky-400/60 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between backdrop-blur-sm cursor-pointer"
+              className="group rounded-2xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 overflow-hidden shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.7)] hover:shadow-2xl hover:border-sky-400 dark:hover:border-sky-400/60 transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between backdrop-blur-sm cursor-pointer"
             >
               {/* Image Preview Box */}
-              <div className="relative h-60 sm:h-72 overflow-hidden bg-slate-100 dark:bg-slate-900">
+              <div className="relative h-48 sm:h-56 overflow-hidden bg-slate-100 dark:bg-slate-900">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -81,15 +81,15 @@ export default function Projects({ projects }) {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
 
                 {/* Bottom title inside image */}
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <h3 className="text-xl font-bold">{project.title}</h3>
+                <div className="absolute bottom-3.5 left-4 right-4 text-white">
+                  <h3 className="text-base sm:text-lg font-bold">{project.title}</h3>
                 </div>
               </div>
 
               {/* Card Body */}
-              <div className="p-6 flex-1 flex flex-col justify-between">
+              <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
                 <div>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                     {project.description}
                   </p>
                 </div>
@@ -102,9 +102,9 @@ export default function Projects({ projects }) {
       {/* Case Study Details Modal */}
       {selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="relative w-full max-w-2xl bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
+          <div className="relative w-full max-w-2xl bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
             {/* Modal Header Image */}
-            <div className="relative h-64 overflow-hidden shrink-0">
+            <div className="relative h-56 sm:h-64 overflow-hidden shrink-0">
               <img
                 src={selectedProject.image}
                 alt={selectedProject.title}
@@ -123,37 +123,37 @@ export default function Projects({ projects }) {
                 <span className="px-3 py-1 rounded-full text-xs font-bold bg-indigo-600">
                   {selectedProject.category}
                 </span>
-                <h3 className="text-2xl font-bold mt-2">
+                <h3 className="text-xl sm:text-2xl font-bold mt-2">
                   {selectedProject.title}
                 </h3>
-                <p className="text-sm text-slate-300">
+                <p className="text-xs sm:text-sm text-slate-300">
                   {selectedProject.subtitle}
                 </p>
               </div>
             </div>
 
             {/* Modal Scrollable Body */}
-            <div className="p-6 overflow-y-auto space-y-5">
+            <div className="p-5 sm:p-6 overflow-y-auto space-y-4 sm:space-y-5">
               <div>
-                <h4 className="text-sm font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-1.5">
                   Project Overview
                 </h4>
-                <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                <p className="text-slate-700 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
                   {selectedProject.description}
                 </p>
               </div>
 
               <div>
-                <h4 className="text-sm font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-1.5">
                   Key Architectural Highlights
                 </h4>
-                <ul className="space-y-2">
+                <ul className="space-y-1.5 sm:space-y-2">
                   {selectedProject.highlights.map((highlight, idx) => (
                     <li
                       key={idx}
-                      className="flex items-start gap-2.5 text-sm text-slate-700 dark:text-slate-300"
+                      className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300"
                     >
-                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-500 shrink-0 mt-0.5" />
                       <span>{highlight}</span>
                     </li>
                   ))}
@@ -161,14 +161,14 @@ export default function Projects({ projects }) {
               </div>
 
               <div>
-                <h4 className="text-sm font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-2">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mb-1.5">
                   Technology Stack
                 </h4>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {selectedProject.technologies.map((tech, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 rounded-xl text-xs font-semibold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800"
+                      className="px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-semibold bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800"
                     >
                       {tech}
                     </span>
@@ -178,10 +178,10 @@ export default function Projects({ projects }) {
             </div>
 
             {/* Modal Footer */}
-            <div className="p-5 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 flex flex-wrap items-center justify-between gap-3">
+            <div className="p-4 sm:p-5 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/60 flex flex-wrap items-center justify-between gap-3">
               <button
                 onClick={() => setSelectedProject(null)}
-                className="px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors"
+                className="px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors"
               >
                 Close Window
               </button>
@@ -191,7 +191,7 @@ export default function Projects({ projects }) {
                     href={selectedProject.githubUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold text-xs transition-colors"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold text-xs transition-colors"
                   >
                     <Github className="w-3.5 h-3.5" />
                     <span>Source</span>
@@ -202,7 +202,7 @@ export default function Projects({ projects }) {
                     href={selectedProject.liveUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl border border-indigo-200 dark:border-indigo-800/80 bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900/60 text-indigo-700 dark:text-indigo-300 font-semibold text-xs transition-colors"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-xl border border-indigo-200 dark:border-indigo-800/80 bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900/60 text-indigo-700 dark:text-indigo-300 font-semibold text-xs transition-colors"
                   >
                     <ExternalLink className="w-3.5 h-3.5" />
                     <span>Live Preview</span>
@@ -211,7 +211,7 @@ export default function Projects({ projects }) {
                 <a
                   href="#contact"
                   onClick={() => setSelectedProject(null)}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-xs shadow-md transition-all"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-xs shadow-md transition-all"
                 >
                   <span>Discuss Project</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -224,4 +224,3 @@ export default function Projects({ projects }) {
     </section>
   );
 }
-

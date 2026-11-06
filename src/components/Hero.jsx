@@ -125,7 +125,7 @@ export default function Hero({ personalInfo, stats = [], onOpenResume }) {
   return (
     <section
       id="home"
-      className="hero-section relative min-h-[92vh] lg:min-h-screen flex items-center justify-center pt-28 pb-20 md:pt-36 md:pb-24 my-0 overflow-hidden bg-slate-50 dark:bg-[#0c1527] border-b border-slate-200/80 dark:border-blue-500/20 transition-colors duration-300"
+      className="hero-section relative min-h-[85vh] lg:min-h-[88vh] flex items-center justify-center pt-20 pb-14 md:pt-24 md:pb-16 my-0 overflow-hidden bg-slate-50 dark:bg-[#0c1527] border-b border-slate-200/80 dark:border-blue-500/20 transition-colors duration-300"
     >
       {/* 1. Unobstructed Slow-Motion Developer Video/Slide Background Reel */}
       <div className="hero-carousel-background">
@@ -155,41 +155,41 @@ export default function Hero({ personalInfo, stats = [], onOpenResume }) {
       <div className="hero-glow hero-glow-1 animate-pulse-slow" />
       <div className="hero-glow hero-glow-2" />
 
-      {/* 5. Main Hero Container (Spacious, Clean Typography & Centered to the Page) */}
-      <div className="container hero-container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10 flex flex-col items-center justify-center text-center">
-        <div className="hero-content flex flex-col items-center justify-center text-center w-full max-w-5xl mx-auto">
-          {/* Centered Welcome & Typewriter Transition Headline matching sample video */}
-          <div className="hero-heading-group w-full text-center mb-2">
-            <p className="hero-greeting text-lg sm:text-xl md:text-2xl font-medium text-slate-800 dark:text-white tracking-wide mb-3 text-center drop-shadow-sm">
+      {/* 5. Main Hero Container (Balanced Typography & Centered to the Page) */}
+      <div className="container hero-container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10 flex flex-col items-center justify-center text-center">
+        <div className="hero-content flex flex-col items-center justify-center text-center w-full max-w-4xl mx-auto">
+          {/* Centered Welcome & Typewriter Transition Headline */}
+          <div className="hero-heading-group w-full text-center mb-1.5">
+            <p className="hero-greeting text-xs sm:text-sm md:text-base font-semibold uppercase tracking-widest text-indigo-600 dark:text-sky-400 mb-2 text-center drop-shadow-sm">
               Welcome
             </p>
 
-            <h1 className="hero-name flex items-center justify-center text-center text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-950 dark:text-white min-h-[1.25em] w-full mx-auto drop-shadow-md">
+            <h1 className="hero-name flex items-center justify-center text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-slate-950 dark:text-white min-h-[1.25em] w-full mx-auto drop-shadow-md">
               <span className="text-slate-950 dark:text-white">{displayText}</span>
               <span className="font-light text-indigo-600 dark:text-sky-400 ml-0.5 animate-pulse select-none">|</span>
             </h1>
           </div>
 
-          {/* Subtitle location matching the sample video */}
-          <p className="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 font-semibold mb-8 text-center drop-shadow-xs">
+          {/* Subtitle location */}
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium mb-6 text-center drop-shadow-xs">
             Based in {personalInfo?.location || "Addis Ababa, Ethiopia"}
           </p>
 
-          {/* Clean Hero Action Buttons (Explore My Work & View Resume) */}
-          <div className="hero-actions flex flex-wrap items-center justify-center gap-4 w-full sm:w-auto mb-6">
+          {/* Clean Hero Action Buttons */}
+          <div className="hero-actions flex flex-wrap items-center justify-center gap-3 w-full sm:w-auto mb-4">
             <a
               href="#projects"
-              className="btn-primary-glow hero-btn-main flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-semibold text-sm border border-indigo-500 hover:border-indigo-400 shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/45 transition-all hover:scale-[1.02] cursor-pointer"
+              className="btn-primary-glow hero-btn-main flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white font-semibold text-xs sm:text-sm border border-indigo-500 hover:border-indigo-400 shadow-md shadow-indigo-600/25 hover:shadow-indigo-600/40 transition-all hover:scale-[1.02] cursor-pointer"
             >
               <span>Explore My Work</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-3.5 h-3.5" />
             </a>
 
             <button
               onClick={onOpenResume}
-              className="btn-secondary-glass hero-btn-resume flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-slate-900/10 hover:bg-slate-900/15 dark:bg-white/10 dark:hover:bg-white/20 text-slate-900 dark:text-white font-semibold text-sm border border-slate-300/80 dark:border-white/25 hover:border-slate-400 dark:hover:border-white/50 shadow-sm transition-all hover:scale-[1.02] backdrop-blur-md cursor-pointer"
+              className="btn-secondary-glass hero-btn-resume flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-xl bg-slate-900/10 hover:bg-slate-900/15 dark:bg-white/10 dark:hover:bg-white/20 text-slate-900 dark:text-white font-semibold text-xs sm:text-sm border border-slate-300/80 dark:border-white/25 hover:border-slate-400 dark:hover:border-white/50 shadow-sm transition-all hover:scale-[1.02] backdrop-blur-md cursor-pointer"
             >
-              <Download className="w-4 h-4 text-slate-800 dark:text-white" />
+              <Download className="w-3.5 h-3.5 text-slate-800 dark:text-white" />
               <span>View Resume</span>
             </button>
           </div>
