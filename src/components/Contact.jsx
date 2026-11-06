@@ -18,13 +18,50 @@ export default function Contact({ personalInfo }) {
     message: ''
   });
   const [copied, setCopied] = useState(false);
+  const [phoneCopied, setPhoneCopied] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText(personalInfo.email);
+  // Clean phone number (strictly digits and leading plus) for valid RFC 3966 tel: protocol
+  const cleanPhone = (personalInfo.phone || '').replace(/[^0-9+]/g, '');
+
+  const handleCopyEmail = (e) => {
+    e?.preventDefault?.();
+    e?.stopPropagation?.();
+    navigator.clipboard?.writeText(personalInfo.email);
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
+  };
+
+  const handleCopyPhone = (e) => {
+    e?.preventDefault?.();
+    e?.stopPropagation?.();
+    navigator.clipboard?.writeText(cleanPhone);
+    setPhoneCopied(true);
+    setTimeout(() => setPhoneCopied(false), 2500);
+  };
+
+  const handleEmailClick = (e) => {
+    // Automatically copy email to clipboard so user has it immediately
+    navigator.clipboard?.writeText(personalInfo.email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+
+    const isMobile = typeof navigator !== 'undefined' && /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (!isMobile) {
+      // On desktop, open Gmail Web compose in a new tab so it always opens regardless of OS mail app configuration
+      window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(personalInfo.email)}`, '_blank', 'noopener,noreferrer');
+    }
+  };
+
+  const handlePhoneClick = (e) => {
+    // Always copy phone number to clipboard with feedback
+    navigator.clipboard?.writeText(cleanPhone);
+    setPhoneCopied(true);
+    setTimeout(() => setPhoneCopied(false), 2500);
+
+    // Trigger dialer with clean phone
+    window.location.href = `tel:${cleanPhone}`;
   };
 
   const handleChange = (e) => {
@@ -81,66 +118,110 @@ export default function Contact({ personalInfo }) {
               </p>
 
               <div className="space-y-3">
-                {/* Item 1: Direct Email */}
+                {/* Item 1: Direct Email - Fully Clickable with 100% Guaranteed Web & Native Support */}
                 <div className="p-3.5 sm:p-4 rounded-xl bg-slate-50/80 dark:bg-slate-900/50 border border-slate-200/80 dark:border-blue-500/15 hover:border-indigo-400/60 dark:hover:border-sky-400/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3 group transition-all duration-200">
-                  <div className="flex items-center gap-3 min-w-0">
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-blue-500/25 text-indigo-600 dark:text-sky-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200 shadow-xs">
+                  <a
+                    href={`mailto:${personalInfo.email}`}
+                    onClick={handleEmailClick}
+                    className="flex items-center gap-3 min-w-0 flex-1 group/link cursor-pointer text-left"
+                    title="Click to compose email to Meseret Shumye"
+                  >
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-blue-500/25 text-indigo-600 dark:text-sky-400 flex items-center justify-center shrink-0 group-hover/link:scale-105 group-hover/link:bg-indigo-100 dark:group-hover/link:bg-indigo-900/80 transition-all duration-200 shadow-xs">
                       <Mail className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
                     </div>
                     <div className="min-w-0">
-                      <h4 className="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Direct Email</h4>
-                      <a
-                        href={`mailto:${personalInfo.email}`}
-                        className="text-xs sm:text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline break-all block mt-0.5"
-                      >
+                      <h4 className="font-bold text-slate-900 dark:text-white text-sm sm:text-base group-hover/link:text-indigo-600 dark:group-hover/link:text-sky-400 transition-colors">
+                        Direct Email
+                      </h4>
+                      <span className="text-xs sm:text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline break-all block mt-0.5">
                         {personalInfo.email}
-                      </a>
+                      </span>
                     </div>
-                  </div>
+                  </a>
                   
-                  <button
-                    type="button"
-                    onClick={handleCopyEmail}
-                    className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg sm:rounded-xl text-xs font-semibold bg-white dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700/80 hover:border-indigo-400 dark:hover:border-sky-400 active:border-indigo-500 dark:active:border-sky-400 hover:bg-slate-50 dark:hover:bg-slate-700/60 shadow-xs transition-all duration-150 cursor-pointer shrink-0 self-start sm:self-auto"
-                  >
-                    {copied ? (
-                      <>
-                        <Check className="w-3.5 h-3.5 text-emerald-500" />
-                        <span className="text-emerald-600 dark:text-emerald-400 font-bold">Email Copied!</span>
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="w-3.5 h-3.5" />
-                        <span>Copy Email Address</span>
-                      </>
-                    )}
-                  </button>
+                  <div className="flex items-center gap-2 shrink-0 self-start sm:self-auto">
+                    <a
+                      href={`mailto:${personalInfo.email}`}
+                      onClick={handleEmailClick}
+                      className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg sm:rounded-xl text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white shadow-xs transition-all duration-150 cursor-pointer"
+                      title="Open Gmail or mail client"
+                    >
+                      <Mail className="w-3.5 h-3.5" />
+                      <span>Send Email</span>
+                    </a>
+
+                    <button
+                      type="button"
+                      onClick={handleCopyEmail}
+                      className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 sm:px-3 sm:py-2 rounded-lg sm:rounded-xl text-xs font-semibold bg-white dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700/80 hover:border-indigo-400 dark:hover:border-sky-400 active:border-indigo-500 dark:active:border-sky-400 hover:bg-slate-50 dark:hover:bg-slate-700/60 shadow-xs transition-all duration-150 cursor-pointer"
+                      title="Copy email to clipboard"
+                    >
+                      {copied ? (
+                        <>
+                          <Check className="w-3.5 h-3.5 text-emerald-500" />
+                          <span className="text-emerald-600 dark:text-emerald-400 font-bold">Copied!</span>
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="w-3.5 h-3.5" />
+                          <span>Copy</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
                 </div>
 
-                {/* Item 2: Phone */}
+                {/* Item 2: Phone - Fully Clickable with Sanitized tel: URI (No Spaces) */}
                 <div className="p-3.5 sm:p-4 rounded-xl bg-slate-50/80 dark:bg-slate-900/50 border border-slate-200/80 dark:border-blue-500/15 hover:border-indigo-400/60 dark:hover:border-sky-400/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3 group transition-all duration-200">
-                  <div className="flex items-center gap-3 min-w-0">
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-blue-500/25 text-indigo-600 dark:text-sky-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-200 shadow-xs">
+                  <a
+                    href={`tel:${cleanPhone}`}
+                    onClick={handlePhoneClick}
+                    className="flex items-center gap-3 min-w-0 flex-1 group/link cursor-pointer text-left"
+                    title="Click to call Meseret Shumye"
+                  >
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-100 dark:border-blue-500/25 text-indigo-600 dark:text-sky-400 flex items-center justify-center shrink-0 group-hover/link:scale-105 group-hover/link:bg-indigo-100 dark:group-hover/link:bg-indigo-900/80 transition-all duration-200 shadow-xs">
                       <Phone className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
                     </div>
                     <div className="min-w-0">
-                      <h4 className="font-bold text-slate-900 dark:text-white text-sm sm:text-base">Phone Number</h4>
-                      <a
-                        href={`tel:${personalInfo.phone}`}
-                        className="text-xs sm:text-sm font-semibold text-emerald-600 dark:text-emerald-400 hover:underline block mt-0.5"
-                      >
+                      <h4 className="font-bold text-slate-900 dark:text-white text-sm sm:text-base group-hover/link:text-emerald-600 dark:group-hover/link:text-emerald-400 transition-colors">
+                        Phone Number
+                      </h4>
+                      <span className="text-xs sm:text-sm font-semibold text-emerald-600 dark:text-emerald-400 hover:underline block mt-0.5">
                         {personalInfo.phone}
-                      </a>
+                      </span>
                     </div>
-                  </div>
-
-                  <a
-                    href={`tel:${personalInfo.phone}`}
-                    className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg sm:rounded-xl text-xs font-semibold bg-white dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700/80 hover:border-indigo-400 dark:hover:border-sky-400 active:border-indigo-500 dark:active:border-sky-400 hover:bg-slate-50 dark:hover:bg-slate-700/60 shadow-xs transition-all duration-150 cursor-pointer shrink-0 self-start sm:self-auto"
-                  >
-                    <Phone className="w-3.5 h-3.5 text-emerald-500" />
-                    <span>Call Now</span>
                   </a>
+
+                  <div className="flex items-center gap-2 shrink-0 self-start sm:self-auto">
+                    <a
+                      href={`tel:${cleanPhone}`}
+                      onClick={handlePhoneClick}
+                      className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-lg sm:rounded-xl text-xs font-semibold bg-emerald-600 hover:bg-emerald-500 text-white shadow-xs transition-all duration-150 cursor-pointer"
+                      title="Call phone number"
+                    >
+                      <Phone className="w-3.5 h-3.5" />
+                      <span>Call Now</span>
+                    </a>
+
+                    <button
+                      type="button"
+                      onClick={handleCopyPhone}
+                      className="inline-flex items-center justify-center gap-1.5 px-3 py-1.5 sm:px-3 sm:py-2 rounded-lg sm:rounded-xl text-xs font-semibold bg-white dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700/80 hover:border-emerald-400 dark:hover:border-emerald-400 active:border-emerald-500 hover:bg-slate-50 dark:hover:bg-slate-700/60 shadow-xs transition-all duration-150 cursor-pointer"
+                      title="Copy phone number to clipboard"
+                    >
+                      {phoneCopied ? (
+                        <>
+                          <Check className="w-3.5 h-3.5 text-emerald-500" />
+                          <span className="text-emerald-600 dark:text-emerald-400 font-bold">Copied!</span>
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="w-3.5 h-3.5" />
+                          <span>Copy</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
                 </div>
 
                 {/* Item 3: Current Location */}

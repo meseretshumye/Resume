@@ -130,6 +130,12 @@ export default function Footer({ personalInfo }) {
             {personalInfo.email && (
               <a
                 href={`mailto:${personalInfo.email}`}
+                onClick={() => {
+                  const isMobile = typeof navigator !== 'undefined' && /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                  if (!isMobile) {
+                    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(personalInfo.email)}`, '_blank', 'noopener,noreferrer');
+                  }
+                }}
                 className="w-8 h-8 rounded-full bg-[#0e1629] border border-sky-500/70 text-white hover:bg-sky-500 hover:border-sky-400 hover:text-white hover:scale-110 hover:shadow-[0_0_12px_rgba(14,165,233,0.5)] flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer"
                 aria-label="Email"
               >
