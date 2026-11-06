@@ -123,7 +123,6 @@ export const resumeData = {
       type: "Full-Time",
       description: "",
       responsibilities: [
-        "Oversee and administer consulting service contracts according to international standard specifications.",
         "Author official engineering assessments, contractual evaluations, and technical correspondence.",
         "Implement rigorous quality control protocols to ensure on-time and within-budget completion."
       ],

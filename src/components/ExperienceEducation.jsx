@@ -78,11 +78,11 @@ export default function ExperienceEducation({ experience = [], education = [], o
                 </div>
               </div>
 
-              <div className="space-y-4 relative pl-6 border-l-2 border-indigo-200 dark:border-indigo-900/60 ml-3">
+              <div className="space-y-4 relative pl-6 border-l-2 border-indigo-200 dark:border-indigo-900/60">
                 {experience.map((item) => (
                   <div key={item.id} className="relative group">
-                    {/* Glowing Node Marker */}
-                    <div className="absolute -left-[31px] top-2 w-3.5 h-3.5 rounded-full bg-indigo-600 dark:bg-sky-400 ring-4 ring-white dark:ring-[#060a14] group-hover:scale-125 transition-transform duration-200" />
+                    {/* Glowing Node Marker - Exactly Centered on Line */}
+                    <div className="absolute -left-[32px] top-2 w-3.5 h-3.5 rounded-full bg-indigo-600 dark:bg-sky-400 ring-4 ring-white dark:ring-[#060a14] group-hover:scale-125 transition-transform duration-200" />
 
                     {/* Card Content - Standardized Equal Padding & Border */}
                     <div className="p-4.5 sm:p-5 rounded-2xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 hover:border-indigo-400/70 dark:hover:border-sky-400/60 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.6)] backdrop-blur-sm transition-all duration-200 group-hover:-translate-y-0.5">
@@ -136,20 +136,11 @@ export default function ExperienceEducation({ experience = [], education = [], o
                 </div>
               </div>
 
-              <div className={`space-y-4 relative ${
-                activeTab === 'both'
-                  ? 'pl-6 border-l-2 border-indigo-200 dark:border-indigo-900/60 ml-3 lg:border-l-0 lg:ml-0 lg:pl-0 lg:mr-[38px]'
-                  : 'pl-6 border-l-2 border-indigo-200 dark:border-indigo-900/60 ml-3'
-              }`}>
-                {/* Desktop Centered Timeline Line between left and right cards */}
-                {activeTab === 'both' && (
-                  <div className="hidden lg:block absolute -left-6 top-0 bottom-0 w-0.5 bg-indigo-200 dark:bg-indigo-900/60" />
-                )}
-
+              <div className="space-y-4 relative pl-6 border-l-2 border-indigo-200 dark:border-indigo-900/60">
                 {education.map((item) => (
                   <div key={item.id} className="relative group">
-                    {/* Glowing Node Marker */}
-                    <div className="absolute -left-[31px] top-2 w-3.5 h-3.5 rounded-full bg-indigo-600 dark:bg-sky-400 ring-4 ring-white dark:ring-[#060a14] group-hover:scale-125 transition-transform duration-200" />
+                    {/* Glowing Node Marker - Exactly Centered on Line */}
+                    <div className="absolute -left-[32px] top-2 w-3.5 h-3.5 rounded-full bg-indigo-600 dark:bg-sky-400 ring-4 ring-white dark:ring-[#060a14] group-hover:scale-125 transition-transform duration-200" />
 
                     {/* Card Content - Standardized Equal Padding & Border */}
                     <div className="p-4.5 sm:p-5 rounded-2xl bg-white dark:bg-[#0e1629]/90 border border-slate-200/90 dark:border-blue-500/25 hover:border-indigo-400/70 dark:hover:border-sky-400/60 shadow-md dark:shadow-[0_4px_25px_rgba(2,12,27,0.6)] backdrop-blur-sm transition-all duration-200 group-hover:-translate-y-0.5">
